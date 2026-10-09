@@ -1,0 +1,14 @@
+:root {
+    --bg-main: #070708;
+    --bg-header: #0E0E10;
+    --bg-btn-nav: #131316;
+    --bg-btn-contact: #1C1C21;
+    --bg-accent: #4A2CED;
+    --bg-gray: #E4E4E6;
+    --bg-dark-gray: #62646C;
+    --bg-placeholder: #D9D9D9;
+    --text-white: #FFFFFF;
+    --text-gray: #AFB0B6;
+    --border-color: #1C1C21;
+    --font-primary: 'Manrope', sans-serif;
+}
