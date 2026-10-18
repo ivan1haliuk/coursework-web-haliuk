@@ -4,7 +4,7 @@
     "brand": "Damien Braun",
     "sharedSources": {
         "styles": [
-            "assets/css/variables.css",
+            "assets/css/_variables.css",
             "assets/css/style.css"
         ],
         "interactions": "assets/js/main.js",
@@ -12,8 +12,9 @@
             "src": "assets/data/home.json",
             "collection": "testimonials"
         },
-        "favicon": "assets/images/favicon.svg",
-        "icons": "assets/images/icons/sprite.png"
+        "favicon": "assets/favicon.svg",
+        "icons": "assets/images/icons/sprite.png",
+        "services": "assets/data/services.json"
     },
     "navigation": [
         {
@@ -37,15 +38,14 @@
         {
             "id": "services",
             "label": "Послуги",
-            "href": "index.html#services",
+            "href": "services.html",
             "ready": true
         }
     ],
     "contact": {
         "label": "Зв’язок",
-        "href": "contact.html",
-        "ready": false,
-        "temporaryDialog": "contactModal"
+        "dialog": "contactModal",
+        "ready": true
     },
     "footer": {
         "tagline": "Місце, де фото мають особливий сенс",
@@ -58,7 +58,21 @@
         "privacy": {
             "label": "Конфіденційність",
             "dialog": "privacyDialog"
-        }
+        },
+        "services": [
+            {
+                "label": "Портретна зйомка",
+                "href": "services.html#portraits"
+            },
+            {
+                "label": "Зйомка подій",
+                "href": "services.html#events"
+            },
+            {
+                "label": "Комерційна зйомка",
+                "href": "services.html#commercial"
+            }
+        ]
     },
     "socials": [
         {

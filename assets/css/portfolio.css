@@ -316,38 +316,6 @@
     gap: 0.25rem;
 }
 
-.portfolio-page .footer-right-block {
-    gap: 2.5rem 3.125rem;
-    padding-inline: 2.5rem;
-}
-
-.portfolio-page .footer-links-col {
-    gap: 0.25rem;
-}
-
-.portfolio-page .footer-links-title {
-    margin-bottom: 0.625rem;
-}
-
-.portfolio-page .footer-link {
-    min-height: 0;
-    line-height: normal;
-}
-
-.portfolio-page .footer-bottom-left {
-    order: 0;
-}
-
-.portfolio-page .footer-bottom-right {
-    order: 1;
-}
-
-.portfolio-page .footer-socials {
-    order: 2;
-    padding: 0.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6rem;
-}
 
 .portfolio-project-dialog {
     width: min(58rem, calc(100% - 2rem));
@@ -460,16 +428,6 @@ html:not(.js) .portfolio-page .testimonials-cards-container {
 
     .portfolio-page .testimonial-card {
         min-height: var(--review-min-height);
-    }
-
-    .portfolio-page .footer-right-block {
-        gap: 1.875rem;
-        padding-inline: var(--footer-inline-padding);
-    }
-
-    .portfolio-page .footer-socials,
-    .portfolio-page .footer-bottom-right {
-        order: 0;
     }
 }
 

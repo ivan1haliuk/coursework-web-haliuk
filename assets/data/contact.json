@@ -1,0 +1,151 @@
+{
+    "version": 1,
+    "locale": "uk",
+    "demo": {
+        "kind": "educational-demo",
+        "notice": "Навчальний макет: персонаж, історії проєктів, статистика та відгуки є демонстраційним контентом."
+    },
+    "meta": {
+        "title": "Контакти та запис на зйомку | Damien Braun",
+        "description": "Обговоріть портретну фотосесію, зйомку події або комерційний проєкт із Дамієном Брауном. Контактні дані та форма для вашого повідомлення."
+    },
+    "hero": {
+        "eyebrow": "Зв’язок",
+        "title": "Зв’яжіться зі мною",
+        "description": "Маєте ідею для фотосесії? Розкажіть про свій задум — разом знайдемо світло, місце й настрій для вашої історії. Працюю з портретами, подіями та комерційними проєктами.",
+        "scrollLabel": "Написати повідомлення",
+        "scrollTarget": "#contact-form",
+        "images": {
+            "mobile": {
+                "src": "assets/images/contact/hero-mobile.webp",
+                "width": 714,
+                "height": 458,
+                "alt": "Фотограф із камерою знімає краєвид у теплому вечірньому світлі",
+                "hasAlpha": true
+            },
+            "laptop": {
+                "src": "assets/images/contact/hero-laptop.webp",
+                "width": 2560,
+                "height": 1264,
+                "alt": "Фотограф із камерою знімає краєвид у теплому вечірньому світлі",
+                "hasAlpha": true
+            },
+            "desktop": {
+                "src": "assets/images/contact/hero-desktop.webp",
+                "width": 3192,
+                "height": 1492,
+                "alt": "Фотограф із камерою знімає краєвид у теплому вечірньому світлі",
+                "hasAlpha": true
+            }
+        }
+    },
+    "information": {
+        "title": "Контактні дані",
+        "description": "Напишіть мені, щоб обговорити зйомку, перевірити вільну дату та поставити запитання. Фотосесії проводжу за попередньою домовленістю.",
+        "email": {
+            "label": "Електронна пошта",
+            "value": "damienbraun@gmail.com",
+            "href": "mailto:damienbraun@gmail.com"
+        },
+        "booking": {
+            "label": "Запис на зйомку",
+            "value": "За домовленістю",
+            "href": "mailto:damienbraun@gmail.com?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%81%20%D0%BD%D0%B0%20%D0%B7%D0%B9%D0%BE%D0%BC%D0%BA%D1%83"
+        },
+        "phone": {
+            "value": null,
+            "show": false,
+            "reason": "У Figma наведений шаблонний номер. Справжній номер не надано, тому його не видаємо за чинний контакт."
+        }
+    },
+    "form": {
+        "id": "contact-form",
+        "title": "Напишіть мені",
+        "description": "Опишіть задум, бажану дату й формат зйомки. Залиште електронну адресу для відповіді.",
+        "fields": [
+            {
+                "name": "firstName",
+                "id": "contact-first-name",
+                "label": "Ім’я",
+                "placeholder": "Ваше ім’я",
+                "type": "text",
+                "autocomplete": "given-name",
+                "required": true,
+                "minLength": 2,
+                "maxLength": 80
+            },
+            {
+                "name": "lastName",
+                "id": "contact-last-name",
+                "label": "Прізвище",
+                "placeholder": "Ваше прізвище",
+                "type": "text",
+                "autocomplete": "family-name",
+                "required": false,
+                "maxLength": 80
+            },
+            {
+                "name": "email",
+                "id": "contact-email",
+                "label": "Електронна пошта",
+                "placeholder": "name@example.com",
+                "type": "email",
+                "autocomplete": "email",
+                "required": true,
+                "maxLength": 254
+            },
+            {
+                "name": "phone",
+                "id": "contact-phone",
+                "label": "Телефон",
+                "placeholder": "Номер із кодом країни",
+                "type": "tel",
+                "autocomplete": "tel",
+                "required": false,
+                "maxLength": 30
+            },
+            {
+                "name": "message",
+                "id": "contact-message",
+                "label": "Ваше повідомлення",
+                "placeholder": "Розкажіть про майбутню зйомку",
+                "type": "textarea",
+                "required": true,
+                "minLength": 10,
+                "maxLength": 2000
+            }
+        ],
+        "submitLabel": "Надіслати повідомлення",
+        "requiredHint": "Ім’я, електронна пошта та повідомлення — обов’язкові. Прізвище й телефон можна не вказувати.",
+        "delivery": {
+            "currentMode": "mailto",
+            "recipient": "damienbraun@gmail.com",
+            "currentHint": "Форма підготує лист. Надішліть його зі своєї поштової програми.",
+            "futureMode": "api",
+            "apiEndpoint": null,
+            "futureSession": 8
+        },
+        "messages": {
+            "required": "Заповніть це поле.",
+            "email": "Введіть коректну електронну адресу.",
+            "tooShort": "Введіть щонайменше {min} символів.",
+            "tooLong": "Введіть не більше {max} символів.",
+            "phone": "Вкажіть номер телефону цифрами; можна додати +, пробіли, дужки та дефіси.",
+            "invalid": "Перевірте виділені поля.",
+            "prepared": "Повідомлення підготовлено.",
+            "openMail": "Відкрити поштову програму",
+            "sending": "Надсилаємо повідомлення…",
+            "sent": "Дякую! Повідомлення надіслано.",
+            "error": "Не вдалося надіслати повідомлення. Спробуйте ще раз або напишіть електронною поштою."
+        }
+    },
+    "testimonials": {
+        "eyebrow": "Відгуки",
+        "title": "Що кажуть клієнти",
+        "countLabel": "Відгуків у добірці",
+        "viewAllLabel": "Усі відгуки →",
+        "dataSource": "assets/data/home.json",
+        "collection": "testimonials",
+        "countFromData": true
+    }
+}

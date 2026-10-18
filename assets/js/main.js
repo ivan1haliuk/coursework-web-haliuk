@@ -2,6 +2,7 @@
     'use strict';
 
     document.documentElement.classList.add('js');
+    const assetBase = new URL('../', document.currentScript.src);
 
     function showImageFallback(image) {
         if (image.dataset.fallbackApplied) {
@@ -10,8 +11,10 @@
         image.dataset.fallbackApplied = 'true';
         image.removeAttribute('srcset');
         image.closest('picture')?.querySelectorAll('source').forEach((source) => source.removeAttribute('srcset'));
-        image.src = 'assets/images/photo-placeholder.svg';
-        image.alt = `${image.alt} — зображення тимчасово недоступне`;
+        image.src = new URL('images/photo-placeholder.svg', assetBase).href;
+        if (image.alt) {
+            image.alt = `${image.alt} — зображення тимчасово недоступне`;
+        }
     }
 
     document.addEventListener('error', (event) => {
@@ -86,16 +89,19 @@
     }
 
     const dialogTriggers = new WeakMap();
+    let pageScroll = { x: 0, y: 0 };
     document.querySelectorAll('dialog').forEach((dialog) => {
         dialog.addEventListener('keydown', (event) => {
             if (event.key !== 'Tab') {
                 return;
             }
-            const controls = [...dialog.querySelectorAll('button, a[href], input, textarea, select')]
-                .filter((control) => !control.disabled && control.getClientRects().length > 0);
+            const controls = [...dialog.querySelectorAll('button, a[href], input, textarea, select, [tabindex]')]
+                .filter((control) => !control.disabled && control.tabIndex >= 0 && control.getClientRects().length > 0);
             const first = controls[0];
             const last = controls[controls.length - 1];
-            if (event.shiftKey && document.activeElement === first) {
+            if (!first) {
+                event.preventDefault();
+            } else if (event.shiftKey && document.activeElement === first) {
                 event.preventDefault();
                 last?.focus();
             } else if (!event.shiftKey && document.activeElement === last) {
@@ -104,18 +110,39 @@
             }
         });
 
-        dialog.addEventListener('click', (event) => {
+        function isBackdrop(event) {
             const bounds = dialog.getBoundingClientRect();
             const outside = event.clientX < bounds.left || event.clientX > bounds.right
                 || event.clientY < bounds.top || event.clientY > bounds.bottom;
-            if (event.target === dialog && outside) {
+            return event.target === dialog && outside;
+        }
+        let pointerStartedOutside = false;
+        dialog.addEventListener('pointerdown', (event) => {
+            pointerStartedOutside = isBackdrop(event);
+        });
+        dialog.addEventListener('click', (event) => {
+            if (pointerStartedOutside && isBackdrop(event)) {
                 dialog.close();
             }
+            pointerStartedOutside = false;
         });
 
         dialog.addEventListener('close', () => {
-            document.body.classList.toggle('dialog-open', Boolean(document.querySelector('dialog[open]')));
-            dialogTriggers.get(dialog)?.focus();
+            if (document.querySelector('dialog[open]')) {
+                return;
+            }
+            document.body.classList.remove('dialog-open');
+            document.documentElement.classList.remove('dialog-open');
+            const trigger = dialogTriggers.get(dialog);
+            if (trigger?.matches('.mobile-contact-btn') && !desktop.matches) {
+                navigation.classList.add('active');
+                burger.setAttribute('aria-expanded', 'true');
+                burger.setAttribute('aria-label', 'Закрити меню');
+            }
+            const fallbackTrigger = desktop.matches ? document.getElementById('open-modal-btn') : burger;
+            const target = trigger?.getClientRects().length ? trigger : fallbackTrigger;
+            target?.focus({ preventScroll: true });
+            window.scrollTo({ left: pageScroll.x, top: pageScroll.y, behavior: 'instant' });
         });
     });
 
@@ -132,7 +159,7 @@
         }
 
         const dialog = document.getElementById(trigger.dataset.dialog);
-        if (!(dialog instanceof HTMLDialogElement)) {
+        if (!(dialog instanceof HTMLDialogElement) || dialog.open) {
             return;
         }
 
@@ -156,9 +183,16 @@
             renderCollection(dialog);
         }
 
-        dialogTriggers.set(dialog, trigger.closest('.mobile-contact-btn') ? burger : trigger);
-        dialog.showModal();
+        if (dialog.id === 'contactModal') {
+            dialog.dispatchEvent(new CustomEvent('contact:open', { detail: trigger.dataset }));
+        }
+
+        dialogTriggers.set(dialog, trigger);
+        pageScroll = { x: window.scrollX, y: window.scrollY };
         document.body.classList.add('dialog-open');
+        document.documentElement.classList.add('dialog-open');
+        dialog.showModal();
+        dialog.querySelector('[autofocus]')?.focus({ preventScroll: true });
     });
 
     const questions = [...document.querySelectorAll('.faq-item')];
@@ -447,54 +481,141 @@
     const form = document.getElementById('contactForm');
     if (form) {
         form.noValidate = true;
-        const fields = [...form.querySelectorAll('input, textarea')];
+        const fields = [...form.querySelectorAll('input, textarea, select')];
         const formStatus = document.getElementById('form-status');
+        const mailLink = document.getElementById('prepared-mail');
+        const submit = form.querySelector('[type="submit"]');
+        const service = form.elements.namedItem('service');
+        const packageField = form.elements.namedItem('package');
+        let preparing = false;
+        let revision = 0;
+
+        function clearPreparedMail() {
+            revision += 1;
+            mailLink.hidden = true;
+            mailLink.removeAttribute('href');
+            formStatus.textContent = '';
+            form.dataset.state = 'idle';
+        }
+
+        function syncPackages() {
+            const selected = packageField.selectedOptions[0];
+            if (service.value && selected?.parentElement.dataset.service !== service.value) {
+                packageField.value = '';
+            }
+            packageField.querySelectorAll('optgroup').forEach((group) => {
+                group.disabled = Boolean(service.value && group.dataset.service !== service.value);
+                group.hidden = group.disabled;
+            });
+        }
 
         function validateField(field) {
             const value = field.value.trim();
             let message = '';
-            if (!value) {
+            if (field.required && !value) {
                 message = 'Заповніть це поле.';
-            } else if (field.type === 'email' && !field.validity.valid) {
-                message = 'Введіть коректну електронну адресу.';
-            } else if (field.minLength > 0 && value.length < field.minLength) {
-                message = `Введіть щонайменше ${field.minLength} символів.`;
-            } else if (field.maxLength > 0 && value.length > field.maxLength) {
-                message = `Введіть не більше ${field.maxLength} символів.`;
+            } else if (field.maxLength > 0 && field.value.length > field.maxLength) {
+                message = 'Введіть не більше ' + field.maxLength + ' символів.';
+            } else if (value && field.type === 'email'
+                && (field.validity.typeMismatch || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))) {
+                message = 'Введіть коректну електронну адресу, наприклад name@example.com.';
+            } else if (value && field.minLength > 0 && value.length < field.minLength) {
+                message = 'Введіть щонайменше ' + field.minLength + ' символів.';
+            } else if (field === packageField && value && field.selectedOptions[0]?.parentElement.dataset.service !== service.value) {
+                message = 'Оберіть пакет для поточного напряму.';
             }
             field.setAttribute('aria-invalid', String(Boolean(message)));
-            document.getElementById(`${field.id}-error`).textContent = message;
+            document.getElementById(field.id + '-error').textContent = message;
             return !message;
         }
 
         fields.forEach((field) => {
             field.addEventListener('input', () => {
-                formStatus.replaceChildren();
+                clearPreparedMail();
                 if (field.hasAttribute('aria-invalid')) {
                     validateField(field);
                 }
             });
         });
+        service.addEventListener('change', () => {
+            syncPackages();
+            clearPreparedMail();
+            validateField(packageField);
+        });
+        packageField.addEventListener('change', () => {
+            const group = packageField.selectedOptions[0]?.parentElement;
+            if (packageField.value && group?.dataset.service) {
+                service.value = group.dataset.service;
+            }
+            syncPackages();
+            clearPreparedMail();
+            validateField(packageField);
+        });
+        document.getElementById('contactModal').addEventListener('contact:open', (event) => {
+            // General contact preserves the draft; an explicit booking replaces only the selection.
+            if (event.detail.service) {
+                service.value = event.detail.service;
+                syncPackages();
+                packageField.value = event.detail.package || '';
+                clearPreparedMail();
+                [service, packageField].forEach((field) => {
+                    field.removeAttribute('aria-invalid');
+                    document.getElementById(field.id + '-error').textContent = '';
+                });
+            }
+        });
 
-        form.addEventListener('submit', (event) => {
+        form.addEventListener('submit', async (event) => {
             event.preventDefault();
+            if (preparing) {
+                return;
+            }
+            clearPreparedMail();
             const results = fields.map(validateField);
             if (results.includes(false)) {
-                formStatus.textContent = 'Перевірте виділені поля.';
+                form.dataset.state = 'error';
+                formStatus.textContent = 'Перевірте виділені поля. Введені дані збережено.';
                 fields[results.indexOf(false)].focus();
                 return;
             }
 
-            const name = form.elements.namedItem('name').value.trim();
-            const email = form.elements.namedItem('email').value.trim();
-            const message = form.elements.namedItem('body').value.trim();
-            const subject = encodeURIComponent(`Запит на фотозйомку — ${name}`);
-            const body = encodeURIComponent(`Ім’я: ${name}\r\nEmail: ${email}\r\n\r\n${message}`);
-            const link = document.createElement('a');
-            link.className = 'form-mail-link';
-            link.href = `mailto:damienbraun@gmail.com?subject=${subject}&body=${body}`;
-            link.textContent = 'Відкрийте поштову програму';
-            formStatus.replaceChildren('Повідомлення підготовлено. ', link, ', щоб надіслати лист.');
+            preparing = true;
+            submit.disabled = true;
+            submit.textContent = 'Готуємо лист…';
+            form.setAttribute('aria-busy', 'true');
+            form.dataset.state = 'pending';
+            formStatus.textContent = 'Готуємо лист для поштової програми…';
+            const currentRevision = revision;
+            try {
+                // Yield through a paint so the pending state can be announced and displayed.
+                await new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 0)));
+                if (revision !== currentRevision) {
+                    return;
+                }
+                const name = form.elements.namedItem('name').value.trim();
+                const email = form.elements.namedItem('email').value.trim();
+                const message = form.elements.namedItem('body').value.trim();
+                const subject = encodeURIComponent('Запит на фотозйомку — ' + name);
+                const body = encodeURIComponent([
+                    'Ім’я: ' + name,
+                    'Email: ' + email,
+                    'Напрям: ' + (service.value || 'Потрібна порада'),
+                    'Пакет: ' + (packageField.value || 'Без пакета'),
+                    '', message,
+                ].join('\r\n'));
+                mailLink.href = 'mailto:damienbraun@gmail.com?subject=' + subject + '&body=' + body;
+                mailLink.hidden = false;
+                form.dataset.state = 'prepared';
+                formStatus.textContent = 'Лист підготовлено, але ще не надіслано. Відкрийте поштову програму за посиланням нижче та надішліть його самостійно. Якщо вона не відкриється, скопіюйте текст і напишіть на damienbraun@gmail.com.';
+            } catch {
+                form.dataset.state = 'error';
+                formStatus.textContent = 'Не вдалося підготувати лист. Введені дані збережено. Спробуйте ще раз або напишіть на damienbraun@gmail.com.';
+            } finally {
+                preparing = false;
+                submit.disabled = false;
+                submit.textContent = 'Підготувати лист';
+                form.setAttribute('aria-busy', 'false');
+            }
         });
     }
 })();

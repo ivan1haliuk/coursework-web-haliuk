@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#070708">
+        <meta name="color-scheme" content="dark">
+        <title>Послуги фотографа — пакети та ціни | Damien Braun</title>
+        <meta name="description" content="Портретна, подієва та комерційна зйомка Дамієна Брауна. Дев’ять демонстраційних пакетів, ціни й відповіді на запитання.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/_variables.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/services.css">
+        <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/services.js" defer></script>
+    </head>
+    <body class="services-page">
+        <a class="skip-link" href="#main-content">Перейти до вмісту</a>
+        <header class="header" id="main-header">
+            <div class="navbar">
+                <a class="logo" href="index.html" aria-label="Дамієн — головна сторінка"><img src="assets/images/home/logo.svg" alt="" width="135" height="27"></a>
+                <nav class="nav-links" id="nav-links" aria-label="Основна навігація">
+                    <a href="index.html" class="nav-btn home">Головна</a>
+                    <a href="about.html" class="nav-btn about">Про мене</a>
+                    <a href="portfolio.html" class="nav-btn portfolio">Портфоліо</a>
+                    <a href="services.html" class="nav-btn services active" aria-current="page">Послуги</a>
+                    <button class="nav-btn mobile-contact-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
+                </nav>
+                <button class="contact-btn" id="open-modal-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">Зв’язок</button>
+                <button class="burger-menu" id="burger-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
+                    <span class="icon icon-menu" aria-hidden="true"></span>
+                </button>
+            </div>
+        </header>
+        <noscript><p class="contact-fallback">Для запису напишіть <a href="mailto:damienbraun@gmail.com">damienbraun@gmail.com</a>. Діалогова форма потребує JavaScript.</p></noscript>
+        <main id="main-content" tabindex="-1">
+            <section class="services-intro page-container" aria-labelledby="services-heading">
+                <picture class="services-hero-photo">
+                    <source media="(min-width: 110rem)" srcset="assets/images/services/hero-desktop.webp" width="3192" height="1568">
+                    <source media="(min-width: 90rem)" srcset="assets/images/services/hero-laptop.webp" width="2560" height="1424">
+                    <img src="assets/images/services/hero-mobile.webp" alt="Фотостудія з фонами, софтбоксами та освітлювальним обладнанням" width="1932" height="1087" fetchpriority="high">
+                </picture>
+                <div class="services-intro-copy">
+                    <p class="services-subtitle">Послуги</p>
+                    <h1 id="services-heading">Послуги фотографа</h1>
+                    <p class="services-intro-description">Професійна фотографія, що втілює ваш задум. Від позачасових портретів до захопливих репортажів із подій — у кожному проєкті поєдную творчий погляд і технічну майстерність.</p>
+                </div>
+                <a class="services-scroll-link" href="#portraits">
+                    <picture>
+                        <source media="(min-width: 110rem)" srcset="assets/images/services/scroll-decoration-desktop.svg" width="137" height="137">
+                        <img src="assets/images/services/scroll-decoration-laptop.svg" alt="" width="100" height="100">
+                    </picture>
+                    <span>Переглянути всі послуги <span aria-hidden="true">↓</span></span>
+                </a>
+            </section>
+            <section class="service-category page-container" id="portraits" aria-labelledby="portraits-heading">
+                <div class="service-overview">
+                    <div class="service-copy">
+                        <h2 id="portraits-heading">Портретна зйомка</h2>
+                        <p>Портретна фотографія розкриває вашу індивідуальність. Діловий портрет, сімейне фото чи особиста фотосесія — створюю кадри, у яких ви впізнаєте себе. Разом шукаємо вдалі ракурси й природні емоції, щоб кожен портрет розповідав вашу історію.</p>
+                        <a class="portfolio-card-btn" href="portfolio.html#portraits" aria-label="Переглянути роботи: Портретна зйомка">Переглянути роботи <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                    </div>
+                    <div class="service-gallery" role="region" aria-roledescription="карусель" aria-label="Портретна зйомка" data-service-gallery>
+                        <div class="service-slides" role="group" id="portraits-slides" tabindex="0" aria-label="Фотографії; клавіші ←, →, Home та End">
+                            <figure class="service-slide" aria-roledescription="слайд" aria-label="1 із 3">
+                                <picture class="service-slide-photo">
+                    <source media="(min-width: 110rem)" srcset="assets/images/services/portraits-desktop.webp" width="1788" height="720">
+                    <source media="(min-width: 64rem)" srcset="assets/images/services/portraits-laptop.webp" width="1436" height="622">
+                    <img src="assets/images/services/portraits-mobile.webp" alt="Портрет рудоволосої жінки на тлі зелені" width="716" height="458" loading="lazy" decoding="async">
+                </picture>
+                                <figcaption class="visually-hidden">Портрет рудоволосої жінки на тлі зелені</figcaption>
+                            </figure>
+                            <figure class="service-slide service-slide-extra" aria-roledescription="слайд" aria-label="2 із 3" hidden>
+                                <img src="assets/images/portfolio/portrait-resilience-small.webp" srcset="assets/images/portfolio/portrait-resilience-small.webp 600w, assets/images/portfolio/portrait-resilience.webp 1200w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Крупний портрет чоловіка в синьому каптурі" width="1200" height="1500" loading="lazy" decoding="async">
+                                <figcaption class="visually-hidden">Обличчя стійкості</figcaption>
+                            </figure>
+                            <figure class="service-slide service-slide-extra" aria-roledescription="слайд" aria-label="3 із 3" hidden>
+                                <img src="assets/images/portfolio/portrait-innocence-small.webp" srcset="assets/images/portfolio/portrait-innocence-small.webp 600w, assets/images/portfolio/portrait-innocence.webp 1200w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Дитина у яскравому вбранні та квітковому вінку на міській вулиці" width="1200" height="1797" loading="lazy" decoding="async">
+                                <figcaption class="visually-hidden">Щирість без масок</figcaption>
+                            </figure>
+                        </div>
+                        <div class="service-gallery-controls" role="group" aria-label="Керування фотографіями">
+                            <button class="slider-btn" type="button" data-slide-step="-1" aria-label="Попереднє фото: Портретна зйомка" aria-controls="portraits-slides" disabled><span class="icon icon-left" aria-hidden="true"></span></button>
+                            <button class="slider-btn" type="button" data-slide-step="1" aria-label="Наступне фото: Портретна зйомка" aria-controls="portraits-slides" disabled><span class="icon icon-right" aria-hidden="true"></span></button>
+                        </div>
+                        <p class="visually-hidden" role="status" data-slide-status></p>
+                    </div>
+                </div>
+                <article class="service-package" id="individual" aria-labelledby="individual-heading">
+                    <div class="service-package-summary">
+                        <h3 id="individual-heading">Індивідуальна</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price">$250</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Портретна зйомка" data-package="Індивідуальна" aria-haspopup="dialog" aria-label="Записатися: Індивідуальна">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Для збереження вашого неповторного характеру та стилю.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>2 години зйомки та 20 професійно оброблених фотографій.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $10 за кожну.</span></li>
+                    </ul>
+                </article>
+                <article class="service-package" id="family" aria-labelledby="family-heading">
+                    <div class="service-package-summary">
+                        <h3 id="family-heading">Сімейна</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price">$400</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Портретна зйомка" data-package="Сімейна" aria-haspopup="dialog" aria-label="Записатися: Сімейна">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Для теплих спогадів разом із близькими.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>3 години зйомки та 30 професійно оброблених фотографій.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $10 за кожну.</span></li>
+                    </ul>
+                </article>
+                <article class="service-package" id="couple" aria-labelledby="couple-heading">
+                    <div class="service-package-summary">
+                        <h3 id="couple-heading">Для пари</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price">$300</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Портретна зйомка" data-package="Для пари" aria-haspopup="dialog" aria-label="Записатися: Для пари">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Ваша історія кохання в камерній фотосесії.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>2,5 години зйомки та 25 професійно оброблених фотографій.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $10 за кожну.</span></li>
+                    </ul>
+                </article>
+            </section>
+            <section class="service-category page-container" id="events" aria-labelledby="events-heading">
+                <div class="service-overview">
+                    <div class="service-copy">
+                        <h2 id="events-heading">Зйомка подій</h2>
+                        <p>Зберігаю атмосферу ваших особливих подій — весілля, корпоративної зустрічі чи важливого святкування. Уважно стежу за щирими моментами й працюю непомітно, щоб природні кадри передавали емоції цього дня.</p>
+                        <a class="portfolio-card-btn" href="portfolio.html#events" aria-label="Переглянути роботи: Зйомка подій">Переглянути роботи <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                    </div>
+                    <div class="service-gallery" role="region" aria-roledescription="карусель" aria-label="Зйомка подій" data-service-gallery>
+                        <div class="service-slides" role="group" id="events-slides" tabindex="0" aria-label="Фотографії; клавіші ←, →, Home та End">
+                            <figure class="service-slide" aria-roledescription="слайд" aria-label="1 із 3">
+                                <picture class="service-slide-photo">
+                    <source media="(min-width: 110rem)" srcset="assets/images/services/events-desktop.webp" width="1788" height="720">
+                    <source media="(min-width: 64rem)" srcset="assets/images/services/events-laptop.webp" width="1436" height="622">
+                    <img src="assets/images/services/events-mobile.webp" alt="Наречена під час весільної церемонії перед гостями" width="716" height="458" loading="lazy" decoding="async">
+                </picture>
+                                <figcaption class="visually-hidden">Наречена під час весільної церемонії перед гостями</figcaption>
+                            </figure>
+                            <figure class="service-slide service-slide-extra" aria-roledescription="слайд" aria-label="2 із 3" hidden>
+                                <img src="assets/images/portfolio/event-wedding-small.webp" srcset="assets/images/portfolio/event-wedding-small.webp 600w, assets/images/portfolio/event-wedding.webp 1200w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Наречена у світлій сукні біля високого вікна" width="1200" height="2008" loading="lazy" decoding="async">
+                                <figcaption class="visually-hidden">Весільна історія</figcaption>
+                            </figure>
+                            <figure class="service-slide service-slide-extra" aria-roledescription="слайд" aria-label="3 із 3" hidden>
+                                <img src="assets/images/portfolio/event-conference-small.webp" srcset="assets/images/portfolio/event-conference-small.webp 600w, assets/images/portfolio/event-conference.webp 1200w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Відкритий нотатник на передньому плані й учасники конференції в залі" width="1200" height="800" loading="lazy" decoding="async">
+                                <figcaption class="visually-hidden">Ділова зустріч</figcaption>
+                            </figure>
+                        </div>
+                        <div class="service-gallery-controls" role="group" aria-label="Керування фотографіями">
+                            <button class="slider-btn" type="button" data-slide-step="-1" aria-label="Попереднє фото: Зйомка подій" aria-controls="events-slides" disabled><span class="icon icon-left" aria-hidden="true"></span></button>
+                            <button class="slider-btn" type="button" data-slide-step="1" aria-label="Наступне фото: Зйомка подій" aria-controls="events-slides" disabled><span class="icon icon-right" aria-hidden="true"></span></button>
+                        </div>
+                        <p class="visually-hidden" role="status" data-slide-status></p>
+                    </div>
+                </div>
+                <article class="service-package" id="wedding" aria-labelledby="wedding-heading">
+                    <div class="service-package-summary">
+                        <h3 id="wedding-heading">Весільна зйомка</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price">$1 500</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Зйомка подій" data-package="Весільна зйомка" aria-haspopup="dialog" aria-label="Записатися: Весільна зйомка">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Збережіть магію вашого особливого дня.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Зйомка протягом усього дня, другий фотограф і понад 300 професійно оброблених фото.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Склад пакета можна адаптувати до потреб вашого весілля.</span></li>
+                    </ul>
+                </article>
+                <article class="service-package" id="party" aria-labelledby="party-heading">
+                    <div class="service-package-summary">
+                        <h3 id="party-heading">Зйомка вечірки</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price">$800</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Зйомка подій" data-package="Зйомка вечірки" aria-haspopup="dialog" aria-label="Записатися: Зйомка вечірки">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Збережіть веселощі та яскраві емоції вашої події.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>До 4 годин зйомки та понад 150 професійно оброблених фотографій.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові години — $150 за годину.</span></li>
+                    </ul>
+                </article>
+                <article class="service-package" id="corporate" aria-labelledby="corporate-heading">
+                    <div class="service-package-summary">
+                        <h3 id="corporate-heading">Корпоративні події</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price service-price-custom">Індивідуальний розрахунок</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Зйомка подій" data-package="Корпоративні події" aria-haspopup="dialog" aria-label="Записатися: Корпоративні події">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Індивідуальні рішення для корпоративних зустрічей, конференцій і семінарів.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Зверніться для розрахунку вартості відповідно до вимог вашої події.</span></li>
+                    </ul>
+                </article>
+            </section>
+            <section class="service-category page-container" id="commercial" aria-labelledby="commercial-heading">
+                <div class="service-overview">
+                    <div class="service-copy">
+                        <h2 id="commercial-heading">Комерційна зйомка</h2>
+                        <p>У бізнесі виразне зображення має значення. Комерційна фотографія допомагає розвивати візуальний образ вашого бренду. Створюю кадри для продуктів, послуг і рекламних кампаній, які привертають увагу та запам’ятовуються аудиторії.</p>
+                        <a class="portfolio-card-btn" href="portfolio.html#commercial" aria-label="Переглянути роботи: Комерційна зйомка">Переглянути роботи <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                    </div>
+                    <div class="service-gallery" role="region" aria-roledescription="карусель" aria-label="Комерційна зйомка" data-service-gallery>
+                        <div class="service-slides" role="group" id="commercial-slides" tabindex="0" aria-label="Фотографії; клавіші ←, →, Home та End">
+                            <figure class="service-slide" aria-roledescription="слайд" aria-label="1 із 3">
+                                <picture class="service-slide-photo">
+                    <source media="(min-width: 110rem)" srcset="assets/images/services/commercial-desktop.webp" width="1788" height="720">
+                    <source media="(min-width: 64rem)" srcset="assets/images/services/commercial-laptop.webp" width="1436" height="622">
+                    <img src="assets/images/services/commercial-mobile.webp" alt="Флакон парфумів на ніжно-рожевій тканині" width="716" height="458" loading="lazy" decoding="async">
+                </picture>
+                                <figcaption class="visually-hidden">Флакон парфумів на ніжно-рожевій тканині</figcaption>
+                            </figure>
+                            <figure class="service-slide service-slide-extra" aria-roledescription="слайд" aria-label="2 із 3" hidden>
+                                <img src="assets/images/portfolio/commercial-backpack-small.webp" srcset="assets/images/portfolio/commercial-backpack-small.webp 600w, assets/images/portfolio/commercial-backpack.webp 1200w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Темний рюкзак зі шкіряними ремінцями на тлі зелені" width="1200" height="800" loading="lazy" decoding="async">
+                                <figcaption class="visually-hidden">Елегантність деталей</figcaption>
+                            </figure>
+                            <figure class="service-slide service-slide-extra" aria-roledescription="слайд" aria-label="3 із 3" hidden>
+                                <img src="assets/images/portfolio/commercial-brand-small.webp" srcset="assets/images/portfolio/commercial-brand-small.webp 600w, assets/images/portfolio/commercial-brand.webp 1200w" sizes="(min-width: 64rem) 50vw, 100vw" alt="Рожевий персонаж з окулярами та кольоровими деталями на рожевому тлі" width="1200" height="1803" loading="lazy" decoding="async">
+                                <figcaption class="visually-hidden">Історія бренду</figcaption>
+                            </figure>
+                        </div>
+                        <div class="service-gallery-controls" role="group" aria-label="Керування фотографіями">
+                            <button class="slider-btn" type="button" data-slide-step="-1" aria-label="Попереднє фото: Комерційна зйомка" aria-controls="commercial-slides" disabled><span class="icon icon-left" aria-hidden="true"></span></button>
+                            <button class="slider-btn" type="button" data-slide-step="1" aria-label="Наступне фото: Комерційна зйомка" aria-controls="commercial-slides" disabled><span class="icon icon-right" aria-hidden="true"></span></button>
+                        </div>
+                        <p class="visually-hidden" role="status" data-slide-status></p>
+                    </div>
+                </div>
+                <article class="service-package" id="product" aria-labelledby="product-heading">
+                    <div class="service-package-summary">
+                        <h3 id="product-heading">Предметна зйомка</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price">$500</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Комерційна зйомка" data-package="Предметна зйомка" aria-haspopup="dialog" aria-label="Записатися: Предметна зйомка">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Покажіть свої товари в найкращому світлі.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Пів дня зйомки, 20 професійно оброблених фото товарів і файли високої роздільності.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $20 за кожну.</span></li>
+                    </ul>
+                </article>
+                <article class="service-package" id="real-estate" aria-labelledby="real-estate-heading">
+                    <div class="service-package-summary">
+                        <h3 id="real-estate-heading">Зйомка нерухомості</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price">$700</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Комерційна зйомка" data-package="Зйомка нерухомості" aria-haspopup="dialog" aria-label="Записатися: Зйомка нерухомості">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Підкресліть красу ваших об’єктів нерухомості.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Інтер’єрні та екстер’єрні кадри, 2 години зйомки й 25 професійно оброблених фото.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $20 за кожну.</span></li>
+                    </ul>
+                </article>
+                <article class="service-package" id="brand" aria-labelledby="brand-heading">
+                    <div class="service-package-summary">
+                        <h3 id="brand-heading">Зйомка для бренду</h3>
+                        <div class="service-package-price-row">
+                            <p class="service-price service-price-custom">Індивідуальний розрахунок</p>
+                            <button class="portfolio-card-btn" type="button" data-dialog="contactModal" data-service="Комерційна зйомка" data-package="Зйомка для бренду" aria-haspopup="dialog" aria-label="Записатися: Зйомка для бренду">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <ul class="service-features">
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Візуальна історія, що відповідає ідентичності вашого бренду.</span></li>
+                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Напишіть про завдання бренду, щоб обговорити зйомку й отримати індивідуальний розрахунок.</span></li>
+                    </ul>
+                </article>
+            </section>
+            <p class="services-notice page-container">Ціни й умови відтворюють навчальний макет. Це демонстраційні пропозиції.</p>
+            <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+                <div class="faq-header"><div class="faq-text-container">
+                    <p class="faq-subtitle">Запитання</p>
+                    <h2 class="faq-title" id="faq-heading">Поширені запитання</h2>
+                </div></div>
+                <div class="faq-content">
+                    <div class="faq-col faq-col-left">
+                            <details class="faq-item" open>
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">На яких видах зйомки ви спеціалізуєтесь?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-specialization">Працюю з портретами, подіями та комерційними проєктами. Під час зйомки прагну зберегти характер людини й атмосферу моменту.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">Як записатися на фотозйомку?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-booking">Напишіть через контактну форму або електронною поштою. Обговоримо ідею, бажану дату, локацію та формат роботи.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">Яке обладнання ви використовуєте?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-equipment">Використовую професійну камеру, об’єктиви та освітлення, які підбираю відповідно до завдання й умов зйомки.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">Чи можна обрати місце зйомки?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-location">Так. Можемо працювати у студії, на природі або в іншій погодженій локації. Разом оцінимо світло та умови.</p>
+                            </details>
+                    </div>
+                    <div class="faq-col faq-col-right" id="faq-more">
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">Як відбувається обробка фотографій?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-editing">Спочатку відбираю вдалі кадри, потім виконую корекцію кольору та делікатну ретуш. Зберігаю природність образу й узгоджений настрій.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">Чи входять цифрові фото у вартість?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-files">Так, погоджена добірка оброблених цифрових фотографій входить у вартість зйомки. Обсяг і формат обговорюємо заздалегідь.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">Чи можна замовити друк фотографій?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-prints">Так. Напишіть мені, щоб узгодити розмір, матеріали й вартість друку. Допоможу підібрати формат для обраних кадрів.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <span class="faq-item-title">Коли будуть готові фотографії?</span>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph" id="answer-delivery">Термін готовності узгоджується перед зйомкою відповідно до обсягу роботи.</p>
+                            </details>
+                    </div>
+                </div>
+            </section>
+            <div class="bottom-logo-section" aria-hidden="true">
+                <div class="bottom-logo-container">
+                    <img src="assets/images/home/footer-logo.svg" alt="" class="bottom-massive-logo" width="1063" height="213">
+                </div>
+            </div>
+            <div class="marquee-section bottom-marquee" role="group" aria-label="Напрями фотографії">
+                <div class="marquee-content">
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Зйомка подій</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Комерційна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Предметна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Весільна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Пейзажна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Брендова зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Портретна зйомка</span>
+                    </div>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Зйомка подій</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Комерційна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Предметна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Весільна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Пейзажна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Брендова зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Портретна зйомка</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <h2 class="visually-hidden">Навігація та зв’язок</h2>
+            <div class="footer-top-container">
+                <img src="assets/images/home/footer-decoration.svg" alt="" class="footer-vector-left" width="162" height="200">
+                <div class="footer-top-content">
+                    <div class="footer-left-block">
+                        <span class="footer-tagline">Місце, де фото мають особливий сенс</span>
+                        <div class="footer-call-to-action">
+                            <div class="footer-cta-row">
+                                <span class="footer-cta-text">Нумо</span>
+                                <button class="footer-cta-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                    <span class="icon icon-arrow" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <span class="footer-cta-text">Співпрацюймо</span>
+                        </div>
+                    </div>
+                    <div class="footer-right-block">
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title"><a href="index.html">Головна</a></h3>
+                            <a href="about.html" class="footer-link">Про мене</a>
+                            <a href="portfolio.html" class="footer-link">Мої роботи</a>
+                            <a href="index.html#testimonials" class="footer-link">Відгуки</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title">Клієнти</h3>
+                            <a href="index.html#testimonials" class="footer-link">Klovesto</a>
+                            <a href="index.html#testimonials" class="footer-link">Nukeway</a>
+                            <a href="index.html#testimonials" class="footer-link">Cloven’s</a>
+                            <a href="index.html#testimonials" class="footer-link">MenVol</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title">Портфоліо</h3>
+                            <a href="portfolio.html#events" class="footer-link">Події</a>
+                            <a href="portfolio.html#portraits" class="footer-link">Портрет</a>
+                            <a href="portfolio.html#commercial" class="footer-link">Брендинг</a>
+                            <a href="portfolio.html#commercial" class="footer-link">Комерція</a>
+                            <a href="portfolio.html#events" class="footer-link">Весілля</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title">Послуги</h3>
+                            <a href="services.html#portraits" class="footer-link">Портрети</a>
+                            <a href="services.html#events" class="footer-link">Події</a>
+                            <a href="services.html#commercial" class="footer-link">Комерція</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/images/home/footer-decoration.svg" alt="" class="footer-vector-right" width="162" height="200">
+            </div>
+            <div class="footer-bottom-container">
+                <div class="footer-bottom-left">
+                    <button class="footer-bottom-link" type="button" data-dialog="termsDialog" aria-haspopup="dialog">Умови користування</button>
+                    <div class="footer-divider"></div>
+                    <button class="footer-bottom-link" type="button" data-dialog="privacyDialog" aria-haspopup="dialog">Конфіденційність</button>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="Facebook — головна сторінка платформи (нова вкладка)">
+                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                    </a>
+                    <a href="https://x.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="X — головна сторінка платформи (нова вкладка)">
+                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="LinkedIn — головна сторінка платформи (нова вкладка)">
+                        <span class="icon icon-linkedin" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="footer-bottom-right">
+                    <span>© 2023 Damien Braun Photography. Усі права захищено.</span>
+                </div>
+            </div>
+        </footer>
+        <dialog class="dialog" id="contactModal" aria-labelledby="contact-title" aria-describedby="contact-help">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити форму">×</button>
+            <h2 class="dialog-title" id="contact-title">Обговорімо вашу зйомку</h2>
+            <form class="contact-form" id="contactForm" method="dialog">
+                <div class="form-field">
+                    <label for="contact-name">Ваше ім’я (обов’язково)</label>
+                    <input class="modal-input" id="contact-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required minlength="2" maxlength="80" aria-describedby="contact-name-error" autofocus>
+                    <span class="field-error" id="contact-name-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-email">Електронна пошта (обов’язково)</label>
+                    <input class="modal-input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" required maxlength="254" aria-describedby="contact-email-error">
+                    <span class="field-error" id="contact-email-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-service">Напрям зйомки</label>
+                    <select class="modal-input" id="contact-service" name="service" autocomplete="off" aria-describedby="contact-service-error">
+                        <option value="">Допоможіть обрати напрям</option>
+                        <option value="Портретна зйомка">Портретна зйомка</option>
+                        <option value="Зйомка подій">Зйомка подій</option>
+                        <option value="Комерційна зйомка">Комерційна зйомка</option>
+                    </select>
+                    <span class="field-error" id="contact-service-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-package">Пакет</label>
+                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="contact-package-error">
+                        <option value="">Обговорити без пакета</option>
+                        <optgroup label="Портретна зйомка" data-service="Портретна зйомка">
+                            <option value="Індивідуальна">Індивідуальна</option>
+                            <option value="Сімейна">Сімейна</option>
+                            <option value="Для пари">Для пари</option>
+                        </optgroup>
+                        <optgroup label="Зйомка подій" data-service="Зйомка подій">
+                            <option value="Весільна зйомка">Весільна зйомка</option>
+                            <option value="Зйомка вечірки">Зйомка вечірки</option>
+                            <option value="Корпоративні події">Корпоративні події</option>
+                        </optgroup>
+                        <optgroup label="Комерційна зйомка" data-service="Комерційна зйомка">
+                            <option value="Предметна зйомка">Предметна зйомка</option>
+                            <option value="Зйомка нерухомості">Зйомка нерухомості</option>
+                            <option value="Зйомка для бренду">Зйомка для бренду</option>
+                        </optgroup>
+                    </select>
+                    <span class="field-error" id="contact-package-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-message">Розкажіть про вашу ідею (обов’язково)</label>
+                    <textarea class="modal-textarea" id="contact-message" name="body" autocomplete="off" enterkeyhint="enter" required minlength="10" maxlength="2000" aria-describedby="contact-message-help contact-message-error"></textarea>
+                    <span class="form-help" id="contact-message-help">Від 10 до 2000 символів.</span>
+                    <span class="field-error" id="contact-message-error"></span>
+                </div>
+                <p class="form-help" id="contact-help">Підготуйте звернення й надішліть його зі своєї поштової програми. Цей сайт не надсилає лист автоматично. Чернетка зберігається лише на цій відкритій сторінці.</p>
+                <button class="action-btn-outline" type="submit">Підготувати лист</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+                <a class="form-mail-link" id="prepared-mail" hidden>Відкрити поштову програму</a>
+            </form>
+        </dialog>
+        <dialog class="dialog" id="termsDialog" aria-labelledby="termsDialog-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
+            <h2 class="dialog-title" id="termsDialog-title">Умови користування</h2>
+            <div class="legal-content">
+                <p>Матеріали не надають дозволу на комерційне використання зображень. Умови фотозйомки й використання фотографій узгоджуються окремо.</p>
+            </div>
+        </dialog>
+        <dialog class="dialog" id="privacyDialog" aria-labelledby="privacyDialog-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
+            <h2 class="dialog-title" id="privacyDialog-title">Конфіденційність</h2>
+            <div class="legal-content">
+                <p>Контактна форма перевіряє введення у вашому браузері та готує посилання для поштової програми. Повідомлення надсилається лише після вашої дії в поштовій програмі.</p>
+                <p>Сайт не зберігає введені дані в базі, cookies або localStorage. Шрифт завантажується з Google Fonts; зовнішні соціальні посилання ведуть на відповідні платформи.</p>
+            </div>
+        </dialog>
+    </body>
+</html>
