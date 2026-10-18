@@ -1,657 +1,695 @@
-
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damien Braun — Портфоліо</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/css/_variables.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
-    <header class="header" id="main-header">
-        <div class="navbar">
-            <div class="logo">DAMIEN</div>
-
-            <nav class="nav-links" id="nav-links">
-                <a href="#" class="nav-btn home active">Головна</a>
-                <a href="#" class="nav-btn about">Про мене</a>
-                <a href="#" class="nav-btn portfolio">Портфоліо</a>
-                <a href="#" class="nav-btn services">Послуги</a>
-            </nav>
-
-            <a href="#" class="contact-btn" id="open-modal-btn">Зв’язок</a>
-
-<div class="burger-menu" id="burger-menu">
-    <img src="assets/images/icons/Icon%20menu.png" alt="Меню">
-</div>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero-section">
-            <div class="hero-sub">
-
-                <div class="hero-text-container">
-                    <p class="subtitle">Вражаючі фото від</p>
-                    <h1 class="title">Damien Braun</h1>
-                </div>
-
-                <div class="vector-block">
-                    <img src="assets/images/icons/Vector.png" alt="Абстрактний візерунок" class="abstract-img">
-                </div>
-
-                <div class="hero-action-container">
-                    <div class="lets-row">
-                        <span class="lets-text">Нумо</span>
-                        <a href="#" class="action-btn">
-                            <img src="assets/images/icons/Icon.png" alt="Стрілка" class="action-icon">
-                        </a>
-                    </div>
-                    <span class="work-text">Співпрацюймо</span>
-                </div>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Дамієн Браун — фотограф | Головна</title>
+        <meta name="description" content="Портфоліо фотографа Дамієна Брауна: портрети, зйомка подій і комерційні проєкти. Перегляньте роботи, відгуки та обговоріть власну фотосесію.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/variables.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+        <script src="assets/js/main.js" defer></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Перейти до вмісту</a>
+        <header class="header" id="main-header">
+            <div class="navbar">
+                <a class="logo" href="index.html" aria-label="Дамієн — головна сторінка"><img src="assets/images/home/logo.svg" alt="Damien" width="135" height="27"></a>
+                <nav class="nav-links" id="nav-links" aria-label="Основна навігація">
+                    <a href="#home" class="nav-btn home active" aria-current="page">Головна</a>
+                    <a href="about.html" class="nav-btn about">Про мене</a>
+                    <a href="#portfolio" class="nav-btn portfolio">Портфоліо</a>
+                    <a href="index.html#services" class="nav-btn services">Послуги</a>
+                    <button class="nav-btn mobile-contact-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
+                </nav>
+                <button class="contact-btn" id="open-modal-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">Зв’язок</button>
+                <button class="burger-menu" id="burger-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
+                    <span class="icon icon-menu" aria-hidden="true"></span>
+                </button>
             </div>
-        </section>
-
-        <section class="marquee-section">
-            <h2 style="display: none;">Види фотозйомки</h2>
-            <div class="marquee-content">
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Зйомка подій</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Комерційна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Предметна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Портретна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Пейзажна зйомка</span></div>
-            </div>
-            <div class="marquee-content">
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Зйомка подій</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Комерційна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Предметна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Портретна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Пейзажна зйомка</span></div>
-            </div>
-        </section>
-
-        <section class="portfolio-collage-section">
-            <h2 style="display: none;">Галерея робіт</h2>
-            <div class="collage-container">
-                <img src="assets/images/1.png" alt="Фото 1" class="img-1">
-                <img src="assets/images/2.png" alt="Фото 2" class="img-2">
-                <img src="assets/images/3.png" alt="Фото 3" class="img-3">
-                <img src="assets/images/4.png" alt="Фото 4" class="img-4">
-                <img src="assets/images/5.png" alt="Фото 5" class="img-5">
-                <img src="assets/images/6.png" alt="Фото 6" class="img-6">
-            </div>
-        </section>
-
-        <section class="about-section">
-            <div class="about-container">
-                <div class="about-header">
-                    <div class="about-text-container">
-                        <span class="about-subtitle">Про мене</span>
-                        <h2 class="about-title">Я — Дамієн</h2>
+        </header>
+        <main id="main-content" tabindex="-1">
+            <section class="hero-section" id="home">
+                <div class="hero-sub">
+                    <div class="hero-text-container">
+                        <p class="subtitle">Вражаючі фото від</p>
+                        <h1 class="title">Damien Braun</h1>
                     </div>
-                    <a href="#" class="about-btn">Детальніше &rarr;</a>
-                </div>
-
-                <div class="about-content">
-
-                    <div class="about-image-block">
-                        <img src="assets/images/7.png" alt="Damien Braun" class="about-main-img">
+                    <div class="vector-block">
+                        <img src="assets/images/home/hero-decoration.svg" alt="" class="abstract-img" width="346" height="328">
                     </div>
-
-                    <div class="about-info-block">
-
-                        <div class="info-top">
-                            <div class="info-title-row">
-                                <img src="assets/images/icons/Star.png" alt="Зірка" class="star-icon">
-                                <h3>Знайомство</h3>
-                            </div>
-                            <p class="info-paragraph">Мій шлях у фотографії — це постійний пошук незвичайного у звичному, бажання зупинити швидкоплинні миті й поділитися красою світу. Серед мальовничих краєвидів США я знаходжу натхнення в кожному куточку цієї різноманітної країни. Запрошую вас у світ фотографії, де кожен знімок розповідає історію, а кожен кадр зберігає частинку моєї душі.</p>
-                        </div>
-
-                        <div class="info-bottom">
-                            <div class="info-title-row">
-                                <img src="assets/images/icons/Star.png" alt="Зірка" class="star-icon">
-                                <h3>Контактні дані</h3>
-                            </div>
-
-                            <div class="contact-details">
-                                <div class="contact-col">
-                                    <span class="contact-label">Пошта</span>
-                                    <span class="contact-value">damienbraun@gmail.com</span>
-                                </div>
-                                <div class="contact-col">
-                                    <span class="contact-label">Телефон</span>
-                                    <span class="contact-value">+00 000000000</span>
-                                </div>
-                            </div>
-
-                            <div class="contact-actions">
-                                <div class="social-buttons social-icon-container">
-                                    <a href="https://www.facebook.com/" target="_blank" class="social-btn">
-                                        <img src="assets/images/icons/Facebook.png" alt="Facebook">
-                                    </a>
-                                    <a href="https://x.com/" target="_blank" class="social-btn">
-                                        <img src="assets/images/icons/Twitter.png" alt="Twitter">
-                                    </a>
-                                    <a href="https://www.linkedin.com/" target="_blank" class="social-btn">
-                                        <img src="assets/images/icons/LinkedIn.png" alt="LinkedIn">
-                                    </a>
-                                </div>
-
-                                <div class="action-buttons">
-                                    <a href="#" class="action-btn-outline">Працюймо</a>
-                                    <a href="#" class="action-btn-outline">Моє резюме</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="services-section">
-            <div class="services-container">
-                <div class="services-header">
-                    <div class="services-text-container">
-                        <span class="services-subtitle">Послуги</span>
-                        <h2 class="services-title">Послуги фотографа</h2>
-                    </div>
-
-                    <div class="services-actions">
-                        <div class="slider-buttons">
-                            <button class="slider-btn">
-                                <img src="assets/images/icons/Left.png" alt="Ліворуч" class="slider-icon">
-                            </button>
-                            <button class="slider-btn">
-                                <img src="assets/images/icons/Right.png" alt="Праворуч" class="slider-icon">
+                    <div class="hero-action-container">
+                        <div class="lets-row">
+                            <span class="lets-text">Нумо</span>
+                            <button class="action-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                <span class="icon icon-arrow" aria-hidden="true"></span>
                             </button>
                         </div>
-                        <a href="#" class="view-all-btn">Усі послуги &rarr;</a>
+                        <span class="work-text">Співпрацюймо</span>
                     </div>
                 </div>
-
-                <div class="services-content">
-
-                    <div class="services-info-block">
-
-                        <div class="service-top">
-                            <div class="service-title-row">
-                                <h3>Події</h3>
-                                <button class="service-action-btn">
-                                    <img src="assets/images/icons/Icon.png" alt="Стрілка" class="action-icon">
+            </section>
+            <section class="marquee-section">
+                <h2 class="visually-hidden">Види фотозйомки</h2>
+                <div class="marquee-content">
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Зйомка подій</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Комерційна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Предметна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Портретна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Пейзажна зйомка</span>
+                    </div>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Зйомка подій</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Комерційна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Предметна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Портретна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Пейзажна зйомка</span>
+                    </div>
+                </div>
+            </section>
+            <section class="portfolio-collage-section">
+                <h2 class="visually-hidden">Галерея робіт</h2>
+                <div class="collage-container">
+                    <picture class="img-1">
+                        <source media="(min-width: 1760px)" srcset="assets/images/home/hero-1-desktop.webp">
+                        <source media="(min-width: 640px)" srcset="assets/images/home/hero-1-laptop.webp">
+                        <img src="assets/images/home/hero-1-mobile.webp" alt="Студійний портрет із помаранчем на синьому тлі" width="234" height="309" decoding="async">
+                    </picture>
+                    <img src="assets/images/2.webp" alt="Портрет моделі у темному вбранні на природі" class="img-2" srcset="assets/images/2-small.webp 480w, assets/images/2.webp 1120w" sizes="(min-width: 1760px) 170px, (min-width: 1024px) 140px, 11vw" width="1120" height="1400" decoding="async">
+                    <picture class="img-3">
+                        <source media="(min-width: 1760px)" srcset="assets/images/home/hero-3-desktop.webp">
+                        <source media="(min-width: 640px)" srcset="assets/images/home/hero-3-laptop.webp">
+                        <img src="assets/images/home/hero-3-mobile.webp" alt="Профіль жінки на теплому золотистому тлі" width="259" height="309" decoding="async">
+                    </picture>
+                    <picture class="img-4">
+                        <source media="(min-width: 1760px)" srcset="assets/images/home/hero-4-desktop.webp">
+                        <source media="(min-width: 640px)" srcset="assets/images/home/hero-4-laptop.webp">
+                        <img src="assets/images/home/hero-4-mobile.webp" alt="Виразний чоловічий портрет на помаранчевому тлі" width="293" height="446" decoding="async">
+                    </picture>
+                    <img src="assets/images/5.webp" alt="Модель у яскравому вбранні серед рослин" class="img-5" srcset="assets/images/5-small.webp 480w, assets/images/5.webp 1120w" sizes="(min-width: 1760px) 390px, (min-width: 1024px) 320px, 25vw" width="1120" height="1400" decoding="async">
+                    <img src="assets/images/6.webp" alt="Чорно-білий чоловічий портрет" class="img-6" srcset="assets/images/6-small.webp 480w, assets/images/6.webp 1120w" sizes="(min-width: 1760px) 390px, (min-width: 1024px) 320px, 25vw" width="1120" height="1400" decoding="async">
+                </div>
+            </section>
+            <section class="about-section" id="about">
+                <div class="about-container">
+                    <div class="about-header">
+                        <div class="about-text-container">
+                            <span class="about-subtitle">Про мене</span>
+                            <h2 class="about-title">Я — Дамієн</h2>
+                        </div>
+                        <a href="about.html" class="about-btn">Детальніше →</a>
+                    </div>
+                    <div class="about-content">
+                        <picture class="about-image-block">
+                            <source media="(min-width: 1760px)" srcset="assets/images/home/about-desktop.webp">
+                            <source media="(min-width: 640px)" srcset="assets/images/home/about-laptop.webp">
+                            <img src="assets/images/home/about-mobile.webp" alt="Дамієн Браун із камерою в полі під хмарним небом" class="about-main-img" width="716" height="750" decoding="async" loading="lazy">
+                        </picture>
+                        <div class="about-info-block">
+                            <div class="info-top" id="about-info">
+                                <div class="info-title-row">
+                                    <span class="icon icon-star" aria-hidden="true"></span>
+                                    <h3>Знайомство</h3>
+                                </div>
+                                <p class="info-paragraph">Мій шлях у фотографії — це постійний пошук незвичайного у звичному, бажання зупинити швидкоплинні миті й поділитися красою світу. Серед мальовничих краєвидів США я знаходжу натхнення в кожному куточку цієї різноманітної країни. Запрошую вас у світ фотографії, де кожен знімок розповідає історію, а кожен кадр зберігає частинку моєї душі.</p>
+                            </div>
+                            <div class="info-bottom">
+                                <div class="info-title-row">
+                                    <span class="icon icon-star" aria-hidden="true"></span>
+                                    <h3>Контактні дані</h3>
+                                </div>
+                                <div class="contact-details">
+                                    <div class="contact-col">
+                                        <span class="contact-label">Пошта</span>
+                                        <a class="contact-value" href="mailto:damienbraun@gmail.com">damienbraun@gmail.com</a>
+                                    </div>
+                                    <div class="contact-col">
+                                        <span class="contact-label">Фотосесії</span>
+                                        <span class="contact-value">За попереднім записом</span>
+                                    </div>
+                                </div>
+                                <div class="contact-actions">
+                                    <div class="social-buttons social-icon-container">
+                                        <a href="https://www.facebook.com/" target="_blank" class="social-btn" rel="noopener noreferrer" aria-label="Facebook">
+                                            <span class="icon icon-facebook" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="https://x.com/" target="_blank" class="social-btn" rel="noopener noreferrer" aria-label="Twitter">
+                                            <span class="icon icon-twitter" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="https://www.linkedin.com/" target="_blank" class="social-btn" rel="noopener noreferrer" aria-label="LinkedIn">
+                                            <span class="icon icon-linkedin" aria-hidden="true"></span>
+                                        </a>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <button class="action-btn-outline" type="button" data-dialog="contactModal" aria-haspopup="dialog">Працюймо</button>
+                                        <button class="action-btn-outline" type="button" data-dialog="contactModal" aria-haspopup="dialog">Обговорити зйомку</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="services-section" id="services">
+                <div class="services-container">
+                    <div class="services-header">
+                        <div class="services-text-container">
+                            <span class="services-subtitle">Послуги</span>
+                            <h2 class="services-title">Послуги фотографа</h2>
+                        </div>
+                        <div class="services-actions">
+                            <div class="slider-buttons">
+                                <button class="slider-btn" type="button" aria-label="Попередня послуга" data-direction="-1">
+                                    <span class="icon icon-left" aria-hidden="true"></span>
+                                </button>
+                                <button class="slider-btn" type="button" aria-label="Наступна послуга" data-direction="1">
+                                    <span class="icon icon-right" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <p class="service-paragraph">Ми допоможемо зберегти магію ваших особливих подій. Весілля, корпоратив чи важливе свято — зафіксуємо кожну щиру мить. Працюємо непомітно, щоб отримати живі й природні кадри, які передають справжні емоції та атмосферу цього дня.</p>
+                            <button class="view-all-btn" type="button" data-dialog="servicesDialog" aria-haspopup="dialog">Усі послуги →</button>
                         </div>
-
-                        <div class="service-bottom">
-                            <h4>Переваги послуги</h4>
-
-                            <div class="highlights-list">
-                                <div class="highlight-item">
-                                    <img src="assets/images/icons/Black%20Star.png" alt="Зірка" class="highlight-icon">
-                                    <span>Зйомка весіль, свят, корпоративів та інших подій.</span>
+                    </div>
+                    <div class="services-content">
+                        <div class="services-info-block">
+                            <div class="service-top">
+                                <div class="service-title-row">
+                                    <h3>Події</h3>
+                                    <button class="service-action-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                        <span class="icon icon-arrow" aria-hidden="true"></span>
+                                    </button>
                                 </div>
-
-                                <div class="highlight-item">
-                                    <img src="assets/images/icons/Black%20Star.png" alt="Зірка" class="highlight-icon">
-                                    <span>Досвідчені фотографи, які вловлюють кожну мить.</span>
-                                </div>
-
-                                <div class="highlight-item">
-                                    <img src="assets/images/icons/Black%20Star.png" alt="Зірка" class="highlight-icon">
-                                    <span>Живі й постановні кадри для цілісної історії.</span>
-                                </div>
-
-                                <div class="highlight-item">
-                                    <img src="assets/images/icons/Black%20Star.png" alt="Зірка" class="highlight-icon">
-                                    <span>Швидка обробка, щоб знову пережити яскраві миті.</span>
-                                </div>
+                                <p class="service-paragraph">Ми допоможемо зберегти магію ваших особливих подій. Весілля, корпоратив чи важливе свято — зафіксуємо кожну щиру мить. Працюємо непомітно, щоб отримати живі й природні кадри, які передають справжні емоції та атмосферу цього дня.</p>
+                            </div>
+                            <div class="service-bottom">
+                                <h4>Переваги послуги</h4>
+                                <ul class="highlights-list">
+                                    <li class="highlight-item">
+                                        <span class="icon icon-highlight" aria-hidden="true"></span>
+                                        <span>Зйомка весіль, свят, корпоративів та інших подій.</span>
+                                    </li>
+                                    <li class="highlight-item">
+                                        <span class="icon icon-highlight" aria-hidden="true"></span>
+                                        <span>Досвідчені фотографи, які вловлюють кожну мить.</span>
+                                    </li>
+                                    <li class="highlight-item">
+                                        <span class="icon icon-highlight" aria-hidden="true"></span>
+                                        <span>Живі й постановні кадри для цілісної історії.</span>
+                                    </li>
+                                    <li class="highlight-item">
+                                        <span class="icon icon-highlight" aria-hidden="true"></span>
+                                        <span>Швидка обробка, щоб знову пережити яскраві миті.</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="services-image-block">
-                        <img src="assets/images/8.png" alt="Зйомка подій">
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section class="portfolio-works-section">
-            <div class="portfolio-works-container">
-
-                <div class="portfolio-works-header">
-                    <div class="portfolio-works-text">
-                        <span class="portfolio-works-subtitle">Портфоліо</span>
-                        <h2 class="portfolio-works-title">Перегляньте мої роботи.</h2>
-                    </div>
-
-                    <div class="portfolio-works-actions">
-                        <div class="portfolio-slider-buttons">
-                            <button class="portfolio-slider-btn">
-                                <img src="assets/images/icons/Left.png" alt="Ліворуч" class="portfolio-slider-icon">
-                            </button>
-                            <button class="portfolio-slider-btn">
-                                <img src="assets/images/icons/Right.png" alt="Праворуч" class="portfolio-slider-icon">
-                            </button>
+                        <div class="services-image-block">
+                            <img src="assets/images/8.webp" alt="Виконавець на сцені серед світла та диму" srcset="assets/images/8-small.webp 600w, assets/images/8.webp 1400w" sizes="(min-width: 1760px) 500px, (min-width: 1024px) 30vw, 90vw" width="1400" height="933" decoding="async" loading="lazy">
                         </div>
-                        <a href="#" class="portfolio-view-all">Усі роботи &rarr;</a>
                     </div>
                 </div>
-
-                <div class="portfolio-cards-container">
-
-                    <div class="portfolio-card">
-                        <img src="assets/images/9.png" alt="Обличчя стійкості" class="portfolio-card-img">
-                        <div class="portfolio-card-info">
-                            <div class="portfolio-card-text">
-                                <h3 class="portfolio-card-title">Обличчя стійкості</h3>
-                                <span class="portfolio-card-date">Березень 2022</span>
+            </section>
+            <section class="portfolio-works-section" id="portfolio">
+                <div class="portfolio-works-container">
+                    <div class="portfolio-works-header">
+                        <div class="portfolio-works-text">
+                            <span class="portfolio-works-subtitle">Портфоліо</span>
+                            <h2 class="portfolio-works-title">Перегляньте мої роботи.</h2>
+                        </div>
+                        <div class="portfolio-works-actions">
+                            <div class="portfolio-slider-buttons">
+                                <button class="portfolio-slider-btn" type="button" aria-label="Попередня робота" data-direction="-1">
+                                    <span class="icon icon-left" aria-hidden="true"></span>
+                                </button>
+                                <button class="portfolio-slider-btn" type="button" aria-label="Наступна робота" data-direction="1">
+                                    <span class="icon icon-right" aria-hidden="true"></span>
+                                </button>
                             </div>
-                            <div class="portfolio-card-btn">
-                                <span class="portfolio-card-btn-text">До проєкту</span>
-                                <img src="assets/images/icons/Icon.png" alt="Перегляд" class="portfolio-card-btn-icon">
-                            </div>
+                            <button class="portfolio-view-all" type="button" data-dialog="portfolioDialog" aria-haspopup="dialog">Усі роботи →</button>
                         </div>
                     </div>
-
-                    <div class="portfolio-card">
-                        <img src="assets/images/10.png" alt="Весільна історія" class="portfolio-card-img">
-                        <div class="portfolio-card-info">
-                            <div class="portfolio-card-text">
-                                <h3 class="portfolio-card-title">Весільна історія</h3>
-                                <span class="portfolio-card-date">Січень 2020</span>
+                    <div class="portfolio-cards-container" id="portfolio-cards" tabindex="0" role="region" aria-label="Роботи фотографа">
+                        <article class="portfolio-card">
+                            <img src="assets/images/9.webp" alt="Студійний портрет жінки в золотистому головному уборі" class="portfolio-card-img" srcset="assets/images/9-small.webp 400w, assets/images/9.webp 933w" sizes="(min-width: 1760px) 500px, (min-width: 1024px) 30vw, 90vw" width="933" height="1400" decoding="async" loading="lazy">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Обличчя стійкості</h3>
+                                    <span class="portfolio-card-date">Березень 2022</span>
+                                </div>
+                                <button class="portfolio-card-btn" type="button" data-dialog="projectDialog" aria-haspopup="dialog" aria-label="Переглянути проєкт «Обличчя стійкості»" data-project="0">
+                                    <span class="portfolio-card-btn-text">До проєкту</span>
+                                    <span class="icon icon-arrow" aria-hidden="true"></span>
+                                </button>
                             </div>
-                            <div class="portfolio-card-btn">
-                                <span class="portfolio-card-btn-text">До проєкту</span>
-                                <img src="assets/images/icons/Icon.png" alt="Перегляд" class="portfolio-card-btn-icon">
+                        </article>
+                        <article class="portfolio-card">
+                            <img src="assets/images/10.webp" alt="Наречена у світлій весільній сукні" class="portfolio-card-img" srcset="assets/images/10-small.webp 400w, assets/images/10.webp 933w" sizes="(min-width: 1760px) 500px, (min-width: 1024px) 30vw, 90vw" width="933" height="1400" decoding="async" loading="lazy">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Весільна історія</h3>
+                                    <span class="portfolio-card-date">Січень 2020</span>
+                                </div>
+                                <button class="portfolio-card-btn" type="button" data-dialog="projectDialog" aria-haspopup="dialog" aria-label="Переглянути проєкт «Весільна історія»" data-project="1">
+                                    <span class="portfolio-card-btn-text">До проєкту</span>
+                                    <span class="icon icon-arrow" aria-hidden="true"></span>
+                                </button>
                             </div>
-                        </div>
+                        </article>
+                        <article class="portfolio-card">
+                            <img src="assets/images/11.webp" alt="Предметна композиція з пакуванням бренду на теплій текстурній поверхні" class="portfolio-card-img" srcset="assets/images/11-small.webp 400w, assets/images/11.webp 933w" sizes="(min-width: 1760px) 500px, (min-width: 1024px) 30vw, 90vw" width="933" height="1400" decoding="async" loading="lazy">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Елегантність речей</h3>
+                                    <span class="portfolio-card-date">Січень 2020</span>
+                                </div>
+                                <button class="portfolio-card-btn" type="button" data-dialog="projectDialog" aria-haspopup="dialog" aria-label="Переглянути проєкт «Елегантність речей»" data-project="2">
+                                    <span class="portfolio-card-btn-text">До проєкту</span>
+                                    <span class="icon icon-arrow" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </article>
                     </div>
-
-                    <div class="portfolio-card">
-                        <img src="assets/images/11.png" alt="Елегантність речей" class="portfolio-card-img">
-                        <div class="portfolio-card-info">
-                            <div class="portfolio-card-text">
-                                <h3 class="portfolio-card-title">Елегантність речей</h3>
-                                <span class="portfolio-card-date">Січень 2020</span>
-                            </div>
-                            <div class="portfolio-card-btn">
-                                <span class="portfolio-card-btn-text">До проєкту</span>
-                                <img src="assets/images/icons/Icon.png" alt="Перегляд" class="portfolio-card-btn-icon">
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
-            </div>
-        </section>
-
-        <section class="faq-section">
-            <div class="faq-container">
-
-                <div class="faq-header">
-                    <div class="faq-text-container">
-                        <span class="faq-subtitle">Запитання</span>
-                        <h2 class="faq-title">Поширені запитання</h2>
-                    </div>
-                </div>
-
-                <div class="faq-content">
-
-                    <div class="faq-col faq-col-left">
-
-                        <div class="faq-item faq-item-open">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">На яких видах зйомки ви спеціалізуєтесь?</h3>
-                                <p class="faq-item-paragraph" style="display: block;">Я знімаю портрети, пейзажі, події тощо, зберігаючи миті, що розповідають особливі історії.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Up.png" alt="Вгору" class="faq-icon">
-                            </button>
+            </section>
+            <section class="faq-section" id="faq">
+                <div class="faq-container">
+                    <div class="faq-header">
+                        <div class="faq-text-container">
+                            <span class="faq-subtitle">Запитання</span>
+                            <h2 class="faq-title">Поширені запитання</h2>
                         </div>
-
-                        <div class="faq-item">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">Як записатися до вас на фотозйомку?</h3>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-col faq-col-left">
+                            <details class="faq-item" open="">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">На яких видах зйомки ви спеціалізуєтесь?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph">Я знімаю портрети, пейзажі, події тощо, зберігаючи миті, що розповідають особливі історії.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">Як записатися до вас на фотозйомку?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
                                 <p class="faq-item-paragraph">Для запису заповніть контактну форму або напишіть мені на електронну пошту.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Down.png" alt="Вниз" class="faq-icon">
-                            </button>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">Яке обладнання ви використовуєте для зйомки?</h3>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">Яке обладнання ви використовуєте для зйомки?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
                                 <p class="faq-item-paragraph">Для високої якості я використовую професійні камери й освітлення.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Down.png" alt="Вниз" class="faq-icon">
-                            </button>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">Чи можна обрати місце для фотозйомки?</h3>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">Чи можна обрати місце для фотозйомки?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
                                 <p class="faq-item-paragraph">Звісно! Ми можемо провести зйомку в студії або в обраному вами місці.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Down.png" alt="Вниз" class="faq-icon">
-                            </button>
+                            </details>
                         </div>
-
-                    </div>
-
-                    <div class="faq-col faq-col-right">
-
-                        <div class="faq-item">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">Як ви обробляєте фотографії?</h3>
+                        <div class="faq-col faq-col-right">
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">Як ви обробляєте фотографії?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
                                 <p class="faq-item-paragraph">Усі фото проходять ретельний відбір, корекцію кольору та якісну ретуш.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Down.png" alt="Вниз" class="faq-icon">
-                            </button>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">Чи входять цифрові фото у вартість зйомки?</h3>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">Чи входять цифрові фото у вартість зйомки?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
                                 <p class="faq-item-paragraph">Так, цифрові фото високої якості входять до всіх стандартних пакетів.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Down.png" alt="Вниз" class="faq-icon">
-                            </button>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">Чи можна замовити друк фотографій?</h3>
-                                <p class="faq-item-paragraph">Так, друк можна замовити. У розділі «Друк» зазначено доступні розміри та ціни.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Down.png" alt="Вниз" class="faq-icon">
-                            </button>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-item-text-container">
-                                <h3 class="faq-item-title">Скільки часу потрібно, щоб отримати оброблені фото?</h3>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">Чи можна замовити друк фотографій?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
+                                <p class="faq-item-paragraph">Так, друк можна замовити. Напишіть мені, щоб узгодити формат, матеріали та вартість.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-summary">
+                                    <h3 class="faq-item-title">Скільки часу потрібно, щоб отримати оброблені фото?</h3>
+                                    <span class="icon icon-down" aria-hidden="true"></span>
+                                </summary>
                                 <p class="faq-item-paragraph">Зазвичай це 1–2 тижні, залежно від обсягу роботи.</p>
-                            </div>
-                            <button class="faq-btn">
-                                <img src="assets/images/icons/Down.png" alt="Вниз" class="faq-icon">
-                            </button>
+                            </details>
                         </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section class="testimonials-section">
-            <div class="testimonials-container">
-
-                <div class="testimonials-header">
-                    <div class="testimonials-header-left">
-                        <div class="testimonials-text-container">
-                            <span class="testimonials-subtitle">Відгуки</span>
-                            <h2 class="testimonials-title">Що кажуть клієнти</h2>
-                        </div>
-                        <div class="testimonials-total-reviews">
-                            <span class="reviews-label">Усього відгуків</span>
-                            <span class="reviews-number">323</span>
-                        </div>
-                    </div>
-
-                    <div class="testimonials-actions">
-                        <div class="slider-buttons testimonials-slider-buttons">
-                            <button class="slider-btn">
-                                <img src="assets/images/icons/Left.png" alt="Ліворуч" class="slider-icon">
-                            </button>
-                            <button class="slider-btn">
-                                <img src="assets/images/icons/Right.png" alt="Праворуч" class="slider-icon">
-                            </button>
-                        </div>
-                        <a href="#" class="view-all-btn testimonials-view-all">Усі відгуки &rarr;</a>
                     </div>
                 </div>
-
-                <div class="testimonials-cards-container">
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-header">
-                            <div class="testimonial-client-info">
-                                <h3 class="client-name">Емілі Джонсон</h3>
-                                <span class="client-location">США, Каліфорнія</span>
+            </section>
+            <section class="testimonials-section" id="testimonials">
+                <div class="testimonials-container">
+                    <div class="testimonials-header">
+                        <div class="testimonials-header-left">
+                            <div class="testimonials-text-container">
+                                <span class="testimonials-subtitle">Відгуки</span>
+                                <h2 class="testimonials-title">Що кажуть клієнти</h2>
                             </div>
-                            <div class="testimonial-socials social-icon-container">
-                                <a href="https://www.facebook.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/Facebook.png" alt="Facebook">
-                                </a>
-                                <a href="https://x.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/Twitter.png" alt="Twitter">
-                                </a>
-                                <a href="https://www.linkedin.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/LinkedIn.png" alt="LinkedIn">
-                                </a>
+                            <div class="testimonials-total-reviews">
+                                <span class="reviews-label">Відгуків у добірці</span>
+                                <span class="reviews-number">3</span>
                             </div>
                         </div>
-
-                        <div class="testimonial-stars">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
+                        <div class="testimonials-actions">
+                            <div class="slider-buttons testimonials-slider-buttons">
+                                <button class="slider-btn" type="button" aria-label="Попередній відгук" data-direction="-1">
+                                    <span class="icon icon-left" aria-hidden="true"></span>
+                                </button>
+                                <button class="slider-btn" type="button" aria-label="Наступний відгук" data-direction="1">
+                                    <span class="icon icon-right" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <button class="view-all-btn testimonials-view-all" type="button" data-dialog="reviewsDialog" aria-haspopup="dialog">Усі відгуки →</button>
                         </div>
-
-                        <p class="testimonial-text">Фото Дамієна передають не лише миті, а й почуття. Його роботи просто зачаровують.</p>
                     </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-header">
-                            <div class="testimonial-client-info">
-                                <h3 class="client-name">Джон Сміт</h3>
-                                <span class="client-location">США, Каліфорнія</span>
-                            </div>
-                            <div class="testimonial-socials social-icon-container">
-                                <a href="https://www.facebook.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/Facebook.png" alt="Facebook">
-                                </a>
-                                <a href="https://x.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/Twitter.png" alt="Twitter">
-                                </a>
-                                <a href="https://www.linkedin.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/LinkedIn.png" alt="LinkedIn">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-stars">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                        </div>
-
-                        <p class="testimonial-text">Дамієн уміє зробити зйомку кожної події легкою, а його роботи говорять самі за себе.</p>
+                    <div class="data-feedback" id="data-feedback" role="status" hidden>
+                        <span id="data-message"></span>
+                        <button class="action-btn-outline" id="retry-data" type="button">Повторити</button>
                     </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-header">
-                            <div class="testimonial-client-info">
-                                <h3 class="client-name">Саманта Девіс</h3>
-                                <span class="client-location">США, Каліфорнія</span>
+                    <div class="testimonials-cards-container" id="testimonial-cards" tabindex="0" role="region" aria-label="Відгуки клієнтів">
+                        <article class="testimonial-card">
+                            <div class="testimonial-card-header">
+                                <div class="testimonial-client-info">
+                                    <h3 class="client-name">Емілі Джонсон</h3>
+                                    <span class="client-location">США, Каліфорнія</span>
+                                </div>
+                                <div class="testimonial-socials social-icon-container">
+                                    <a href="https://www.facebook.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="Facebook">
+                                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="https://x.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="Twitter">
+                                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="LinkedIn">
+                                        <span class="icon icon-linkedin" aria-hidden="true"></span>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="testimonial-socials social-icon-container">
-                                <a href="https://www.facebook.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/Facebook.png" alt="Facebook">
-                                </a>
-                                <a href="https://x.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/Twitter.png" alt="Twitter">
-                                </a>
-                                <a href="https://www.linkedin.com/" target="_blank" class="social-btn-small">
-                                    <img src="assets/images/icons/LinkedIn.png" alt="LinkedIn">
-                                </a>
+                            <div class="testimonial-stars" role="img" aria-label="Оцінка: 5 із 5">
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
                             </div>
-                        </div>
-
-                        <div class="testimonial-stars">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                            <img src="assets/images/icons/Shape.png" alt="Зірка">
-                        </div>
-
-                        <p class="testimonial-text">Мене вразило, як Дамієн передав атмосферу нашого весілля. Його фото — дорогі серцю спогади.</p>
+                            <p class="testimonial-text">Фото Дамієна передають не лише миті, а й почуття. Його роботи просто зачаровують.</p>
+                        </article>
+                        <article class="testimonial-card">
+                            <div class="testimonial-card-header">
+                                <div class="testimonial-client-info">
+                                    <h3 class="client-name">Джон Сміт</h3>
+                                    <span class="client-location">США, Каліфорнія</span>
+                                </div>
+                                <div class="testimonial-socials social-icon-container">
+                                    <a href="https://www.facebook.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="Facebook">
+                                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="https://x.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="Twitter">
+                                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="LinkedIn">
+                                        <span class="icon icon-linkedin" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="testimonial-stars" role="img" aria-label="Оцінка: 5 із 5">
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                            </div>
+                            <p class="testimonial-text">Дамієн уміє зробити зйомку кожної події легкою, а його роботи говорять самі за себе.</p>
+                        </article>
+                        <article class="testimonial-card">
+                            <div class="testimonial-card-header">
+                                <div class="testimonial-client-info">
+                                    <h3 class="client-name">Саманта Девіс</h3>
+                                    <span class="client-location">США, Каліфорнія</span>
+                                </div>
+                                <div class="testimonial-socials social-icon-container">
+                                    <a href="https://www.facebook.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="Facebook">
+                                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="https://x.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="Twitter">
+                                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/" target="_blank" class="social-btn-small" rel="noopener noreferrer" aria-label="LinkedIn">
+                                        <span class="icon icon-linkedin" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="testimonial-stars" role="img" aria-label="Оцінка: 5 із 5">
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                                <span class="icon icon-rating" aria-hidden="true"></span>
+                            </div>
+                            <p class="testimonial-text">Мене вразило, як Дамієн передав атмосферу нашого весілля. Його фото — дорогі серцю спогади.</p>
+                        </article>
                     </div>
-
+                    <noscript>
+                        <p class="form-help">Показано збережену добірку відгуків. Увімкніть JavaScript для оновлення даних і керування слайдерами.</p>
+                    </noscript>
                 </div>
-
-            </div>
-        </section>
-
-        <section class="bottom-logo-section">
-            <h2 style="display: none;">Логотип Дамієна</h2>
-            <div class="bottom-logo-container">
-                <img src="assets/images/icons/Damien.png" alt="Damien" class="bottom-massive-logo">
-            </div>
-        </section>
-
-        <section class="marquee-section bottom-marquee">
-            <h2 style="display: none;">Інші послуги</h2>
-            <div class="marquee-content">
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Зйомка подій</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Комерційна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Предметна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Весільна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Пейзажна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Брендова зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Портретна зйомка</span></div>
-            </div>
-            <div class="marquee-content">
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Зйомка подій</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Комерційна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Предметна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Весільна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Пейзажна зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Брендова зйомка</span></div>
-                <div class="marquee-item"><img src="assets/images/icons/Clip%20path%20group.png" alt="Іконка"><span>Портретна зйомка</span></div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-top-container">
-            <img src="assets/images/icons/Right%20vector.png" alt="Декор" class="footer-vector-left">
-
-            <div class="footer-top-content">
-                <div class="footer-left-block">
-                    <span class="footer-tagline">Місце, де фото мають особливий сенс</span>
-                    <div class="footer-call-to-action">
-                        <div class="footer-cta-row">
-                            <span class="footer-cta-text">Нумо</span>
-                            <a href="#" class="footer-cta-btn">
-                                <img src="assets/images/icons/Icon.png" alt="Стрілка">
-                            </a>
-                        </div>
-                        <span class="footer-cta-text">Співпрацюймо</span>
-                    </div>
+            </section>
+            <section class="bottom-logo-section">
+                <h2 class="visually-hidden">Логотип Дамієна</h2>
+                <div class="bottom-logo-container">
+                    <img src="assets/images/home/footer-logo.svg" alt="Damien" class="bottom-massive-logo" width="1063" height="213">
                 </div>
-
-                <div class="footer-right-block">
-                    <div class="footer-links-col">
-                        <h3 class="footer-links-title">Головна</h3>
-                        <a href="#" class="footer-link">Про мене</a>
-                        <a href="#" class="footer-link">Мої роботи</a>
-                        <a href="#" class="footer-link">Відгуки</a>
+            </section>
+            <section class="marquee-section bottom-marquee">
+                <h2 class="visually-hidden">Інші послуги</h2>
+                <div class="marquee-content">
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Зйомка подій</span>
                     </div>
-                    <div class="footer-links-col">
-                        <h3 class="footer-links-title">Клієнти</h3>
-                        <a href="#" class="footer-link">Klovesto</a>
-                        <a href="#" class="footer-link">Nukeway</a>
-                        <a href="#" class="footer-link">Cloven’s</a>
-                        <a href="#" class="footer-link">MenVol</a>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Комерційна зйомка</span>
                     </div>
-                    <div class="footer-links-col">
-                        <h3 class="footer-links-title">Портфоліо</h3>
-                        <a href="#" class="footer-link">Події</a>
-                        <a href="#" class="footer-link">Портрет</a>
-                        <a href="#" class="footer-link">Брендинг</a>
-                        <a href="#" class="footer-link">Комерція</a>
-                        <a href="#" class="footer-link">Весілля</a>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Предметна зйомка</span>
                     </div>
-                    <div class="footer-links-col">
-                        <h3 class="footer-links-title">Послуги</h3>
-                        <a href="#" class="footer-link">Портрети</a>
-                        <a href="#" class="footer-link">Події</a>
-                        <a href="#" class="footer-link">Комерція</a>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Весільна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Пейзажна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Брендова зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Портретна зйомка</span>
                     </div>
                 </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Зйомка подій</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Комерційна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Предметна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Весільна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Пейзажна зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Брендова зйомка</span>
+                    </div>
+                    <div class="marquee-item">
+                        <span class="icon icon-spark" aria-hidden="true"></span>
+                        <span>Портретна зйомка</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <div class="footer-top-container">
+                <img src="assets/images/home/footer-decoration.svg" alt="" class="footer-vector-left" width="162" height="200">
+                <div class="footer-top-content">
+                    <div class="footer-left-block">
+                        <span class="footer-tagline">Місце, де фото мають особливий сенс</span>
+                        <div class="footer-call-to-action">
+                            <div class="footer-cta-row">
+                                <span class="footer-cta-text">Нумо</span>
+                                <button class="footer-cta-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                    <span class="icon icon-arrow" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <span class="footer-cta-text">Співпрацюймо</span>
+                        </div>
+                    </div>
+                    <div class="footer-right-block">
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title">Головна</h3>
+                            <a href="about.html" class="footer-link">Про мене</a>
+                            <a href="#portfolio" class="footer-link">Мої роботи</a>
+                            <a href="#testimonials" class="footer-link">Відгуки</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title">Клієнти</h3>
+                            <a href="#testimonials" class="footer-link">Klovesto</a>
+                            <a href="#testimonials" class="footer-link">Nukeway</a>
+                            <a href="#testimonials" class="footer-link">Cloven’s</a>
+                            <a href="#testimonials" class="footer-link">MenVol</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title">Портфоліо</h3>
+                            <a href="#portfolio" class="footer-link">Події</a>
+                            <a href="#portfolio" class="footer-link">Портрет</a>
+                            <a href="#portfolio" class="footer-link">Брендинг</a>
+                            <a href="#portfolio" class="footer-link">Комерція</a>
+                            <a href="#portfolio" class="footer-link">Весілля</a>
+                        </div>
+                        <div class="footer-links-col">
+                            <h3 class="footer-links-title">Послуги</h3>
+                            <a href="index.html#services" class="footer-link">Портрети</a>
+                            <a href="#portfolio" class="footer-link">Події</a>
+                            <a href="#portfolio" class="footer-link">Комерція</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/images/home/footer-decoration.svg" alt="" class="footer-vector-right" width="162" height="200">
             </div>
-
-            <img src="assets/images/icons/Left%20vector.png" alt="Декор" class="footer-vector-right">
-        </div>
-
-        <div class="footer-bottom-container">
-            <div class="footer-bottom-left">
-                <a href="#" class="footer-bottom-link">Умови користування</a>
-                <div class="footer-divider"></div>
-                <a href="#" class="footer-bottom-link">Конфіденційність</a>
+            <div class="footer-bottom-container">
+                <div class="footer-bottom-left">
+                    <button class="footer-bottom-link" type="button" data-dialog="termsDialog" aria-haspopup="dialog">Умови користування</button>
+                    <div class="footer-divider"></div>
+                    <button class="footer-bottom-link" type="button" data-dialog="privacyDialog" aria-haspopup="dialog">Конфіденційність</button>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="Facebook">
+                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                    </a>
+                    <a href="https://x.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="Twitter">
+                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <span class="icon icon-linkedin" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="footer-bottom-right">
+                    <span>© 2024 Damien Braun Photography. Усі права захищено.</span>
+                </div>
             </div>
-
-            <div class="footer-socials">
-                <a href="https://www.facebook.com/" target="_blank" class="social-btn-footer">
-                    <img src="assets/images/icons/Facebook.png" alt="Facebook">
-                </a>
-                <a href="https://x.com/" target="_blank" class="social-btn-footer">
-                    <img src="assets/images/icons/Twitter.png" alt="Twitter">
-                </a>
-                <a href="https://www.linkedin.com/" target="_blank" class="social-btn-footer">
-                    <img src="assets/images/icons/LinkedIn.png" alt="LinkedIn">
-                </a>
-            </div>
-
-            <div class="footer-bottom-right">
-                <span>© 2024 Damien Braun Photography. Усі права захищено.</span>
-            </div>
-        </div>
-    </footer>
-
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 class="about-title" style="font-size: 30px; margin-bottom: 20px;">Зв’язок</h2>
-            <form id="contactForm">
-                <input type="text" placeholder="Ваше ім’я" required class="modal-input">
-                <input type="email" placeholder="Ваша пошта" required class="modal-input">
-                <textarea placeholder="Ваше повідомлення" required class="modal-textarea"></textarea>
-                <button type="submit" class="action-btn-outline" style="width: 100%; border: none;">Надіслати</button>
+        </footer>
+        <dialog class="dialog" id="contactModal" aria-labelledby="contact-title" aria-describedby="contact-help">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити форму">×</button>
+            <h2 class="dialog-title" id="contact-title">Обговорімо вашу зйомку</h2>
+            <form class="contact-form" id="contactForm" action="mailto:damienbraun@gmail.com" method="get">
+                <div class="form-field">
+                    <label for="contact-name">Ваше ім’я</label>
+                    <input class="modal-input" id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="contact-name-error">
+                    <span class="field-error" id="contact-name-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-email">Електронна пошта</label>
+                    <input class="modal-input" id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="contact-email-error">
+                    <span class="field-error" id="contact-email-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-message">Розкажіть про вашу ідею</label>
+                    <textarea class="modal-textarea" id="contact-message" name="body" required minlength="10" maxlength="2000" aria-describedby="contact-message-error"></textarea>
+                    <span class="field-error" id="contact-message-error"></span>
+                </div>
+                <p class="form-help" id="contact-help">Підготуйте звернення й надішліть його зі своєї поштової програми. Цей сайт не надсилає лист автоматично.</p>
+                <button class="action-btn-outline" type="submit">Підготувати повідомлення</button>
+                <p class="form-status" id="form-status" role="status"></p>
             </form>
-        </div>
-    </div>
-
-    <script src="assets/js/main.js"></script>
-</body>
+        </dialog>
+        <dialog class="dialog" id="projectDialog" aria-labelledby="project-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити проєкт">×</button>
+            <h2 class="dialog-title" id="project-title">Фотопроєкт</h2>
+            <img class="project-image" id="project-image" src="assets/images/9-small.webp" alt="" loading="lazy">
+            <p class="project-description" id="project-description"></p>
+        </dialog>
+        <dialog class="dialog" id="termsDialog" aria-labelledby="termsDialog-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
+            <h2 class="dialog-title" id="termsDialog-title">Умови користування</h2>
+            <div class="legal-content">
+                <p>Матеріали не надають дозволу на комерційне використання зображень. Умови фотозйомки й використання фотографій узгоджуються окремо.</p>
+            </div>
+        </dialog>
+        <dialog class="dialog" id="privacyDialog" aria-labelledby="privacyDialog-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
+            <h2 class="dialog-title" id="privacyDialog-title">Конфіденційність</h2>
+            <div class="legal-content">
+                <p>Контактна форма перевіряє введення у вашому браузері та готує посилання для поштової програми. Повідомлення надсилається лише після вашої дії в поштовій програмі.</p>
+                <p>Сайт не зберігає введені дані в базі, cookies або localStorage. Шрифт завантажується з Google Fonts; зовнішні соціальні посилання ведуть на відповідні платформи.</p>
+            </div>
+        </dialog>
+        <dialog class="dialog collection-dialog" id="servicesDialog" aria-labelledby="services-dialog-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
+            <h2 class="dialog-title" id="services-dialog-title">Усі послуги</h2>
+            <div class="collection-content"></div>
+        </dialog>
+        <dialog class="dialog collection-dialog" id="portfolioDialog" aria-labelledby="portfolio-dialog-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
+            <h2 class="dialog-title" id="portfolio-dialog-title">Добірка робіт</h2>
+            <div class="collection-content"></div>
+        </dialog>
+        <dialog class="dialog collection-dialog" id="reviewsDialog" aria-labelledby="reviews-dialog-title">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
+            <h2 class="dialog-title" id="reviews-dialog-title">Відгуки клієнтів</h2>
+            <div class="collection-content"></div>
+        </dialog>
+    </body>
 </html>

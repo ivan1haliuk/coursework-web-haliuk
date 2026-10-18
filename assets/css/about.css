@@ -1,0 +1,359 @@
+/* Mobile first; shared navigation, reviews, controls and footer use style.css. */
+.page-container {
+    width: calc(100% - var(--page-gutter) * 2);
+    max-width: var(--content-width);
+    margin-inline: auto;
+}
+
+.about-intro {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.about-intro-heading {
+    min-width: 0;
+}
+
+.about-intro-heading h1 {
+    color: var(--bg-gray);
+    font-size: var(--heading-size);
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.about-hero-photo {
+    display: block;
+    grid-row: 1;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1.25rem;
+}
+
+.about-hero-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 357 / 236;
+    object-fit: cover;
+}
+
+.about-statistics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+    margin: 0;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 0;
+    padding: 1.25rem 0.875rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: var(--bg-header);
+    text-align: center;
+}
+
+.stat-card dt {
+    color: var(--text-muted);
+    font-size: var(--body-size);
+}
+
+.stat-card dd {
+    order: -1;
+    margin: 0;
+    color: var(--bg-gray);
+    font-size: clamp(1.5rem, 7.2vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.about-journey-link {
+    display: none;
+}
+
+.biography-section {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 3.75rem;
+    padding-block: 2.5rem;
+    border-block: 1px solid var(--border-color);
+}
+
+.biography-section h2 {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.biography-copy {
+    display: grid;
+    color: var(--text-muted);
+    font-size: var(--body-size);
+    line-height: 1.5;
+}
+
+.journey-section {
+    margin-top: var(--section-spacing);
+}
+
+.journey-timeline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    margin: var(--section-gap) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.journey-card {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    align-content: start;
+    gap: 0.625rem;
+    min-width: 0;
+    padding: var(--panel-padding);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 0.625rem;
+    background: var(--bg-header);
+}
+
+.journey-card::before,
+.journey-card::after {
+    position: absolute;
+    z-index: -1;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 1.375rem;
+    background: linear-gradient(206.565deg, #18181b, rgb(24 24 27 / 0%) 83.333%);
+    opacity: 0.5;
+    content: "";
+    pointer-events: none;
+}
+
+.journey-card::before {
+    top: -10rem;
+    right: -8rem;
+    transform: rotate(-144.56deg);
+}
+
+.journey-card::after {
+    bottom: -28rem;
+    left: -9rem;
+    transform: rotate(-54.64deg) scaleY(-1);
+}
+
+.journey-card h3 {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.journey-card p {
+    color: var(--text-muted);
+    font-size: var(--body-size);
+    line-height: 1.5;
+}
+
+/* Every review remains readable when scripting is disabled. */
+html:not(.js) .about-page .testimonials-cards-container {
+    grid-auto-flow: row;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+html:not(.js) .about-page .testimonials-actions {
+    display: none;
+}
+
+@media (min-width: 40rem) {
+    .about-statistics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .journey-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
+    .journey-card {
+        padding: 2.5rem;
+        gap: 0.875rem;
+    }
+
+    .journey-card h3 {
+        font-size: 2.125rem;
+    }
+}
+
+@media (min-width: 90rem) {
+    .about-page {
+        --heading-size: 3rem;
+    }
+
+    .about-intro {
+        grid-template-rows: auto auto minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+        gap: 1.25rem;
+        margin-top: 5rem;
+    }
+
+    .about-intro-heading {
+        z-index: 1;
+        grid-area: 1 / 1;
+        width: 42%;
+    }
+
+    .about-statistics {
+        z-index: 1;
+        grid-area: 2 / 1;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0.625rem;
+    }
+
+    .stat-card {
+        padding: 1.25rem 1.5rem;
+        text-align: left;
+    }
+
+    .stat-card dd {
+        font-size: clamp(1.5rem, 2.4vw, 2.125rem);
+        white-space: nowrap;
+    }
+
+    .about-hero-photo {
+        grid-area: 1 / 1 / 4 / 2;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .about-hero-photo img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2558 / 1568;
+        object-fit: contain;
+    }
+
+    .about-journey-link {
+        position: absolute;
+        right: 1.25rem;
+        bottom: 1.125rem;
+        left: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+    }
+
+    .about-journey-link img {
+        width: 6.25rem;
+        height: auto;
+    }
+
+    .about-journey-link > span {
+        width: 10.25rem;
+    }
+
+    .biography-section {
+        margin-top: 5rem;
+        padding-block: 3.75rem;
+        gap: 1.875rem;
+    }
+
+    .biography-section h2 {
+        font-size: 2.125rem;
+    }
+
+    .biography-copy {
+        font-size: 1rem;
+    }
+
+    .about-page .testimonials-cards-container {
+        --card-gap: 1.25rem;
+    }
+}
+
+@media (min-width: 110rem) {
+    .about-page {
+        --heading-size: clamp(3rem, 3.020833vw, 3.625rem);
+    }
+
+    .about-intro {
+        margin-top: 6.25rem;
+        gap: 1.9375rem;
+    }
+
+    .about-statistics {
+        gap: 1.25rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem 1.875rem;
+    }
+
+    .stat-card dd {
+        font-size: clamp(2.5rem, 2.5vw, 3rem);
+    }
+
+    .about-hero-photo img {
+        aspect-ratio: 3186 / 1568;
+    }
+
+    .about-journey-link {
+        right: 3.125rem;
+        font-size: 1.125rem;
+    }
+
+    .about-journey-link img {
+        width: 8.5625rem;
+    }
+
+    .about-journey-link > span {
+        width: 12.8125rem;
+    }
+
+    .biography-section {
+        margin-top: 6.25rem;
+        padding-block: 5rem;
+        gap: 2.5rem;
+    }
+
+    .biography-section h2,
+    .journey-card h3 {
+        font-size: 2.75rem;
+    }
+
+    .biography-copy {
+        font-size: 1.25rem;
+    }
+
+    .journey-timeline {
+        gap: 1.875rem;
+    }
+
+    .journey-card {
+        padding: 3.125rem;
+        gap: 1.25rem;
+    }
+
+    .about-page .testimonials-cards-container {
+        --card-gap: 1.875rem;
+    }
+}
