@@ -218,16 +218,6 @@
     flex: 0 0 auto;
 }
 
-.services-notice {
-    margin-top: 1.5rem;
-    color: var(--text-muted);
-    font-size: 0.875rem;
-}
-
-.services-notice a {
-    text-decoration: underline;
-}
-
 .services-page .faq-col {
     display: grid;
     align-content: start;
