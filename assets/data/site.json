@@ -1,0 +1,94 @@
+{
+    "version": 1,
+    "locale": "uk",
+    "brand": "Damien Braun",
+    "sharedSources": {
+        "styles": [
+            "assets/css/variables.css",
+            "assets/css/style.css"
+        ],
+        "interactions": "assets/js/main.js",
+        "testimonials": {
+            "src": "assets/data/home.json",
+            "collection": "testimonials"
+        },
+        "favicon": "assets/images/favicon.svg",
+        "icons": "assets/images/icons/sprite.png"
+    },
+    "navigation": [
+        {
+            "id": "home",
+            "label": "Головна",
+            "href": "index.html",
+            "ready": true
+        },
+        {
+            "id": "about",
+            "label": "Про мене",
+            "href": "about.html",
+            "ready": true
+        },
+        {
+            "id": "portfolio",
+            "label": "Портфоліо",
+            "href": "portfolio.html",
+            "ready": true
+        },
+        {
+            "id": "services",
+            "label": "Послуги",
+            "href": "index.html#services",
+            "ready": true
+        }
+    ],
+    "contact": {
+        "label": "Зв’язок",
+        "href": "contact.html",
+        "ready": false,
+        "temporaryDialog": "contactModal"
+    },
+    "footer": {
+        "tagline": "Місце, де фото мають особливий сенс",
+        "ctaFirstLine": "Нумо",
+        "ctaSecondLine": "Співпрацюймо",
+        "terms": {
+            "label": "Умови користування",
+            "dialog": "termsDialog"
+        },
+        "privacy": {
+            "label": "Конфіденційність",
+            "dialog": "privacyDialog"
+        }
+    },
+    "socials": [
+        {
+            "id": "facebook",
+            "label": "Facebook",
+            "href": "https://www.facebook.com/",
+            "icon": "icon-facebook"
+        },
+        {
+            "id": "twitter",
+            "label": "Twitter",
+            "href": "https://x.com/",
+            "icon": "icon-twitter"
+        },
+        {
+            "id": "linkedin",
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/",
+            "icon": "icon-linkedin"
+        }
+    ],
+    "socialsArePlatformLinks": true,
+    "accessibility": {
+        "skipLink": "Перейти до вмісту",
+        "navigation": "Основна навігація",
+        "openMenu": "Відкрити меню",
+        "closeMenu": "Закрити меню",
+        "closeDialog": "Закрити",
+        "contactDialog": "Обговорити фотозйомку",
+        "activeAttribute": "aria-current",
+        "activeValue": "page"
+    }
+}

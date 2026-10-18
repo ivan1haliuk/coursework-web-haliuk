@@ -142,9 +142,14 @@
             const projectImage = dialog.querySelector('.project-image');
             delete projectImage.dataset.fallbackApplied;
             dialog.querySelector('.dialog-title').textContent = card.querySelector('.portfolio-card-title').textContent;
-            projectImage.src = image.src;
+            projectImage.src = image.dataset.fullImage || image.src;
             projectImage.alt = image.alt;
-            dialog.querySelector('.project-description').textContent = card.querySelector('.portfolio-card-date').textContent;
+            const date = card.querySelector('.portfolio-card-date').textContent;
+            const projectDate = dialog.querySelector('.project-date');
+            if (projectDate) {
+                projectDate.textContent = date;
+            }
+            dialog.querySelector('.project-description').textContent = card.dataset.description || date;
         }
 
         if (dialog.classList.contains('collection-dialog')) {
@@ -235,6 +240,7 @@
         }, { passive: true });
 
         new ResizeObserver(update).observe(track);
+        track.addEventListener('carousel:refresh', update);
         update();
         return { update };
     }
@@ -244,6 +250,14 @@
         document.querySelector('.portfolio-slider-buttons'),
         'Роботи',
     );
+
+    document.querySelectorAll('[data-portfolio-category]').forEach((section) => {
+        setupCarousel(
+            section.querySelector('.portfolio-cards-container'),
+            section.querySelector('.portfolio-slider-buttons'),
+            section.querySelector('h2').textContent,
+        );
+    });
 
     const reviewTrack = document.getElementById('testimonial-cards');
     const reviewTemplate = reviewTrack?.firstElementChild?.cloneNode(true);
@@ -348,7 +362,6 @@
     const feedbackMessage = document.getElementById('data-message');
     const retryButton = document.getElementById('retry-data');
     let loading = false;
-    let dataLoadAttempt = 0;
 
     function renderCollection(dialog) {
         const content = dialog.querySelector('.collection-content');
@@ -396,15 +409,14 @@
         feedbackMessage.textContent = serviceSection ? 'Завантажуємо послуги та відгуки…' : 'Завантажуємо відгуки…';
         retryButton.hidden = true;
         reviewTrack?.setAttribute('aria-busy', 'true');
-        let timeout;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
         try {
-            const source = await Promise.race([
-                import(`./shared-data.js?attempt=${dataLoadAttempt++}`),
-                new Promise((_, reject) => {
-                    timeout = setTimeout(() => reject(new Error('Data loading timed out')), 10000);
-                }),
-            ]);
-            const data = validateData(source.default);
+            const response = await fetch('assets/data/home.json', { signal: controller.signal });
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            const data = validateData(await response.json());
             services = data.services ?? [];
             serviceIndex = 0;
             renderService();
