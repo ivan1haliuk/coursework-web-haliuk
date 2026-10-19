@@ -108,24 +108,12 @@
     object-fit: contain;
 }
 
-.service-slide-extra {
-    position: relative;
-}
-
 .service-slide-extra img {
-    border-radius: 1rem;
     object-fit: cover;
-}
-
-/* The controls occupy the same rectangular recess as in the exported first photo. */
-.service-slide-extra::after {
-    position: absolute;
-    bottom: 0;
-    left: 32%;
-    width: 36%;
-    height: 8%;
-    background: var(--bg-main);
-    content: "";
+    mask-image: url("../images/services/portraits-mobile.webp");
+    mask-mode: alpha;
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
 }
 
 .service-gallery-controls {
@@ -278,6 +266,10 @@ html:not(.js) .services-page .faq-col-right {
         aspect-ratio: 718 / 311;
     }
 
+    .service-slide-extra img {
+        mask-image: url("../images/services/portraits-laptop.webp");
+    }
+
     .service-gallery-controls {
         padding: 0.4375rem;
         margin-top: -1.875rem;
@@ -408,6 +400,10 @@ html:not(.js) .services-page .faq-col-right {
 
     .service-slide img {
         aspect-ratio: 894 / 360;
+    }
+
+    .service-slide-extra img {
+        mask-image: url("../images/services/portraits-desktop.webp");
     }
 
     .service-gallery-controls {
