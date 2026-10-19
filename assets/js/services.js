@@ -34,8 +34,6 @@
             showSlide(event.key === 'Home' ? 0 : event.key === 'End' ? track.children.length - 1
                 : index + (event.key === 'ArrowRight' ? 1 : -1));
         });
-        // Keep the controls correct if the gallery is reduced to a single photo.
-        new MutationObserver(() => showSlide(index)).observe(track, { childList: true });
         showSlide(0);
     });
 

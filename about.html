@@ -26,15 +26,14 @@
                     <a href="about.html" class="nav-btn about active" aria-current="page">Про мене</a>
                     <a href="portfolio.html" class="nav-btn portfolio">Портфоліо</a>
                     <a href="services.html" class="nav-btn services">Послуги</a>
-                    <button class="nav-btn mobile-contact-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
+                    <a class="nav-btn mobile-contact-btn" href="mailto:damienbraun@gmail.com">Зв’язок</a>
                 </nav>
-                <button class="contact-btn" id="open-modal-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">Зв’язок</button>
+                <a class="contact-btn" id="header-contact" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">Зв’язок</a>
                 <button class="burger-menu" id="burger-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
                     <span class="icon icon-menu" aria-hidden="true"></span>
                 </button>
             </div>
         </header>
-        <noscript><p class="contact-fallback">Для запису напишіть <a href="mailto:damienbraun@gmail.com">damienbraun@gmail.com</a>. Діалогова форма потребує JavaScript.</p></noscript>
         <main id="main-content" tabindex="-1">
             <section class="about-intro page-container" aria-labelledby="about-heading">
                 <div class="about-intro-heading">
@@ -144,12 +143,8 @@
                                     <span class="icon icon-right" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <button class="view-all-btn testimonials-view-all" type="button" data-dialog="reviewsDialog" aria-haspopup="dialog">Усі відгуки <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></button>
+                            <a class="view-all-btn testimonials-view-all" href="#testimonial-cards">Усі відгуки <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></a>
                         </div>
-                    </div>
-                    <div class="data-feedback" id="data-feedback" role="status" hidden>
-                        <span id="data-message"></span>
-                        <button class="action-btn-outline" id="retry-data" type="button">Повторити</button>
                     </div>
                     <div class="testimonials-cards-container" id="testimonial-cards" tabindex="0" role="region" aria-label="Відгуки клієнтів">
                         <article class="testimonial-card">
@@ -234,9 +229,6 @@
                             <p class="testimonial-text">Мене вразило, як Дамієн передав атмосферу нашого весілля. Його фото — дорогі серцю спогади.</p>
                         </article>
                     </div>
-                    <noscript>
-                        <p class="form-help">Показано збережену добірку відгуків. Усі відгуки доступні нижче; увімкніть JavaScript для оновлення даних.</p>
-                    </noscript>
                 </div>
             </section>
             <div class="bottom-logo-section" aria-hidden="true">
@@ -317,9 +309,9 @@
                         <div class="footer-call-to-action">
                             <div class="footer-cta-row">
                                 <span class="footer-cta-text">Нумо</span>
-                                <button class="footer-cta-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                <a class="footer-cta-btn" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </button>
+                                </a>
                             </div>
                             <span class="footer-cta-text">Співпрацюймо</span>
                         </div>
@@ -358,9 +350,9 @@
             </div>
             <div class="footer-bottom-container">
                 <div class="footer-bottom-left">
-                    <button class="footer-bottom-link" type="button" data-dialog="termsDialog" aria-haspopup="dialog">Умови користування</button>
+                    <span class="footer-bottom-link">Умови користування</span>
                     <div class="footer-divider"></div>
-                    <button class="footer-bottom-link" type="button" data-dialog="privacyDialog" aria-haspopup="dialog">Конфіденційність</button>
+                    <span class="footer-bottom-link">Конфіденційність</span>
                 </div>
                 <div class="footer-socials">
                     <a href="https://www.facebook.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="Facebook — головна сторінка платформи (нова вкладка)">
@@ -378,83 +370,5 @@
                 </div>
             </div>
         </footer>
-        <dialog class="dialog" id="contactModal" aria-labelledby="contact-title" aria-describedby="contact-help">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити форму">×</button>
-            <h2 class="dialog-title" id="contact-title">Обговорімо вашу зйомку</h2>
-            <form class="contact-form" id="contactForm" method="dialog">
-                <div class="form-field">
-                    <label for="contact-name">Ваше ім’я (обов’язково)</label>
-                    <input class="modal-input" id="contact-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required minlength="2" maxlength="80" aria-describedby="contact-name-error" autofocus>
-                    <span class="field-error" id="contact-name-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-email">Електронна пошта (обов’язково)</label>
-                    <input class="modal-input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" required maxlength="254" aria-describedby="contact-email-error">
-                    <span class="field-error" id="contact-email-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-service">Напрям зйомки</label>
-                    <select class="modal-input" id="contact-service" name="service" autocomplete="off" aria-describedby="contact-service-error">
-                        <option value="">Допоможіть обрати напрям</option>
-                        <option value="Портретна зйомка">Портретна зйомка</option>
-                        <option value="Зйомка подій">Зйомка подій</option>
-                        <option value="Комерційна зйомка">Комерційна зйомка</option>
-                    </select>
-                    <span class="field-error" id="contact-service-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-package">Пакет</label>
-                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="contact-package-error">
-                        <option value="">Обговорити без пакета</option>
-                        <optgroup label="Портретна зйомка" data-service="Портретна зйомка">
-                            <option value="Індивідуальна">Індивідуальна</option>
-                            <option value="Сімейна">Сімейна</option>
-                            <option value="Для пари">Для пари</option>
-                        </optgroup>
-                        <optgroup label="Зйомка подій" data-service="Зйомка подій">
-                            <option value="Весільна зйомка">Весільна зйомка</option>
-                            <option value="Зйомка вечірки">Зйомка вечірки</option>
-                            <option value="Корпоративні події">Корпоративні події</option>
-                        </optgroup>
-                        <optgroup label="Комерційна зйомка" data-service="Комерційна зйомка">
-                            <option value="Предметна зйомка">Предметна зйомка</option>
-                            <option value="Зйомка нерухомості">Зйомка нерухомості</option>
-                            <option value="Зйомка для бренду">Зйомка для бренду</option>
-                        </optgroup>
-                    </select>
-                    <span class="field-error" id="contact-package-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-message">Розкажіть про вашу ідею (обов’язково)</label>
-                    <textarea class="modal-textarea" id="contact-message" name="body" autocomplete="off" enterkeyhint="enter" required minlength="10" maxlength="2000" aria-describedby="contact-message-help contact-message-error"></textarea>
-                    <span class="form-help" id="contact-message-help">Від 10 до 2000 символів.</span>
-                    <span class="field-error" id="contact-message-error"></span>
-                </div>
-                <p class="form-help" id="contact-help">Підготуйте звернення й надішліть його зі своєї поштової програми. Цей сайт не надсилає лист автоматично. Чернетка зберігається лише на цій відкритій сторінці.</p>
-                <button class="action-btn-outline" type="submit">Підготувати лист</button>
-                <p class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
-                <a class="form-mail-link" id="prepared-mail" hidden>Відкрити поштову програму</a>
-            </form>
-        </dialog>
-        <dialog class="dialog" id="termsDialog" aria-labelledby="termsDialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
-            <h2 class="dialog-title" id="termsDialog-title">Умови користування</h2>
-            <div class="legal-content">
-                <p>Матеріали не надають дозволу на комерційне використання зображень. Умови фотозйомки й використання фотографій узгоджуються окремо.</p>
-            </div>
-        </dialog>
-        <dialog class="dialog" id="privacyDialog" aria-labelledby="privacyDialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
-            <h2 class="dialog-title" id="privacyDialog-title">Конфіденційність</h2>
-            <div class="legal-content">
-                <p>Контактна форма перевіряє введення у вашому браузері та готує посилання для поштової програми. Повідомлення надсилається лише після вашої дії в поштовій програмі.</p>
-                <p>Сайт не зберігає введені дані в базі, cookies або localStorage. Шрифт завантажується з Google Fonts; зовнішні соціальні посилання ведуть на відповідні платформи.</p>
-            </div>
-        </dialog>
-        <dialog class="dialog collection-dialog" id="reviewsDialog" aria-labelledby="reviews-dialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
-            <h2 class="dialog-title" id="reviews-dialog-title">Відгуки клієнтів</h2>
-            <div class="collection-content"></div>
-        </dialog>
     </body>
 </html>

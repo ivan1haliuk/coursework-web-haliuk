@@ -198,43 +198,12 @@
     --icon-size: 1.75rem;
 }
 
-.portfolio-feedback {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2.5rem;
-    padding: 1.25rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    color: var(--text-gray);
-}
-
-.portfolio-feedback[hidden],
-.portfolio-feedback button[hidden],
-.portfolio-category-empty[hidden] {
-    display: none;
-}
-
 .portfolio-category-title {
     color: var(--text-muted);
     font-size: 1.75rem;
     font-weight: 600;
     line-height: 1.35;
     text-transform: uppercase;
-}
-
-.portfolio-category-empty,
-.portfolio-noscript {
-    color: var(--text-gray);
-}
-
-.portfolio-noscript {
-    margin-top: 1.5rem;
-}
-
-.portfolio-noscript a {
-    text-decoration: underline;
 }
 
 .portfolio-category .portfolio-card-info {
@@ -317,23 +286,6 @@
 }
 
 
-.portfolio-project-dialog {
-    width: min(58rem, calc(100% - 2rem));
-}
-
-.portfolio-project-dialog .project-image {
-    width: 100%;
-    height: min(55dvh, 38rem);
-    object-fit: contain;
-}
-
-.project-date {
-    margin-top: 0.5rem;
-    color: var(--text-muted);
-}
-
-html:not(.js) .portfolio-feedback,
-html:not(.js) .portfolio-category,
 html:not(.js) .portfolio-page .testimonials-actions {
     display: none;
 }

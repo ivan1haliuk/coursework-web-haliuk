@@ -27,15 +27,14 @@
                     <a href="about.html" class="nav-btn about">Про мене</a>
                     <a href="portfolio.html" class="nav-btn portfolio active" aria-current="page">Портфоліо</a>
                     <a href="services.html" class="nav-btn services">Послуги</a>
-                    <button class="nav-btn mobile-contact-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
+                    <a class="nav-btn mobile-contact-btn" href="mailto:damienbraun@gmail.com">Зв’язок</a>
                 </nav>
-                <button class="contact-btn" id="open-modal-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">Зв’язок</button>
+                <a class="contact-btn" id="header-contact" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">Зв’язок</a>
                 <button class="burger-menu" id="burger-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
                     <span class="icon icon-menu" aria-hidden="true"></span>
                 </button>
             </div>
         </header>
-        <noscript><p class="contact-fallback">Для запису напишіть <a href="mailto:damienbraun@gmail.com">damienbraun@gmail.com</a>. Діалогова форма потребує JavaScript.</p></noscript>
         <main id="main-content" tabindex="-1">
             <section class="portfolio-intro page-container" aria-labelledby="portfolio-heading">
                 <picture class="portfolio-hero-photo">
@@ -62,8 +61,25 @@
                     <button class="brand-motion-toggle" type="button" aria-label="Призупинити рух логотипів" aria-pressed="false" aria-controls="portfolio-brand-track" title="Призупинити або продовжити рух логотипів">Бренди, з якими я працював</button>
                 </h2>
                 <div class="portfolio-brand-viewport" tabindex="0" role="region" aria-label="Логотипи брендів; горизонтальна стрічка">
-                    <div class="portfolio-brand-track" id="portfolio-brand-track">
+                    <div class="portfolio-brand-track" id="portfolio-brand-track" data-loop-ready="true">
                         <ul class="portfolio-brand-list">
+                    <li>
+                        <span class="portfolio-brand-logo brand-infinity-parker" role="img" aria-label="Infinity Parker"></span>
+                    </li>
+                    <li>
+                        <span class="portfolio-brand-logo brand-omega-million" role="img" aria-label="Omega Million"></span>
+                    </li>
+                    <li>
+                        <span class="portfolio-brand-logo brand-wheelapp" role="img" aria-label="WheelApp"></span>
+                    </li>
+                    <li>
+                        <span class="portfolio-brand-logo brand-high-country-club" role="img" aria-label="High Country Club"></span>
+                    </li>
+                    <li>
+                        <span class="portfolio-brand-logo brand-edgekart" role="img" aria-label="EdgeKart"></span>
+                    </li>
+                        </ul>
+                        <ul class="portfolio-brand-list brand-copy" aria-hidden="true" inert>
                     <li>
                         <span class="portfolio-brand-logo brand-infinity-parker" role="img" aria-label="Infinity Parker"></span>
                     </li>
@@ -83,11 +99,6 @@
                     </div>
                 </div>
             </section>
-            <div class="portfolio-feedback page-container" id="portfolio-feedback" role="status" aria-live="polite">
-                <p id="portfolio-message">Завантажуємо роботи…</p>
-                <button class="action-btn-outline" id="retry-portfolio" type="button" hidden>Повторити завантаження</button>
-            </div>
-            <noscript><p class="page-container portfolio-noscript">Щоб переглянути картки робіт і відкривати проєкти, увімкніть JavaScript. <a href="assets/data/portfolio.json">Переглянути дані портфоліо у JSON</a>. Для запису напишіть <a href="mailto:damienbraun@gmail.com">damienbraun@gmail.com</a>.</p></noscript>
             <section class="portfolio-works-section portfolio-category" id="portraits" data-portfolio-category aria-labelledby="portraits-heading">
                 <div class="portfolio-works-container">
                     <div class="portfolio-works-header">
@@ -99,8 +110,38 @@
                             </div>
                         </div>
                     </div>
-                    <p class="portfolio-category-empty" hidden>У цій категорії поки немає робіт.</p>
-                    <div class="portfolio-cards-container" id="portraits-cards" tabindex="0" role="region" aria-label="Портретна зйомка: роботи; клавіші ←, →, Home та End" aria-busy="true"></div>
+                    <div class="portfolio-cards-container" id="portraits-cards" tabindex="0" role="region" aria-label="Портретна зйомка: роботи; клавіші ←, →, Home та End">
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/portrait-resilience-small.webp" srcset="assets/images/portfolio/portrait-resilience-small.webp 600w, assets/images/portfolio/portrait-resilience.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Крупний портрет чоловіка в синьому каптурі" width="1200" height="1500" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Обличчя стійкості</h3>
+                                    <time class="portfolio-card-date" datetime="2022-03">березень 2022 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/portrait-resilience.webp" aria-label="Переглянути проєкт «Обличчя стійкості»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/portrait-innocence-small.webp" srcset="assets/images/portfolio/portrait-innocence-small.webp 600w, assets/images/portfolio/portrait-innocence.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Дитина у яскравому вбранні та квітковому вінку на міській вулиці" width="1200" height="1797" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Щирість без масок</h3>
+                                    <time class="portfolio-card-date" datetime="2020-01">січень 2020 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/portrait-innocence.webp" aria-label="Переглянути проєкт «Щирість без масок»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/portrait-elegance-small.webp" srcset="assets/images/portfolio/portrait-elegance-small.webp 600w, assets/images/portfolio/portrait-elegance.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Студійний портрет із помаранчем на синьому тлі" width="1200" height="1500" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Елегантність у тіні</h3>
+                                    <time class="portfolio-card-date" datetime="2020-01">січень 2020 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/portrait-elegance.webp" aria-label="Переглянути проєкт «Елегантність у тіні»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
             <section class="portfolio-works-section portfolio-category" id="events" data-portfolio-category aria-labelledby="events-heading">
@@ -114,8 +155,38 @@
                             </div>
                         </div>
                     </div>
-                    <p class="portfolio-category-empty" hidden>У цій категорії поки немає робіт.</p>
-                    <div class="portfolio-cards-container" id="events-cards" tabindex="0" role="region" aria-label="Зйомка подій: роботи; клавіші ←, →, Home та End" aria-busy="true"></div>
+                    <div class="portfolio-cards-container" id="events-cards" tabindex="0" role="region" aria-label="Зйомка подій: роботи; клавіші ←, →, Home та End">
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/event-wedding-small.webp" srcset="assets/images/portfolio/event-wedding-small.webp 600w, assets/images/portfolio/event-wedding.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Наречена у світлій сукні біля високого вікна" width="1200" height="2008" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Весільна історія</h3>
+                                    <time class="portfolio-card-date" datetime="2021-09">вересень 2021 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/event-wedding.webp" aria-label="Переглянути проєкт «Весільна історія»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/event-conference-small.webp" srcset="assets/images/portfolio/event-conference-small.webp 600w, assets/images/portfolio/event-conference.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Відкритий нотатник на передньому плані й учасники конференції в залі" width="1200" height="800" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Ділова зустріч</h3>
+                                    <time class="portfolio-card-date" datetime="2019-11">листопад 2019 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/event-conference.webp" aria-label="Переглянути проєкт «Ділова зустріч»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/event-festival-small.webp" srcset="assets/images/portfolio/event-festival-small.webp 600w, assets/images/portfolio/event-festival.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Учасниця фестивалю з кольоровою фарбою на обличчі й волоссі" width="1200" height="798" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Фестиваль кольорів</h3>
+                                    <time class="portfolio-card-date" datetime="2018-03">березень 2018 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/event-festival.webp" aria-label="Переглянути проєкт «Фестиваль кольорів»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
             <section class="portfolio-works-section portfolio-category" id="commercial" data-portfolio-category aria-labelledby="commercial-heading">
@@ -129,8 +200,38 @@
                             </div>
                         </div>
                     </div>
-                    <p class="portfolio-category-empty" hidden>У цій категорії поки немає робіт.</p>
-                    <div class="portfolio-cards-container" id="commercial-cards" tabindex="0" role="region" aria-label="Комерційна зйомка: роботи; клавіші ←, →, Home та End" aria-busy="true"></div>
+                    <div class="portfolio-cards-container" id="commercial-cards" tabindex="0" role="region" aria-label="Комерційна зйомка: роботи; клавіші ←, →, Home та End">
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/commercial-backpack-small.webp" srcset="assets/images/portfolio/commercial-backpack-small.webp 600w, assets/images/portfolio/commercial-backpack.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Темний рюкзак зі шкіряними ремінцями на тлі зелені" width="1200" height="800" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Елегантність деталей</h3>
+                                    <time class="portfolio-card-date" datetime="2020-08">серпень 2020 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/commercial-backpack.webp" aria-label="Переглянути проєкт «Елегантність деталей»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/commercial-brand-small.webp" srcset="assets/images/portfolio/commercial-brand-small.webp 600w, assets/images/portfolio/commercial-brand.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Рожевий персонаж з окулярами та кольоровими деталями на рожевому тлі" width="1200" height="1803" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Історія бренду</h3>
+                                    <time class="portfolio-card-date" datetime="2019-05">травень 2019 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/commercial-brand.webp" aria-label="Переглянути проєкт «Історія бренду»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                        <article class="portfolio-card">
+                            <img class="portfolio-card-img" src="assets/images/portfolio/commercial-food-small.webp" srcset="assets/images/portfolio/commercial-food-small.webp 600w, assets/images/portfolio/commercial-food.webp 1200w" sizes="(min-width: 110rem) 500px, (min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 100vw" alt="Кухар нарізає зелень на дерев’яній дошці" width="1200" height="1800" loading="lazy" decoding="async">
+                            <div class="portfolio-card-info">
+                                <div class="portfolio-card-text">
+                                    <h3 class="portfolio-card-title">Кулінарні миті</h3>
+                                    <time class="portfolio-card-date" datetime="2017-02">лютий 2017 р.</time>
+                                </div>
+                                <a class="portfolio-card-btn" href="assets/images/portfolio/commercial-food.webp" aria-label="Переглянути проєкт «Кулінарні миті»">До проєкту <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
             <section class="faq-section" id="faq" aria-labelledby="faq-heading">
@@ -223,12 +324,8 @@
                                     <span class="icon icon-right" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <button class="view-all-btn testimonials-view-all" type="button" data-dialog="reviewsDialog" aria-haspopup="dialog">Усі відгуки <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></button>
+                            <a class="view-all-btn testimonials-view-all" href="#testimonial-cards">Усі відгуки <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></a>
                         </div>
-                    </div>
-                    <div class="data-feedback" id="data-feedback" role="status" hidden>
-                        <span id="data-message"></span>
-                        <button class="action-btn-outline" id="retry-data" type="button">Повторити</button>
                     </div>
                     <div class="testimonials-cards-container" id="testimonial-cards" tabindex="0" role="region" aria-label="Відгуки клієнтів">
                         <article class="testimonial-card">
@@ -313,9 +410,6 @@
                             <p class="testimonial-text">Мене вразило, як Дамієн передав атмосферу нашого весілля. Його фото — дорогі серцю спогади.</p>
                         </article>
                     </div>
-                    <noscript>
-                        <p class="form-help">Показано збережену добірку відгуків. Усі відгуки доступні нижче; увімкніть JavaScript для оновлення даних.</p>
-                    </noscript>
                 </div>
             </section>
             <div class="bottom-logo-section" aria-hidden="true">
@@ -396,9 +490,9 @@
                         <div class="footer-call-to-action">
                             <div class="footer-cta-row">
                                 <span class="footer-cta-text">Нумо</span>
-                                <button class="footer-cta-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                <a class="footer-cta-btn" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </button>
+                                </a>
                             </div>
                             <span class="footer-cta-text">Співпрацюймо</span>
                         </div>
@@ -437,9 +531,9 @@
             </div>
             <div class="footer-bottom-container">
                 <div class="footer-bottom-left">
-                    <button class="footer-bottom-link" type="button" data-dialog="termsDialog" aria-haspopup="dialog">Умови користування</button>
+                    <span class="footer-bottom-link">Умови користування</span>
                     <div class="footer-divider"></div>
-                    <button class="footer-bottom-link" type="button" data-dialog="privacyDialog" aria-haspopup="dialog">Конфіденційність</button>
+                    <span class="footer-bottom-link">Конфіденційність</span>
                 </div>
                 <div class="footer-socials">
                     <a href="https://www.facebook.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="Facebook — головна сторінка платформи (нова вкладка)">
@@ -457,90 +551,5 @@
                 </div>
             </div>
         </footer>
-        <dialog class="dialog portfolio-project-dialog" id="projectDialog" aria-labelledby="project-title" aria-describedby="project-description">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити проєкт">×</button>
-            <h2 class="dialog-title" id="project-title">Фотопроєкт</h2>
-            <p class="project-date"></p>
-            <img class="project-image" src="assets/images/photo-placeholder.svg" alt="" width="1200" height="1500">
-            <p class="project-description" id="project-description"></p>
-        </dialog>
-        <dialog class="dialog" id="contactModal" aria-labelledby="contact-title" aria-describedby="contact-help">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити форму">×</button>
-            <h2 class="dialog-title" id="contact-title">Обговорімо вашу зйомку</h2>
-            <form class="contact-form" id="contactForm" method="dialog">
-                <div class="form-field">
-                    <label for="contact-name">Ваше ім’я (обов’язково)</label>
-                    <input class="modal-input" id="contact-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required minlength="2" maxlength="80" aria-describedby="contact-name-error" autofocus>
-                    <span class="field-error" id="contact-name-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-email">Електронна пошта (обов’язково)</label>
-                    <input class="modal-input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" required maxlength="254" aria-describedby="contact-email-error">
-                    <span class="field-error" id="contact-email-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-service">Напрям зйомки</label>
-                    <select class="modal-input" id="contact-service" name="service" autocomplete="off" aria-describedby="contact-service-error">
-                        <option value="">Допоможіть обрати напрям</option>
-                        <option value="Портретна зйомка">Портретна зйомка</option>
-                        <option value="Зйомка подій">Зйомка подій</option>
-                        <option value="Комерційна зйомка">Комерційна зйомка</option>
-                    </select>
-                    <span class="field-error" id="contact-service-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-package">Пакет</label>
-                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="contact-package-error">
-                        <option value="">Обговорити без пакета</option>
-                        <optgroup label="Портретна зйомка" data-service="Портретна зйомка">
-                            <option value="Індивідуальна">Індивідуальна</option>
-                            <option value="Сімейна">Сімейна</option>
-                            <option value="Для пари">Для пари</option>
-                        </optgroup>
-                        <optgroup label="Зйомка подій" data-service="Зйомка подій">
-                            <option value="Весільна зйомка">Весільна зйомка</option>
-                            <option value="Зйомка вечірки">Зйомка вечірки</option>
-                            <option value="Корпоративні події">Корпоративні події</option>
-                        </optgroup>
-                        <optgroup label="Комерційна зйомка" data-service="Комерційна зйомка">
-                            <option value="Предметна зйомка">Предметна зйомка</option>
-                            <option value="Зйомка нерухомості">Зйомка нерухомості</option>
-                            <option value="Зйомка для бренду">Зйомка для бренду</option>
-                        </optgroup>
-                    </select>
-                    <span class="field-error" id="contact-package-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-message">Розкажіть про вашу ідею (обов’язково)</label>
-                    <textarea class="modal-textarea" id="contact-message" name="body" autocomplete="off" enterkeyhint="enter" required minlength="10" maxlength="2000" aria-describedby="contact-message-help contact-message-error"></textarea>
-                    <span class="form-help" id="contact-message-help">Від 10 до 2000 символів.</span>
-                    <span class="field-error" id="contact-message-error"></span>
-                </div>
-                <p class="form-help" id="contact-help">Підготуйте звернення й надішліть його зі своєї поштової програми. Цей сайт не надсилає лист автоматично. Чернетка зберігається лише на цій відкритій сторінці.</p>
-                <button class="action-btn-outline" type="submit">Підготувати лист</button>
-                <p class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
-                <a class="form-mail-link" id="prepared-mail" hidden>Відкрити поштову програму</a>
-            </form>
-        </dialog>
-        <dialog class="dialog" id="termsDialog" aria-labelledby="termsDialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
-            <h2 class="dialog-title" id="termsDialog-title">Умови користування</h2>
-            <div class="legal-content">
-                <p>Матеріали не надають дозволу на комерційне використання зображень. Умови фотозйомки й використання фотографій узгоджуються окремо.</p>
-            </div>
-        </dialog>
-        <dialog class="dialog" id="privacyDialog" aria-labelledby="privacyDialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
-            <h2 class="dialog-title" id="privacyDialog-title">Конфіденційність</h2>
-            <div class="legal-content">
-                <p>Контактна форма перевіряє введення у вашому браузері та готує посилання для поштової програми. Повідомлення надсилається лише після вашої дії в поштовій програмі.</p>
-                <p>Сайт не зберігає введені дані в базі, cookies або localStorage. Шрифт завантажується з Google Fonts; зовнішні соціальні посилання ведуть на відповідні платформи.</p>
-            </div>
-        </dialog>
-        <dialog class="dialog collection-dialog" id="reviewsDialog" aria-labelledby="reviews-dialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
-            <h2 class="dialog-title" id="reviews-dialog-title">Відгуки клієнтів</h2>
-            <div class="collection-content"></div>
-        </dialog>
     </body>
 </html>

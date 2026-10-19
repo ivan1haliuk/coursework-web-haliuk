@@ -25,15 +25,14 @@
                     <a href="about.html" class="nav-btn about">Про мене</a>
                     <a href="portfolio.html" class="nav-btn portfolio">Портфоліо</a>
                     <a href="services.html" class="nav-btn services">Послуги</a>
-                    <button class="nav-btn mobile-contact-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
+                    <a class="nav-btn mobile-contact-btn" href="mailto:damienbraun@gmail.com">Зв’язок</a>
                 </nav>
-                <button class="contact-btn" id="open-modal-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">Зв’язок</button>
+                <a class="contact-btn" id="header-contact" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">Зв’язок</a>
                 <button class="burger-menu" id="burger-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
                     <span class="icon icon-menu" aria-hidden="true"></span>
                 </button>
             </div>
         </header>
-        <noscript><p class="contact-fallback">Для запису напишіть <a href="mailto:damienbraun@gmail.com">damienbraun@gmail.com</a>. Діалогова форма потребує JavaScript.</p></noscript>
         <main id="main-content" tabindex="-1">
             <section class="hero-section" id="home">
                 <div class="hero-sub">
@@ -47,9 +46,9 @@
                     <div class="hero-action-container">
                         <div class="lets-row">
                             <span class="lets-text">Нумо</span>
-                            <button class="action-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                            <a class="action-btn" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">
                                 <span class="icon icon-arrow" aria-hidden="true"></span>
-                            </button>
+                            </a>
                         </div>
                         <span class="work-text">Співпрацюймо</span>
                     </div>
@@ -176,8 +175,8 @@
                                         </a>
                                     </div>
                                     <div class="action-buttons">
-                                        <button class="action-btn-outline" type="button" data-dialog="contactModal" aria-haspopup="dialog">Працюймо</button>
-                                        <button class="action-btn-outline" type="button" data-dialog="contactModal" aria-haspopup="dialog">Обговорити зйомку</button>
+                                        <a class="action-btn-outline" href="mailto:damienbraun@gmail.com">Працюймо</a>
+                                        <a class="action-btn-outline" href="mailto:damienbraun@gmail.com">Обговорити зйомку</a>
                                     </div>
                                 </div>
                             </div>
@@ -201,17 +200,17 @@
                                     <span class="icon icon-right" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <button class="view-all-btn" type="button" data-dialog="servicesDialog" aria-haspopup="dialog">Усі послуги <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></button>
+                            <a class="view-all-btn" href="services.html">Усі послуги <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></a>
                         </div>
                     </div>
-                    <div class="services-content">
+                    <div class="services-content" id="home-service-1" data-home-service>
                         <div class="services-info-block">
                             <div class="service-top">
                                 <div class="service-title-row">
                                     <h3>Події</h3>
-                                    <button class="service-action-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                    <a class="service-action-btn" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">
                                         <span class="icon icon-arrow" aria-hidden="true"></span>
-                                    </button>
+                                    </a>
                                 </div>
                                 <p class="service-paragraph">Ми допоможемо зберегти магію ваших особливих подій. Весілля, корпоратив чи важливе свято — зафіксуємо кожну щиру мить. Працюємо непомітно, щоб отримати живі й природні кадри, які передають справжні емоції та атмосферу цього дня.</p>
                             </div>
@@ -241,6 +240,53 @@
                             <img src="assets/images/8.webp" alt="Виконавець на сцені серед світла та диму" srcset="assets/images/8-small.webp 600w, assets/images/8.webp 1400w" sizes="(min-width: 1760px) 500px, (min-width: 1024px) 30vw, 90vw" width="1400" height="933" decoding="async" loading="lazy">
                         </div>
                     </div>
+                    <div class="services-content" id="home-service-2" data-home-service hidden>
+                        <div class="services-info-block">
+                            <div class="service-top">
+                                <div class="service-title-row">
+                                    <h3>Портрети</h3>
+                                    <a class="service-action-btn" href="mailto:damienbraun@gmail.com" aria-label="Обговорити фотозйомку"><span class="icon icon-arrow" aria-hidden="true"></span></a>
+                                </div>
+                                <p class="service-paragraph">Портретна зйомка допомагає побачити власний характер у новому світлі. Разом оберемо образ, локацію та настрій, щоб створити природні й виразні фотографії.</p>
+                            </div>
+                            <div class="service-bottom">
+                                <h4>Переваги послуги</h4>
+                                <ul class="highlights-list">
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Індивідуальні та сімейні портрети.</span></li>
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Допомога з образом і позуванням.</span></li>
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Студія або зйомка на природі.</span></li>
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Відбір і делікатна обробка фотографій.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="services-image-block">
+                            <img src="assets/images/9.webp" srcset="assets/images/9-small.webp 400w, assets/images/9.webp 933w" sizes="(min-width: 1760px) 500px, (min-width: 1024px) 30vw, 90vw" alt="Студійний портрет жінки в золотистому головному уборі" width="933" height="1400" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="services-content" id="home-service-3" data-home-service hidden>
+                        <div class="services-info-block">
+                            <div class="service-top">
+                                <div class="service-title-row">
+                                    <h3>Комерція</h3>
+                                    <a class="service-action-btn" href="mailto:damienbraun@gmail.com" aria-label="Обговорити фотозйомку"><span class="icon icon-arrow" aria-hidden="true"></span></a>
+                                </div>
+                                <p class="service-paragraph">Створюю фотографії, які розповідають про ваш продукт і підкреслюють характер бренду. Продумуємо композицію, світло та деталі для каталогу, реклами чи соціальних мереж.</p>
+                            </div>
+                            <div class="service-bottom">
+                                <h4>Переваги послуги</h4>
+                                <ul class="highlights-list">
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Предметні та іміджеві фотографії.</span></li>
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Візуальна концепція під ваш бренд.</span></li>
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Матеріали для каталогу й реклами.</span></li>
+                                    <li class="highlight-item"><span class="icon icon-highlight" aria-hidden="true"></span><span>Підготовка фотографій до публікації.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="services-image-block">
+                            <img src="assets/images/11.webp" srcset="assets/images/11-small.webp 400w, assets/images/11.webp 933w" sizes="(min-width: 1760px) 500px, (min-width: 1024px) 30vw, 90vw" alt="Предметна композиція з пакуванням бренду на теплій текстурній поверхні" width="933" height="1400" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <p id="service-status" class="visually-hidden" role="status">Послуга 1 із 3: Події.</p>
                 </div>
             </section>
             <section class="portfolio-works-section" id="portfolio">
@@ -259,7 +305,7 @@
                                     <span class="icon icon-right" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <button class="portfolio-view-all" type="button" data-dialog="portfolioDialog" aria-haspopup="dialog">Усі роботи <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></button>
+                            <a class="portfolio-view-all" href="portfolio.html">Усі роботи <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></a>
                         </div>
                     </div>
                     <div class="portfolio-cards-container" id="portfolio-cards" tabindex="0" role="region" aria-label="Роботи фотографа">
@@ -270,10 +316,10 @@
                                     <h3 class="portfolio-card-title">Обличчя стійкості</h3>
                                     <span class="portfolio-card-date">Березень 2022</span>
                                 </div>
-                                <button class="portfolio-card-btn" type="button" data-dialog="projectDialog" aria-haspopup="dialog" aria-label="Переглянути проєкт «Обличчя стійкості»" data-project="0">
+                                <a class="portfolio-card-btn" aria-label="Переглянути проєкт «Обличчя стійкості»" href="assets/images/9.webp">
                                     <span class="portfolio-card-btn-text">До проєкту</span>
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </button>
+                                </a>
                             </div>
                         </article>
                         <article class="portfolio-card">
@@ -283,10 +329,10 @@
                                     <h3 class="portfolio-card-title">Весільна історія</h3>
                                     <span class="portfolio-card-date">Січень 2020</span>
                                 </div>
-                                <button class="portfolio-card-btn" type="button" data-dialog="projectDialog" aria-haspopup="dialog" aria-label="Переглянути проєкт «Весільна історія»" data-project="1">
+                                <a class="portfolio-card-btn" aria-label="Переглянути проєкт «Весільна історія»" href="assets/images/10.webp">
                                     <span class="portfolio-card-btn-text">До проєкту</span>
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </button>
+                                </a>
                             </div>
                         </article>
                         <article class="portfolio-card">
@@ -296,10 +342,10 @@
                                     <h3 class="portfolio-card-title">Елегантність речей</h3>
                                     <span class="portfolio-card-date">Січень 2020</span>
                                 </div>
-                                <button class="portfolio-card-btn" type="button" data-dialog="projectDialog" aria-haspopup="dialog" aria-label="Переглянути проєкт «Елегантність речей»" data-project="2">
+                                <a class="portfolio-card-btn" aria-label="Переглянути проєкт «Елегантність речей»" href="assets/images/11.webp">
                                     <span class="portfolio-card-btn-text">До проєкту</span>
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </button>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -399,12 +445,8 @@
                                     <span class="icon icon-right" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <button class="view-all-btn testimonials-view-all" type="button" data-dialog="reviewsDialog" aria-haspopup="dialog">Усі відгуки <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></button>
+                            <a class="view-all-btn testimonials-view-all" href="#testimonial-cards">Усі відгуки <span class="icon icon-arrow icon-inline" aria-hidden="true"></span></a>
                         </div>
-                    </div>
-                    <div class="data-feedback" id="data-feedback" role="status" hidden>
-                        <span id="data-message"></span>
-                        <button class="action-btn-outline" id="retry-data" type="button">Повторити</button>
                     </div>
                     <div class="testimonials-cards-container" id="testimonial-cards" tabindex="0" role="region" aria-label="Відгуки клієнтів">
                         <article class="testimonial-card">
@@ -489,9 +531,6 @@
                             <p class="testimonial-text">Мене вразило, як Дамієн передав атмосферу нашого весілля. Його фото — дорогі серцю спогади.</p>
                         </article>
                     </div>
-                    <noscript>
-                        <p class="form-help">Показано збережену добірку відгуків. Увімкніть JavaScript для оновлення даних і керування слайдерами.</p>
-                    </noscript>
                 </div>
             </section>
             <section class="bottom-logo-section">
@@ -574,9 +613,9 @@
                         <div class="footer-call-to-action">
                             <div class="footer-cta-row">
                                 <span class="footer-cta-text">Нумо</span>
-                                <button class="footer-cta-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog" aria-label="Обговорити фотозйомку">
+                                <a class="footer-cta-btn" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </button>
+                                </a>
                             </div>
                             <span class="footer-cta-text">Співпрацюймо</span>
                         </div>
@@ -615,9 +654,9 @@
             </div>
             <div class="footer-bottom-container">
                 <div class="footer-bottom-left">
-                    <button class="footer-bottom-link" type="button" data-dialog="termsDialog" aria-haspopup="dialog">Умови користування</button>
+                    <span class="footer-bottom-link">Умови користування</span>
                     <div class="footer-divider"></div>
-                    <button class="footer-bottom-link" type="button" data-dialog="privacyDialog" aria-haspopup="dialog">Конфіденційність</button>
+                    <span class="footer-bottom-link">Конфіденційність</span>
                 </div>
                 <div class="footer-socials">
                     <a href="https://www.facebook.com/" target="_blank" class="social-btn-footer" rel="noopener noreferrer" aria-label="Facebook — головна сторінка платформи (нова вкладка)">
@@ -635,99 +674,5 @@
                 </div>
             </div>
         </footer>
-        <dialog class="dialog" id="contactModal" aria-labelledby="contact-title" aria-describedby="contact-help">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити форму">×</button>
-            <h2 class="dialog-title" id="contact-title">Обговорімо вашу зйомку</h2>
-            <form class="contact-form" id="contactForm" method="dialog">
-                <div class="form-field">
-                    <label for="contact-name">Ваше ім’я (обов’язково)</label>
-                    <input class="modal-input" id="contact-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required minlength="2" maxlength="80" aria-describedby="contact-name-error" autofocus>
-                    <span class="field-error" id="contact-name-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-email">Електронна пошта (обов’язково)</label>
-                    <input class="modal-input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" required maxlength="254" aria-describedby="contact-email-error">
-                    <span class="field-error" id="contact-email-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-service">Напрям зйомки</label>
-                    <select class="modal-input" id="contact-service" name="service" autocomplete="off" aria-describedby="contact-service-error">
-                        <option value="">Допоможіть обрати напрям</option>
-                        <option value="Портретна зйомка">Портретна зйомка</option>
-                        <option value="Зйомка подій">Зйомка подій</option>
-                        <option value="Комерційна зйомка">Комерційна зйомка</option>
-                    </select>
-                    <span class="field-error" id="contact-service-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-package">Пакет</label>
-                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="contact-package-error">
-                        <option value="">Обговорити без пакета</option>
-                        <optgroup label="Портретна зйомка" data-service="Портретна зйомка">
-                            <option value="Індивідуальна">Індивідуальна</option>
-                            <option value="Сімейна">Сімейна</option>
-                            <option value="Для пари">Для пари</option>
-                        </optgroup>
-                        <optgroup label="Зйомка подій" data-service="Зйомка подій">
-                            <option value="Весільна зйомка">Весільна зйомка</option>
-                            <option value="Зйомка вечірки">Зйомка вечірки</option>
-                            <option value="Корпоративні події">Корпоративні події</option>
-                        </optgroup>
-                        <optgroup label="Комерційна зйомка" data-service="Комерційна зйомка">
-                            <option value="Предметна зйомка">Предметна зйомка</option>
-                            <option value="Зйомка нерухомості">Зйомка нерухомості</option>
-                            <option value="Зйомка для бренду">Зйомка для бренду</option>
-                        </optgroup>
-                    </select>
-                    <span class="field-error" id="contact-package-error"></span>
-                </div>
-                <div class="form-field">
-                    <label for="contact-message">Розкажіть про вашу ідею (обов’язково)</label>
-                    <textarea class="modal-textarea" id="contact-message" name="body" autocomplete="off" enterkeyhint="enter" required minlength="10" maxlength="2000" aria-describedby="contact-message-help contact-message-error"></textarea>
-                    <span class="form-help" id="contact-message-help">Від 10 до 2000 символів.</span>
-                    <span class="field-error" id="contact-message-error"></span>
-                </div>
-                <p class="form-help" id="contact-help">Підготуйте звернення й надішліть його зі своєї поштової програми. Цей сайт не надсилає лист автоматично. Чернетка зберігається лише на цій відкритій сторінці.</p>
-                <button class="action-btn-outline" type="submit">Підготувати лист</button>
-                <p class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
-                <a class="form-mail-link" id="prepared-mail" hidden>Відкрити поштову програму</a>
-            </form>
-        </dialog>
-        <dialog class="dialog" id="projectDialog" aria-labelledby="project-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити проєкт">×</button>
-            <h2 class="dialog-title" id="project-title">Фотопроєкт</h2>
-            <img class="project-image" id="project-image" src="assets/images/9-small.webp" alt="" loading="lazy">
-            <p class="project-description" id="project-description"></p>
-        </dialog>
-        <dialog class="dialog" id="termsDialog" aria-labelledby="termsDialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
-            <h2 class="dialog-title" id="termsDialog-title">Умови користування</h2>
-            <div class="legal-content">
-                <p>Матеріали не надають дозволу на комерційне використання зображень. Умови фотозйомки й використання фотографій узгоджуються окремо.</p>
-            </div>
-        </dialog>
-        <dialog class="dialog" id="privacyDialog" aria-labelledby="privacyDialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити вікно">×</button>
-            <h2 class="dialog-title" id="privacyDialog-title">Конфіденційність</h2>
-            <div class="legal-content">
-                <p>Контактна форма перевіряє введення у вашому браузері та готує посилання для поштової програми. Повідомлення надсилається лише після вашої дії в поштовій програмі.</p>
-                <p>Сайт не зберігає введені дані в базі, cookies або localStorage. Шрифт завантажується з Google Fonts; зовнішні соціальні посилання ведуть на відповідні платформи.</p>
-            </div>
-        </dialog>
-        <dialog class="dialog collection-dialog" id="servicesDialog" aria-labelledby="services-dialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
-            <h2 class="dialog-title" id="services-dialog-title">Усі послуги</h2>
-            <div class="collection-content"></div>
-        </dialog>
-        <dialog class="dialog collection-dialog" id="portfolioDialog" aria-labelledby="portfolio-dialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
-            <h2 class="dialog-title" id="portfolio-dialog-title">Добірка робіт</h2>
-            <div class="collection-content"></div>
-        </dialog>
-        <dialog class="dialog collection-dialog" id="reviewsDialog" aria-labelledby="reviews-dialog-title">
-            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити">×</button>
-            <h2 class="dialog-title" id="reviews-dialog-title">Відгуки клієнтів</h2>
-            <div class="collection-content"></div>
-        </dialog>
     </body>
 </html>
