@@ -108,12 +108,20 @@
     object-fit: contain;
 }
 
+.service-slide-extra {
+    position: relative;
+}
+
 .service-slide-extra img {
     object-fit: cover;
-    mask-image: url("../images/services/portraits-mobile.webp");
-    mask-mode: alpha;
-    mask-size: 100% 100%;
-    mask-repeat: no-repeat;
+}
+
+.service-slide-extra::after {
+    position: absolute;
+    inset: 0;
+    background: url("../images/services/controls-contour-mobile.svg") center / 100% 100% no-repeat;
+    pointer-events: none;
+    content: "";
 }
 
 .service-gallery-controls {
@@ -266,8 +274,8 @@ html:not(.js) .services-page .faq-col-right {
         aspect-ratio: 718 / 311;
     }
 
-    .service-slide-extra img {
-        mask-image: url("../images/services/portraits-laptop.webp");
+    .service-slide-extra::after {
+        background-image: url("../images/services/controls-contour-laptop.svg");
     }
 
     .service-gallery-controls {
@@ -402,8 +410,8 @@ html:not(.js) .services-page .faq-col-right {
         aspect-ratio: 894 / 360;
     }
 
-    .service-slide-extra img {
-        mask-image: url("../images/services/portraits-desktop.webp");
+    .service-slide-extra::after {
+        background-image: url("../images/services/controls-contour-desktop.svg");
     }
 
     .service-gallery-controls {
