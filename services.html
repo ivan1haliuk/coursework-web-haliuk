@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="assets/css/services.css">
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
         <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/contact.js" defer></script>
         <script src="assets/js/services.js" defer></script>
     </head>
     <body class="services-page">
@@ -27,9 +28,9 @@
                     <a href="about.html" class="nav-btn about">Про мене</a>
                     <a href="portfolio.html" class="nav-btn portfolio">Портфоліо</a>
                     <a href="services.html" class="nav-btn services active" aria-current="page">Послуги</a>
-                    <a class="nav-btn mobile-contact-btn" href="mailto:damienbraun@gmail.com">Зв’язок</a>
+                    <button class="nav-btn mobile-contact-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
                 </nav>
-                <a class="contact-btn" id="header-contact" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">Зв’язок</a>
+                <button class="contact-btn" id="header-contact" aria-label="Обговорити фотозйомку" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
                 <button class="burger-menu" id="burger-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
                     <span class="icon icon-menu" aria-hidden="true"></span>
                 </button>
@@ -93,7 +94,7 @@
                         <h3 id="individual-heading">Індивідуальна</h3>
                         <div class="service-package-price-row">
                             <p class="service-price">$250</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Індивідуальна" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Індивідуальна" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Портретна зйомка" data-package="Індивідуальна">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -107,7 +108,7 @@
                         <h3 id="family-heading">Сімейна</h3>
                         <div class="service-package-price-row">
                             <p class="service-price">$400</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Сімейна" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Сімейна" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Портретна зйомка" data-package="Сімейна">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -121,7 +122,7 @@
                         <h3 id="couple-heading">Для пари</h3>
                         <div class="service-package-price-row">
                             <p class="service-price">$300</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Для пари" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Для пари" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Портретна зйомка" data-package="Для пари">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -169,7 +170,7 @@
                         <h3 id="wedding-heading">Весільна зйомка</h3>
                         <div class="service-package-price-row">
                             <p class="service-price">$1 500</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Весільна зйомка" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Весільна зйомка" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Зйомка подій" data-package="Весільна зйомка">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -183,7 +184,7 @@
                         <h3 id="party-heading">Зйомка вечірки</h3>
                         <div class="service-package-price-row">
                             <p class="service-price">$800</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Зйомка вечірки" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Зйомка вечірки" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Зйомка подій" data-package="Зйомка вечірки">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -197,7 +198,7 @@
                         <h3 id="corporate-heading">Корпоративні події</h3>
                         <div class="service-package-price-row">
                             <p class="service-price service-price-custom">Індивідуальний розрахунок</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Корпоративні події" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Корпоративні події" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Зйомка подій" data-package="Корпоративні події">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -244,7 +245,7 @@
                         <h3 id="product-heading">Предметна зйомка</h3>
                         <div class="service-package-price-row">
                             <p class="service-price">$500</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Предметна зйомка" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Предметна зйомка" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Комерційна зйомка" data-package="Предметна зйомка">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -258,7 +259,7 @@
                         <h3 id="real-estate-heading">Зйомка нерухомості</h3>
                         <div class="service-package-price-row">
                             <p class="service-price">$700</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Зйомка нерухомості" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Зйомка нерухомості" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Комерційна зйомка" data-package="Зйомка нерухомості">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -272,7 +273,7 @@
                         <h3 id="brand-heading">Зйомка для бренду</h3>
                         <div class="service-package-price-row">
                             <p class="service-price service-price-custom">Індивідуальний розрахунок</p>
-                            <a class="portfolio-card-btn" aria-label="Записатися: Зйомка для бренду" href="mailto:damienbraun@gmail.com">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></a>
+                            <button class="portfolio-card-btn" aria-label="Записатися: Зйомка для бренду" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Комерційна зйомка" data-package="Зйомка для бренду">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
                         </div>
                     </div>
                     <ul class="service-features">
@@ -427,9 +428,9 @@
                         <div class="footer-call-to-action">
                             <div class="footer-cta-row">
                                 <span class="footer-cta-text">Нумо</span>
-                                <a class="footer-cta-btn" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">
+                                <button class="footer-cta-btn" aria-label="Обговорити фотозйомку" type="button" data-dialog="contactModal" aria-haspopup="dialog">
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </a>
+                                </button>
                             </div>
                             <span class="footer-cta-text">Співпрацюймо</span>
                         </div>
@@ -488,5 +489,48 @@
                 </div>
             </div>
         </footer>
+        <dialog class="dialog" id="contactModal" aria-labelledby="contact-title" aria-describedby="contact-help">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити форму">×</button>
+            <h2 class="dialog-title" id="contact-title">Обговорімо вашу зйомку</h2>
+            <form class="contact-form" id="contactForm" method="dialog" novalidate>
+                <div class="form-field">
+                    <label for="contact-name">Ваше ім’я (обов’язково)</label>
+                    <input class="modal-input" id="contact-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required minlength="2" maxlength="80" aria-describedby="contact-name-error" autofocus>
+                    <span class="field-error" id="contact-name-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-email">Електронна пошта (обов’язково)</label>
+                    <input class="modal-input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" required maxlength="254" aria-describedby="contact-email-error">
+                    <span class="field-error" id="contact-email-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-service">Напрям зйомки</label>
+                    <select class="modal-input" id="contact-service" name="service" autocomplete="off" aria-describedby="contact-service-error">
+                        <option value="">Допоможіть обрати напрям</option>
+                        <option value="Портретна зйомка">Портретна зйомка</option>
+                        <option value="Зйомка подій">Зйомка подій</option>
+                        <option value="Комерційна зйомка">Комерційна зйомка</option>
+                    </select>
+                    <span class="field-error" id="contact-service-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-package">Пакет</label>
+                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="contact-package-error">
+                        <option value="">Обговорити без пакета</option>
+                    </select>
+                    <span class="field-error" id="contact-package-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-message">Розкажіть про вашу ідею (обов’язково)</label>
+                    <textarea class="modal-textarea" id="contact-message" name="body" autocomplete="off" enterkeyhint="enter" required minlength="10" maxlength="2000" aria-describedby="contact-message-help contact-message-error"></textarea>
+                    <span class="form-help" id="contact-message-help">Від 10 до 2000 символів.</span>
+                    <span class="field-error" id="contact-message-error"></span>
+                </div>
+                <p class="form-help" id="contact-help">Підготуйте звернення й надішліть його зі своєї поштової програми. Цей сайт не надсилає лист автоматично. Чернетка зберігається лише на цій відкритій сторінці.</p>
+                <button class="action-btn-outline" type="submit">Підготувати лист</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+                <a class="form-mail-link" id="prepared-mail" hidden>Відкрити поштову програму</a>
+            </form>
+        </dialog>
     </body>
 </html>

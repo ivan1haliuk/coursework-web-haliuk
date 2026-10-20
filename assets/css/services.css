@@ -459,3 +459,6 @@ html:not(.js) .services-page .faq-col-right {
         --icon-size: 2.5rem;
     }
 }
+.service-slides {
+    touch-action: pan-y pinch-zoom;
+}

@@ -6,6 +6,7 @@
         const controls = [...gallery.querySelectorAll('[data-slide-step]')];
         const status = gallery.querySelector('[data-slide-status]');
         let index = 0;
+        let swipe = null;
 
         function showSlide(next) {
             const slides = [...track.querySelectorAll('.service-slide')];
@@ -26,6 +27,26 @@
         controls.forEach((button) => {
             button.addEventListener('click', () => showSlide(index + Number(button.dataset.slideStep)));
         });
+        track.addEventListener('pointerdown', (event) => {
+            if (event.pointerType === 'mouse' || !event.isPrimary) {
+                return;
+            }
+            swipe = { x: event.clientX, y: event.clientY, id: event.pointerId };
+            track.setPointerCapture(event.pointerId);
+        });
+        track.addEventListener('pointerup', (event) => {
+            if (!swipe || event.pointerId !== swipe.id) {
+                return;
+            }
+            const dx = event.clientX - swipe.x;
+            const dy = event.clientY - swipe.y;
+            swipe = null;
+            if (Math.abs(dx) >= 40 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+                showSlide(index + (dx < 0 ? 1 : -1));
+            }
+        });
+        track.addEventListener('pointercancel', () => { swipe = null; });
+        track.addEventListener('lostpointercapture', () => { swipe = null; });
         gallery.addEventListener('keydown', (event) => {
             if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
                 return;

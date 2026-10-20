@@ -7,7 +7,7 @@
         <meta name="color-scheme" content="dark">
         <meta name="robots" content="noindex">
         <title>Сторінку не знайдено – Дамієн Браун</title>
-        <meta name="description" content="Сторінку не знайдено. Перейдіть на головну, до портфоліо або послуг фотографа Дамієна Брауна.">
+        <meta name="description" content="Сторінку не знайдено. Поверніться на головну сторінку фотографа Дамієна Брауна, щоб продовжити перегляд робіт.">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="/coursework-web-haliuk/assets/css/_variables.css">
         <link rel="stylesheet" href="/coursework-web-haliuk/assets/css/style.css">
         <script src="/coursework-web-haliuk/assets/js/main.js" defer></script>
+        <script src="/coursework-web-haliuk/assets/js/contact.js" defer></script>
     </head>
     <body class="not-found-page">
         <a class="skip-link" href="#main-content">Перейти до вмісту</a>
@@ -26,24 +27,39 @@
                     <a href="/coursework-web-haliuk/about.html" class="nav-btn about">Про мене</a>
                     <a href="/coursework-web-haliuk/portfolio.html" class="nav-btn portfolio">Портфоліо</a>
                     <a href="/coursework-web-haliuk/services.html" class="nav-btn services">Послуги</a>
-                    <a class="nav-btn mobile-contact-btn" href="mailto:damienbraun@gmail.com">Зв’язок</a>
+                    <button class="nav-btn mobile-contact-btn" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
                 </nav>
-                <a class="contact-btn" id="header-contact" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">Зв’язок</a>
+                <button class="contact-btn" id="header-contact" aria-label="Обговорити фотозйомку" type="button" data-dialog="contactModal" aria-haspopup="dialog">Зв’язок</button>
                 <button class="burger-menu" id="burger-menu" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
                     <span class="icon icon-menu" aria-hidden="true"></span>
                 </button>
             </div>
         </header>
         <main class="error-page" id="main-content" tabindex="-1">
-            <p class="about-subtitle">Помилка 404</p>
-            <h1 class="about-title">Цей кадр загубився</h1>
-            <p>Сторінку не знайдено. Можливо, адресу змінено або в ній є помилка. Оберіть потрібний розділ.</p>
-            <a class="about-btn" href="/coursework-web-haliuk/">На головну</a>
-            <nav aria-label="Розділи сайту">
-                <a href="/coursework-web-haliuk/about.html">Про мене</a>
-                <a href="/coursework-web-haliuk/portfolio.html">Портфоліо</a>
-                <a href="/coursework-web-haliuk/services.html">Послуги</a>
-            </nav>
+            <div class="error-copy">
+                <p class="error-eyebrow">Помилка 404</p>
+                <h1 class="error-title">Сторінку<br>не знайдено</h1>
+                <p class="error-description">Можливо, посилання застаріло або в адресі є помилка. Поверніться на головну, щоб продовжити знайомство з моїми роботами.</p>
+                <a class="action-btn-outline error-home-btn" href="/coursework-web-haliuk/">
+                    <span class="icon icon-left" aria-hidden="true"></span>
+                    Повернутися на головну
+                </a>
+            </div>
+            <div class="error-visual" aria-hidden="true">
+                <div class="error-code">
+                    <span>4</span>
+                    <svg class="error-lens" viewBox="0 0 160 160" width="160" height="160" fill="none" focusable="false">
+                        <circle cx="80" cy="80" r="76" fill="#121018" stroke="#39333f"></circle>
+                        <circle cx="80" cy="80" r="65" stroke="#4a2ced"></circle>
+                        <circle cx="80" cy="80" r="57" fill="#1c1537" stroke="#6e55ef"></circle>
+                        <path d="M80 53 125 44M103 66 134 103M103 94 91 137M80 107 35 116M57 94 26 57M57 66 69 23" stroke="#9b88f5" stroke-width="1.5"></path>
+                        <path d="m80 53 23 13v28l-23 13-23-13V66Z" fill="#070708" stroke="#9b88f5" stroke-width="1.5"></path>
+                        <circle cx="80" cy="80" r="3" fill="#9b88f5"></circle>
+                    </svg>
+                    <span>4</span>
+                </div>
+                <span class="error-visual-caption">Цей кадр загубився</span>
+            </div>
         </main>
         <footer class="main-footer">
             <h2 class="visually-hidden">Навігація та зв’язок</h2>
@@ -55,9 +71,9 @@
                         <div class="footer-call-to-action">
                             <div class="footer-cta-row">
                                 <span class="footer-cta-text">Нумо</span>
-                                <a class="footer-cta-btn" aria-label="Обговорити фотозйомку" href="mailto:damienbraun@gmail.com">
+                                <button class="footer-cta-btn" aria-label="Обговорити фотозйомку" type="button" data-dialog="contactModal" aria-haspopup="dialog">
                                     <span class="icon icon-arrow" aria-hidden="true"></span>
-                                </a>
+                                </button>
                             </div>
                             <span class="footer-cta-text">Співпрацюймо</span>
                         </div>
@@ -116,5 +132,48 @@
                 </div>
             </div>
         </footer>
+        <dialog class="dialog" id="contactModal" aria-labelledby="contact-title" aria-describedby="contact-help">
+            <button class="close-btn" type="button" data-close-dialog aria-label="Закрити форму">×</button>
+            <h2 class="dialog-title" id="contact-title">Обговорімо вашу зйомку</h2>
+            <form class="contact-form" id="contactForm" method="dialog" novalidate>
+                <div class="form-field">
+                    <label for="contact-name">Ваше ім’я (обов’язково)</label>
+                    <input class="modal-input" id="contact-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required minlength="2" maxlength="80" aria-describedby="contact-name-error" autofocus>
+                    <span class="field-error" id="contact-name-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-email">Електронна пошта (обов’язково)</label>
+                    <input class="modal-input" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" required maxlength="254" aria-describedby="contact-email-error">
+                    <span class="field-error" id="contact-email-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-service">Напрям зйомки</label>
+                    <select class="modal-input" id="contact-service" name="service" autocomplete="off" aria-describedby="contact-service-error">
+                        <option value="">Допоможіть обрати напрям</option>
+                        <option value="Портретна зйомка">Портретна зйомка</option>
+                        <option value="Зйомка подій">Зйомка подій</option>
+                        <option value="Комерційна зйомка">Комерційна зйомка</option>
+                    </select>
+                    <span class="field-error" id="contact-service-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-package">Пакет</label>
+                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="contact-package-error">
+                        <option value="">Обговорити без пакета</option>
+                    </select>
+                    <span class="field-error" id="contact-package-error"></span>
+                </div>
+                <div class="form-field">
+                    <label for="contact-message">Розкажіть про вашу ідею (обов’язково)</label>
+                    <textarea class="modal-textarea" id="contact-message" name="body" autocomplete="off" enterkeyhint="enter" required minlength="10" maxlength="2000" aria-describedby="contact-message-help contact-message-error"></textarea>
+                    <span class="form-help" id="contact-message-help">Від 10 до 2000 символів.</span>
+                    <span class="field-error" id="contact-message-error"></span>
+                </div>
+                <p class="form-help" id="contact-help">Підготуйте звернення й надішліть його зі своєї поштової програми. Цей сайт не надсилає лист автоматично. Чернетка зберігається лише на цій відкритій сторінці.</p>
+                <button class="action-btn-outline" type="submit">Підготувати лист</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+                <a class="form-mail-link" id="prepared-mail" hidden>Відкрити поштову програму</a>
+            </form>
+        </dialog>
     </body>
 </html>
