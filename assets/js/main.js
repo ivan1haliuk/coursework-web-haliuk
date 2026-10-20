@@ -61,7 +61,7 @@
             }
         });
 
-        document.addEventListener('click', (event) => {
+        document.addEventListener('pointerdown', (event) => {
             if (!event.target.closest('.navbar')) {
                 closeMenu();
             }
@@ -74,7 +74,9 @@
         });
 
         navigation.addEventListener('focusout', (event) => {
-            if (!navigation.contains(event.relatedTarget) && event.relatedTarget !== burger) {
+            // Safari can blur a tapped link before click without a new focus target.
+            const next = event.relatedTarget;
+            if (next && !navigation.contains(next) && next !== burger) {
                 closeMenu();
             }
         });
