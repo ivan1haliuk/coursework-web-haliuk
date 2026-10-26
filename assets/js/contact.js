@@ -114,17 +114,9 @@
             form.dataset.state = 'idle';
         }
 
-        const packages = [
-            { service: 'Портретна зйомка', name: 'Індивідуальна' },
-            { service: 'Портретна зйомка', name: 'Сімейна' },
-            { service: 'Портретна зйомка', name: 'Для пари' },
-            { service: 'Зйомка подій', name: 'Весільна зйомка' },
-            { service: 'Зйомка подій', name: 'Зйомка вечірки' },
-            { service: 'Зйомка подій', name: 'Корпоративні події' },
-            { service: 'Комерційна зйомка', name: 'Предметна зйомка' },
-            { service: 'Комерційна зйомка', name: 'Зйомка нерухомості' },
-            { service: 'Комерційна зйомка', name: 'Зйомка для бренду' },
-        ];
+        const packages = window.servicePackages.flatMap((category) => category.packages.map((item) => ({
+            service: category.service, name: item.name,
+        })));
 
         function syncPackages() {
             const selected = packageField.value;

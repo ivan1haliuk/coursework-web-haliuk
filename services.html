@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="assets/css/services.css">
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
         <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/service-packages.js" defer></script>
         <script src="assets/js/contact.js" defer></script>
         <script src="assets/js/services.js" defer></script>
     </head>
@@ -89,48 +90,7 @@
                         <p class="visually-hidden" role="status" data-slide-status></p>
                     </div>
                 </div>
-                <article class="service-package" id="individual" aria-labelledby="individual-heading">
-                    <div class="service-package-summary">
-                        <h3 id="individual-heading">Індивідуальна</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price">$250</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Індивідуальна" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Портретна зйомка" data-package="Індивідуальна">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Для збереження вашого неповторного характеру та стилю.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>2 години зйомки та 20 професійно оброблених фотографій.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $10 за кожну.</span></li>
-                    </ul>
-                </article>
-                <article class="service-package" id="family" aria-labelledby="family-heading">
-                    <div class="service-package-summary">
-                        <h3 id="family-heading">Сімейна</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price">$400</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Сімейна" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Портретна зйомка" data-package="Сімейна">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Для теплих спогадів разом із близькими.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>3 години зйомки та 30 професійно оброблених фотографій.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $10 за кожну.</span></li>
-                    </ul>
-                </article>
-                <article class="service-package" id="couple" aria-labelledby="couple-heading">
-                    <div class="service-package-summary">
-                        <h3 id="couple-heading">Для пари</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price">$300</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Для пари" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Портретна зйомка" data-package="Для пари">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Ваша історія кохання в камерній фотосесії.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>2,5 години зйомки та 25 професійно оброблених фотографій.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $10 за кожну.</span></li>
-                    </ul>
-                </article>
+                <div class="service-packages" data-service-packages="portraits"><noscript><p>Увімкніть JavaScript, щоб переглянути пакети зйомки.</p></noscript></div>
             </section>
             <section class="service-category page-container" id="events" aria-labelledby="events-heading">
                 <div class="service-overview">
@@ -165,47 +125,7 @@
                         <p class="visually-hidden" role="status" data-slide-status></p>
                     </div>
                 </div>
-                <article class="service-package" id="wedding" aria-labelledby="wedding-heading">
-                    <div class="service-package-summary">
-                        <h3 id="wedding-heading">Весільна зйомка</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price">$1 500</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Весільна зйомка" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Зйомка подій" data-package="Весільна зйомка">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Збережіть магію вашого особливого дня.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Зйомка протягом усього дня, другий фотограф і понад 300 професійно оброблених фото.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Склад пакета можна адаптувати до потреб вашого весілля.</span></li>
-                    </ul>
-                </article>
-                <article class="service-package" id="party" aria-labelledby="party-heading">
-                    <div class="service-package-summary">
-                        <h3 id="party-heading">Зйомка вечірки</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price">$800</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Зйомка вечірки" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Зйомка подій" data-package="Зйомка вечірки">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Збережіть веселощі та яскраві емоції вашої події.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>До 4 годин зйомки та понад 150 професійно оброблених фотографій.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові години — $150 за годину.</span></li>
-                    </ul>
-                </article>
-                <article class="service-package" id="corporate" aria-labelledby="corporate-heading">
-                    <div class="service-package-summary">
-                        <h3 id="corporate-heading">Корпоративні події</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price service-price-custom">Індивідуальний розрахунок</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Корпоративні події" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Зйомка подій" data-package="Корпоративні події">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Індивідуальні рішення для корпоративних зустрічей, конференцій і семінарів.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Зверніться для розрахунку вартості відповідно до вимог вашої події.</span></li>
-                    </ul>
-                </article>
+                <div class="service-packages" data-service-packages="events"></div>
             </section>
             <section class="service-category page-container" id="commercial" aria-labelledby="commercial-heading">
                 <div class="service-overview">
@@ -240,47 +160,7 @@
                         <p class="visually-hidden" role="status" data-slide-status></p>
                     </div>
                 </div>
-                <article class="service-package" id="product" aria-labelledby="product-heading">
-                    <div class="service-package-summary">
-                        <h3 id="product-heading">Предметна зйомка</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price">$500</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Предметна зйомка" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Комерційна зйомка" data-package="Предметна зйомка">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Покажіть свої товари в найкращому світлі.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Пів дня зйомки, 20 професійно оброблених фото товарів і файли високої роздільності.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $20 за кожну.</span></li>
-                    </ul>
-                </article>
-                <article class="service-package" id="real-estate" aria-labelledby="real-estate-heading">
-                    <div class="service-package-summary">
-                        <h3 id="real-estate-heading">Зйомка нерухомості</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price">$700</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Зйомка нерухомості" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Комерційна зйомка" data-package="Зйомка нерухомості">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Підкресліть красу ваших об’єктів нерухомості.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Інтер’єрні та екстер’єрні кадри, 2 години зйомки й 25 професійно оброблених фото.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Додаткові фотографії — $20 за кожну.</span></li>
-                    </ul>
-                </article>
-                <article class="service-package" id="brand" aria-labelledby="brand-heading">
-                    <div class="service-package-summary">
-                        <h3 id="brand-heading">Зйомка для бренду</h3>
-                        <div class="service-package-price-row">
-                            <p class="service-price service-price-custom">Індивідуальний розрахунок</p>
-                            <button class="portfolio-card-btn" aria-label="Записатися: Зйомка для бренду" type="button" data-dialog="contactModal" aria-haspopup="dialog" data-service="Комерційна зйомка" data-package="Зйомка для бренду">Записатися <span class="icon icon-arrow" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <ul class="service-features">
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Візуальна історія, що відповідає ідентичності вашого бренду.</span></li>
-                            <li><span class="icon icon-highlight" aria-hidden="true"></span><span>Напишіть про завдання бренду, щоб обговорити зйомку й отримати індивідуальний розрахунок.</span></li>
-                    </ul>
-                </article>
+                <div class="service-packages" data-service-packages="commercial"></div>
             </section>
             <section class="faq-section" id="faq" aria-labelledby="faq-heading">
                 <div class="faq-header"><div class="faq-text-container">

@@ -1,6 +1,72 @@
 (() => {
     'use strict';
 
+    const packageLists = [...document.querySelectorAll('[data-service-packages]')];
+
+    function element(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) {
+            node.className = className;
+        }
+        if (text) {
+            node.textContent = text;
+        }
+        return node;
+    }
+
+    function icon(name) {
+        const node = element('span', 'icon icon-' + name);
+        node.setAttribute('aria-hidden', 'true');
+        return node;
+    }
+
+    function packageCard(item, service) {
+        const article = element('article', 'service-package');
+        article.id = item.id;
+        article.setAttribute('aria-labelledby', item.id + '-heading');
+        const summary = element('div', 'service-package-summary');
+        const heading = element('h3', '', item.name);
+        heading.id = item.id + '-heading';
+        const row = element('div', 'service-package-price-row');
+        const price = element('p', 'service-price' + (item.customPrice ? ' service-price-custom' : ''), item.price);
+        const button = element('button', 'portfolio-card-btn', 'Записатися ');
+        button.type = 'button';
+        button.dataset.dialog = 'contactModal';
+        button.dataset.service = service;
+        button.dataset.package = item.name;
+        button.setAttribute('aria-label', 'Записатися: ' + item.name);
+        button.setAttribute('aria-haspopup', 'dialog');
+        button.append(icon('arrow'));
+        row.append(price, button);
+        summary.append(heading, row);
+        const features = element('ul', 'service-features');
+        item.features.forEach((feature) => {
+            const li = element('li');
+            li.append(icon('highlight'), element('span', '', feature));
+            features.append(li);
+        });
+        article.append(summary, features);
+        return article;
+    }
+
+    packageLists.forEach((list) => {
+        const category = window.servicePackages.find((item) => item.id === list.dataset.servicePackages);
+        const fragment = document.createDocumentFragment();
+        category.packages.forEach((item) => fragment.append(packageCard(item, category.service)));
+        list.replaceChildren(fragment);
+    });
+
+    let anchor = location.hash.slice(1);
+    try {
+        anchor = decodeURIComponent(anchor);
+    } catch {
+        // An invalid URL fragment must not prevent the page from working.
+    }
+    const target = document.getElementById(anchor);
+    if (target?.classList.contains('service-package')) {
+        target.scrollIntoView();
+    }
+
     document.querySelectorAll('[data-service-gallery]').forEach((gallery) => {
         const track = gallery.querySelector('.service-slides');
         const controls = [...gallery.querySelectorAll('[data-slide-step]')];
