@@ -2,6 +2,9 @@
     'use strict';
 
     const packageLists = [...document.querySelectorAll('[data-service-packages]')];
+    const dataState = document.getElementById('services-data-state');
+    const dataMessage = dataState.querySelector('[data-catalog-message]');
+    const retry = dataState.querySelector('[data-catalog-retry]');
 
     function element(tag, className, text) {
         const node = document.createElement(tag);
@@ -49,23 +52,41 @@
         return article;
     }
 
-    packageLists.forEach((list) => {
-        const category = window.servicePackages.find((item) => item.id === list.dataset.servicePackages);
-        const fragment = document.createDocumentFragment();
-        category.packages.forEach((item) => fragment.append(packageCard(item, category.service)));
-        list.replaceChildren(fragment);
+    window.serviceCatalog.subscribe(({ status, data }) => {
+        dataState.hidden = status === 'success';
+        retry.hidden = status !== 'error';
+        retry.disabled = status === 'loading';
+        dataMessage.textContent = status === 'error'
+            ? 'Не вдалося завантажити пакети зйомки. Перевірте з’єднання та спробуйте ще раз.'
+            : 'Завантажуємо пакети зйомки…';
+        packageLists.forEach((list) => {
+            list.setAttribute('aria-busy', String(status === 'loading'));
+            if (status !== 'success') {
+                return;
+            }
+            const category = data.categories.find((item) => item.id === list.dataset.servicePackages);
+            const fragment = document.createDocumentFragment();
+            category.packages.forEach((item) => fragment.append(packageCard(item, category.service)));
+            list.replaceChildren(fragment);
+        });
+        if (status === 'success') {
+            // Package anchors may be requested before the asynchronous cards exist.
+            let anchor = location.hash.slice(1);
+            try {
+                anchor = decodeURIComponent(anchor);
+            } catch {
+                // A malformed URL fragment must not prevent the catalog from loading.
+            }
+            const target = document.getElementById(anchor);
+            if (target?.classList.contains('service-package')) {
+                target.scrollIntoView();
+            }
+        }
     });
-
-    let anchor = location.hash.slice(1);
-    try {
-        anchor = decodeURIComponent(anchor);
-    } catch {
-        // An invalid URL fragment must not prevent the page from working.
-    }
-    const target = document.getElementById(anchor);
-    if (target?.classList.contains('service-package')) {
-        target.scrollIntoView();
-    }
+    retry.addEventListener('click', () => {
+        window.serviceCatalog.load().catch(() => {});
+    });
+    window.serviceCatalog.load().catch(() => {});
 
     document.querySelectorAll('[data-service-gallery]').forEach((gallery) => {
         const track = gallery.querySelector('.service-slides');

@@ -114,12 +114,13 @@
             form.dataset.state = 'idle';
         }
 
-        const packages = window.servicePackages.flatMap((category) => category.packages.map((item) => ({
-            service: category.service, name: item.name,
-        })));
+        let packages = [];
+        let requestedPackage = '';
+        const packageStatus = document.getElementById('package-status');
+        const packageRetry = document.getElementById('package-retry');
 
         function syncPackages() {
-            const selected = packageField.value;
+            const selected = packageField.value || requestedPackage;
             const placeholder = new Option('Обговорити без пакета', '');
             const fragment = document.createDocumentFragment();
             fragment.append(placeholder);
@@ -138,7 +139,31 @@
             packageField.value = packages.some((item) => item.name === selected
                 && (!service.value || item.service === service.value)) ? selected : '';
         }
-        syncPackages();
+        window.serviceCatalog.subscribe(({ status, data }) => {
+            packageField.disabled = status !== 'success';
+            packageRetry.hidden = status !== 'error';
+            packageRetry.disabled = status === 'loading';
+            if (status === 'success') {
+                packages = data.categories.flatMap((category) => category.packages.map((item) => ({
+                    service: category.service, name: item.name,
+                })));
+                syncPackages();
+                requestedPackage = '';
+                packageStatus.textContent = '';
+                packageStatus.hidden = true;
+            } else {
+                packageStatus.hidden = false;
+                packageStatus.textContent = status === 'error'
+                    ? 'Не вдалося завантажити пакети. Спробуйте ще раз або обговоріть зйомку без пакета.'
+                    : 'Завантажуємо пакети зйомки…';
+                packageField.replaceChildren(new Option(status === 'error'
+                    ? 'Пакети тимчасово недоступні' : 'Завантажуємо пакети…', ''));
+            }
+        });
+        packageRetry.addEventListener('click', () => {
+            window.serviceCatalog.load().catch(() => {});
+        });
+        window.serviceCatalog.load().catch(() => {});
 
         function validateField(field) {
             const value = field.value.trim();
@@ -169,7 +194,10 @@
             });
         });
         service.addEventListener('change', () => {
-            syncPackages();
+            requestedPackage = '';
+            if (!packageField.disabled) {
+                syncPackages();
+            }
             clearPreparedMail();
             validateField(packageField);
         });
@@ -186,8 +214,12 @@
             // General contact preserves the draft; an explicit booking replaces only the selection.
             if (event.detail.service) {
                 service.value = event.detail.service;
-                syncPackages();
-                packageField.value = event.detail.package || '';
+                requestedPackage = event.detail.package || '';
+                if (!packageField.disabled) {
+                    syncPackages();
+                    packageField.value = requestedPackage;
+                    requestedPackage = '';
+                }
                 clearPreparedMail();
                 [service, packageField].forEach((field) => {
                     field.removeAttribute('aria-invalid');

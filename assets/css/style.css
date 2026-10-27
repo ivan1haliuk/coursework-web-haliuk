@@ -2016,6 +2016,12 @@ body.dialog-open {
     display: none;
 }
 
+[data-catalog-retry][hidden],
+#package-retry[hidden],
+#package-status[hidden] {
+    display: none;
+}
+
 .contact-form[data-state="error"] .form-status {
     color: #f6a2a2;
 }

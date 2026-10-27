@@ -54,6 +54,18 @@
     border-top: 1px solid var(--border-color);
 }
 
+.services-data-state {
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    color: var(--text-muted);
+}
+
+.services-data-state[hidden] {
+    display: none;
+}
+
 .service-category#portraits {
     margin-top: 5rem;
 }

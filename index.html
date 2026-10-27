@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
         <script src="assets/js/main.js" defer></script>
-        <script src="assets/js/service-packages.js" defer></script>
+        <script src="assets/js/service-data.js" defer></script>
         <script src="assets/js/contact.js" defer></script>
     </head>
     <body>
@@ -702,9 +702,11 @@
                 </div>
                 <div class="form-field">
                     <label for="contact-package">Пакет</label>
-                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="contact-package-error">
-                        <option value="">Обговорити без пакета</option>
+                    <select class="modal-input" id="contact-package" name="package" autocomplete="off" aria-describedby="package-status contact-package-error" disabled>
+                        <option value="">Завантажуємо пакети…</option>
                     </select>
+                    <p class="form-help" id="package-status" role="status">Завантажуємо пакети зйомки…</p>
+                    <button class="portfolio-card-btn" type="button" id="package-retry" hidden>Спробувати ще раз</button>
                     <span class="field-error" id="contact-package-error"></span>
                 </div>
                 <div class="form-field">
