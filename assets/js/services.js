@@ -48,7 +48,10 @@
             li.append(icon('highlight'), element('span', '', feature));
             features.append(li);
         });
-        article.append(summary, features);
+        article.append(summary);
+        if (item.features.length) {
+            article.append(features);
+        }
         return article;
     }
 
@@ -67,7 +70,13 @@
             const category = data.categories.find((item) => item.id === list.dataset.servicePackages);
             const fragment = document.createDocumentFragment();
             category.packages.forEach((item) => fragment.append(packageCard(item, category.service)));
+            if (!category.packages.length) {
+                const empty = element('p', 'service-packages-empty', 'Пакети цього напряму тимчасово недоступні. Зв’яжіться зі мною, щоб обговорити вашу зйомку.');
+                empty.setAttribute('role', 'status');
+                fragment.append(empty);
+            }
             list.replaceChildren(fragment);
+            document.getElementById(category.id + '-heading').textContent = category.service;
         });
         if (status === 'success') {
             // Package anchors may be requested before the asynchronous cards exist.

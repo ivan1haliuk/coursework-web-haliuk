@@ -167,6 +167,13 @@
     border-top: 1px solid var(--border-color);
 }
 
+.service-packages-empty {
+    padding-block: var(--service-row-padding);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: var(--body-size);
+}
+
 .service-package h3 {
     color: #cacace;
     font-size: 1rem;
@@ -186,10 +193,11 @@
 }
 
 .service-price {
+    max-width: 100%;
     color: #cacace;
     font-size: 2.125rem;
     font-weight: 500;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .service-price-custom {

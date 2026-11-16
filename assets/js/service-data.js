@@ -2,6 +2,7 @@
     'use strict';
 
     const source = new URL('../data/services.json', document.currentScript.src);
+    const reservedIds = new Set([...document.querySelectorAll('[id]')].map((element) => element.id));
     const listeners = new Set();
     let state = { status: 'idle', data: null };
     let request = null;
@@ -13,25 +14,37 @@
 
     function validate(data) {
         const categoryIds = ['portraits', 'events', 'commercial'];
+        const categories = new Set();
+        const services = new Set();
         const ids = new Set();
         const names = new Set();
         const text = (value) => typeof value === 'string' && value.trim().length > 0;
         if (!data || !Array.isArray(data.categories) || data.categories.length !== categoryIds.length) {
             throw new Error('Invalid service categories');
         }
-        data.categories.forEach((category, index) => {
-            if (!category || category.id !== categoryIds[index] || !text(category.service)
-                || !Array.isArray(category.packages) || !category.packages.length) {
+        data.categories.forEach((category) => {
+            if (!category || !categoryIds.includes(category.id) || categories.has(category.id)
+                || !text(category.service) || services.has(category.service.trim())
+                || !Array.isArray(category.packages)) {
                 throw new Error('Invalid service category');
             }
+            categories.add(category.id);
+            services.add(category.service.trim());
+            category.service = category.service.trim();
             category.packages.forEach((item) => {
-                if (!item || !/^[a-z]+(?:-[a-z]+)*$/.test(item.id) || ids.has(item.id)
-                    || document.getElementById(item.id) || !text(item.name) || names.has(item.name)
+                if (!item || typeof item.id !== 'string' || !/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(item.id)
+                    || ids.has(item.id) || ids.has(item.id + '-heading')
+                    || reservedIds.has(item.id) || reservedIds.has(item.id + '-heading')
+                    || !text(item.name) || names.has(item.name.trim())
                     || !text(item.price) || typeof item.customPrice !== 'boolean'
-                    || !Array.isArray(item.features) || !item.features.length || !item.features.every(text)) {
+                    || !Array.isArray(item.features) || !item.features.every(text)) {
                     throw new Error('Invalid service package');
                 }
                 ids.add(item.id);
+                ids.add(item.id + '-heading');
+                item.name = item.name.trim();
+                item.price = item.price.trim();
+                item.features = item.features.map((feature) => feature.trim());
                 names.add(item.name);
             });
         });

@@ -115,17 +115,19 @@
         }
 
         let packages = [];
+        let catalogLoaded = false;
         let requestedPackage = '';
         const packageStatus = document.getElementById('package-status');
         const packageRetry = document.getElementById('package-retry');
 
         function syncPackages() {
             const selected = packageField.value || requestedPackage;
+            const available = packages.filter((item) => !service.value || item.service === service.value);
             const placeholder = new Option('Обговорити без пакета', '');
             const fragment = document.createDocumentFragment();
             fragment.append(placeholder);
             const groups = new Map();
-            packages.filter((item) => !service.value || item.service === service.value).forEach((item) => {
+            available.forEach((item) => {
                 if (!groups.has(item.service)) {
                     const group = document.createElement('optgroup');
                     group.label = item.service;
@@ -138,19 +140,30 @@
             packageField.replaceChildren(fragment);
             packageField.value = packages.some((item) => item.name === selected
                 && (!service.value || item.service === service.value)) ? selected : '';
+            packageField.disabled = !available.length;
+            packageStatus.hidden = available.length > 0;
+            packageStatus.textContent = available.length ? ''
+                : 'Пакети тимчасово недоступні. Ви можете обговорити зйомку без пакета.';
         }
         window.serviceCatalog.subscribe(({ status, data }) => {
+            catalogLoaded = status === 'success';
             packageField.disabled = status !== 'success';
             packageRetry.hidden = status !== 'error';
             packageRetry.disabled = status === 'loading';
             if (status === 'success') {
+                const previousService = service.value;
+                const previousPackage = packageField.value;
+                service.replaceChildren(new Option('Допоможіть обрати напрям', ''),
+                    ...data.categories.map((category) => new Option(category.service, category.service)));
+                service.value = data.categories.some((category) => category.service === previousService) ? previousService : '';
                 packages = data.categories.flatMap((category) => category.packages.map((item) => ({
                     service: category.service, name: item.name,
                 })));
                 syncPackages();
                 requestedPackage = '';
-                packageStatus.textContent = '';
-                packageStatus.hidden = true;
+                if (previousService !== service.value || previousPackage !== packageField.value) {
+                    clearPreparedMail();
+                }
             } else {
                 packageStatus.hidden = false;
                 packageStatus.textContent = status === 'error'
@@ -195,7 +208,7 @@
         });
         service.addEventListener('change', () => {
             requestedPackage = '';
-            if (!packageField.disabled) {
+            if (catalogLoaded) {
                 syncPackages();
             }
             clearPreparedMail();
@@ -215,7 +228,7 @@
             if (event.detail.service) {
                 service.value = event.detail.service;
                 requestedPackage = event.detail.package || '';
-                if (!packageField.disabled) {
+                if (catalogLoaded) {
                     syncPackages();
                     packageField.value = requestedPackage;
                     requestedPackage = '';
