@@ -1,3 +1,4 @@
+/* Базові стилі елементів сторінки */
 *,
 *::before,
 *::after {
@@ -59,6 +60,7 @@ img {
     outline-offset: 5px;
 }
 
+/* Службовий текст для програм читання з екрана */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -70,6 +72,7 @@ img {
     border: 0;
 }
 
+/* Перехід клавіатурою до основного вмісту */
 .skip-link {
     position: fixed;
     top: 1rem;
@@ -85,7 +88,8 @@ img {
     transform: translateY(0);
 }
 
-/* Shared controls */
+
+/* Спільний спрайт іконок */
 .icon {
     --icon-size: 1.5rem;
     display: inline-block;
@@ -93,7 +97,7 @@ img {
     width: var(--icon-size);
     height: var(--icon-size);
     background: url("../images/icons/sprite.png") no-repeat;
-    /* Each 32px sprite cell includes padding around the original 24px icon. */
+
     background-size: calc(var(--icon-size) * 18) calc(var(--icon-size) * 1.5);
     background-position: calc(var(--icon-size) * var(--icon-index) * -1.5 - var(--icon-size) / 4) center;
     vertical-align: middle;
@@ -145,6 +149,7 @@ img {
     display: none;
 }
 
+/* Кнопки та спільні елементи керування */
 .contact-btn,
 .about-btn,
 .view-all-btn,
@@ -238,7 +243,8 @@ img {
     display: none;
 }
 
-/* Header */
+
+/* Шапка сайту та мобільне меню */
 .header {
     position: sticky;
     top: 0;
@@ -340,7 +346,8 @@ img {
     display: none;
 }
 
-/* Intro and collage */
+
+/* Головний екран і колаж фотографій */
 .hero-sub {
     position: relative;
     display: flex;
@@ -483,7 +490,8 @@ img {
     height: 40.04%;
 }
 
-/* Section layout */
+
+/* Заголовки та відступи розділів */
 .about-section,
 .services-section,
 .portfolio-works-section,
@@ -561,7 +569,8 @@ img {
     gap: 0.75rem;
 }
 
-/* About */
+
+/* Коротка інформація про фотографа */
 .about-content {
     display: grid;
     gap: 1.25rem;
@@ -653,7 +662,8 @@ img {
     width: 100%;
 }
 
-/* Services */
+
+/* Огляд послуг на головній сторінці */
 .services-content[hidden] {
     display: none;
 }
@@ -735,7 +745,8 @@ img {
     text-transform: uppercase;
 }
 
-/* Portfolio and review carousels */
+
+/* Карусель робіт портфоліо */
 .portfolio-cards-container,
 .testimonials-cards-container {
     --visible-cards: 1;
@@ -807,7 +818,8 @@ img {
     text-transform: uppercase;
 }
 
-/* FAQ */
+
+/* Запитання та відповіді */
 .faq-content {
     display: grid;
     padding-block: 1.25rem;
@@ -861,7 +873,8 @@ img {
     line-height: 1.5;
 }
 
-/* Reviews */
+
+/* Картки відгуків клієнтів */
 .testimonials-header-left,
 .testimonials-total-reviews {
     display: grid;
@@ -938,7 +951,7 @@ img {
     line-height: 1.5;
 }
 
-/* Footer */
+
 .bottom-logo-section {
     width: calc(100% - var(--page-gutter) * 2);
     max-width: var(--content-width);
@@ -955,6 +968,7 @@ img {
     width: var(--footer-logo-width);
 }
 
+/* Спільний підвал сайту */
 .main-footer {
     position: relative;
 }
@@ -1099,6 +1113,7 @@ img {
     font-size: var(--footer-font-size);
 }
 
+/* Сторінка помилки 404 */
 .error-page {
     display: grid;
     align-items: center;
@@ -1217,6 +1232,7 @@ img {
     font-size: var(--subtitle-size);
 }
 
+/* Компонування для ноутбуків */
 @media (min-width: 64rem) {
     .error-page {
         grid-template-columns: 1fr 1fr;
@@ -1260,7 +1276,7 @@ img {
     object-fit: cover;
 }
 
-/* Small-screen controls follow their content, as in the mobile frame. */
+
 .services-container,
 .portfolio-works-container,
 .testimonials-container {
@@ -1355,7 +1371,8 @@ img {
     display: none;
 }
 
-/* Tablet */
+
+/* Компонування для планшетів */
 @media (min-width: 40rem) {
     :root {
         --page-gutter: 2.5rem;
@@ -1389,7 +1406,7 @@ img {
 
 }
 
-/* Laptop */
+
 @media (min-width: 64rem) {
     :root {
         --page-gutter: 5.555556vw;
@@ -1689,7 +1706,8 @@ img {
 
 }
 
-/* Wide desktop */
+
+/* Компонування для широких екранів */
 @media (min-width: 110rem) {
     :root {
         --page-gutter: 8.4375vw;
@@ -1899,24 +1917,27 @@ img {
     }
 }
 
+/* Зменшення анімації за налаштуванням користувача */
 @media (prefers-reduced-motion: reduce) {
     .marquee-content {
         animation: none;
     }
 }
 
+/* Анімація рядка напрямів зйомки */
 @keyframes marquee {
     to {
         transform: translateX(-100%);
     }
 }
 
-/* Contact form */
+
 html.dialog-open,
 body.dialog-open {
     overflow: hidden;
 }
 
+/* Модальне вікно та форма звернення */
 .dialog {
     width: min(35rem, calc(100% - 2rem));
     max-height: calc(100dvh - 2rem);

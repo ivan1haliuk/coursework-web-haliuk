@@ -1,3 +1,4 @@
+/* Відступи та розміри сторінки послуг */
 .services-page {
     --footer-logo-width: 19.6875rem;
     --logo-bottom-gap: 1.25rem;
@@ -13,6 +14,7 @@
     margin-inline: auto;
 }
 
+/* Вступний блок послуг */
 .services-intro {
     position: relative;
     display: grid;
@@ -54,6 +56,7 @@
     border-top: 1px solid var(--border-color);
 }
 
+/* Повідомлення про завантаження та помилку даних */
 .services-data-state {
     display: grid;
     justify-items: start;
@@ -70,6 +73,7 @@
     margin-top: 5rem;
 }
 
+/* Опис окремого напряму зйомки */
 .service-overview {
     display: grid;
     align-items: center;
@@ -100,6 +104,7 @@
     color: var(--text-white);
 }
 
+/* Галереї фотографій послуг */
 .service-gallery,
 .service-slides {
     position: relative;
@@ -128,6 +133,7 @@
     object-fit: cover;
 }
 
+/* Плавний контур біля кнопок галереї */
 .service-slide-extra::after {
     position: absolute;
     inset: 0;
@@ -158,6 +164,7 @@
     --icon-size: 1.75rem;
 }
 
+/* Картки пакетів і порожній стан */
 .service-package {
     display: grid;
     align-items: center;
@@ -207,6 +214,7 @@
     white-space: normal;
 }
 
+/* Список характеристик пакета */
 .service-features {
     display: grid;
     gap: 0.5rem;
@@ -233,6 +241,7 @@
     flex: 0 0 auto;
 }
 
+/* Компонування запитань і відповідей */
 .services-page .faq-col {
     display: grid;
     align-content: start;
@@ -255,6 +264,7 @@ html:not(.js) .services-page .faq-col-right {
     display: grid;
 }
 
+/* Компонування для планшетів */
 @media (min-width: 40rem) {
     .services-intro {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -271,6 +281,7 @@ html:not(.js) .services-page .faq-col-right {
     }
 }
 
+/* Компонування для ноутбуків */
 @media (min-width: 64rem) {
     .services-page {
         --footer-logo-width: 52.875rem;
@@ -325,6 +336,7 @@ html:not(.js) .services-page .faq-col-right {
     }
 }
 
+/* Компонування для великих ноутбуків */
 @media (min-width: 90rem) {
     .services-intro {
         grid-template-columns: minmax(0, 1fr);
@@ -378,6 +390,7 @@ html:not(.js) .services-page .faq-col-right {
     }
 }
 
+/* Компонування для широких екранів */
 @media (min-width: 110rem) {
     .services-page {
         --footer-logo-width: 66.125rem;

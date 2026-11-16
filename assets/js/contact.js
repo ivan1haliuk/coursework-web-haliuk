@@ -1,12 +1,14 @@
 (() => {
     'use strict';
 
+    // Спільні елементи навігації для роботи модального вікна
     const desktop = window.matchMedia('(min-width: 64rem)');
     const burger = document.getElementById('burger-menu');
     const navigation = document.getElementById('nav-links');
 
     const dialogTriggers = new WeakMap();
     let pageScroll = { x: 0, y: 0 };
+    // Утримання клавіатурного фокуса всередині відкритого вікна
     document.querySelectorAll('dialog').forEach((dialog) => {
         dialog.addEventListener('keydown', (event) => {
             if (event.key !== 'Tab') {
@@ -27,6 +29,7 @@
             }
         });
 
+        // Закриття вікна лише після натискання на фонову область
         function isBackdrop(event) {
             const bounds = dialog.getBoundingClientRect();
             const outside = event.clientX < bounds.left || event.clientX > bounds.right
@@ -44,6 +47,7 @@
             pointerStartedOutside = false;
         });
 
+        // Відновлення прокручування та фокуса після закриття
         dialog.addEventListener('close', () => {
             if (document.querySelector('dialog[open]')) {
                 return;
@@ -59,6 +63,7 @@
         });
     });
 
+    // Відкриття та закриття вікна через кнопки сторінки
     document.addEventListener('click', (event) => {
         const closeButton = event.target.closest('[data-close-dialog]');
         if (closeButton) {
@@ -94,6 +99,7 @@
         dialog.querySelector('[autofocus]')?.focus({ preventScroll: true });
     });
 
+    // Поля форми та стан підготовки листа
     const form = document.getElementById('contactForm');
     if (form) {
         form.noValidate = true;
@@ -120,6 +126,7 @@
         const packageStatus = document.getElementById('package-status');
         const packageRetry = document.getElementById('package-retry');
 
+        // Вибір пакетів відповідно до напряму зйомки
         function syncPackages() {
             const selected = packageField.value || requestedPackage;
             const available = packages.filter((item) => !service.value || item.service === service.value);
@@ -145,6 +152,7 @@
             packageStatus.textContent = available.length ? ''
                 : 'Пакети тимчасово недоступні. Ви можете обговорити зйомку без пакета.';
         }
+        // Оновлення списків форми після завантаження JSON
         window.serviceCatalog.subscribe(({ status, data }) => {
             catalogLoaded = status === 'success';
             packageField.disabled = status !== 'success';
@@ -173,11 +181,13 @@
                     ? 'Пакети тимчасово недоступні' : 'Завантажуємо пакети…', ''));
             }
         });
+        // Повторне завантаження пакетів із форми
         packageRetry.addEventListener('click', () => {
             window.serviceCatalog.load().catch(() => {});
         });
         window.serviceCatalog.load().catch(() => {});
 
+        // Перевірка поля та виведення повідомлення про помилку
         function validateField(field) {
             const value = field.value.trim();
             let message = '';
@@ -198,6 +208,7 @@
             return !message;
         }
 
+        // Оновлення перевірки під час редагування полів
         fields.forEach((field) => {
             field.addEventListener('input', () => {
                 clearPreparedMail();
@@ -223,8 +234,8 @@
             clearPreparedMail();
             validateField(packageField);
         });
+        // Збереження чернетки та вибір пакета з натиснутої картки
         document.getElementById('contactModal').addEventListener('contact:open', (event) => {
-            // General contact preserves the draft; an explicit booking replaces only the selection.
             if (event.detail.service) {
                 service.value = event.detail.service;
                 requestedPackage = event.detail.package || '';
@@ -241,6 +252,7 @@
             }
         });
 
+        // Перевірка форми та підготовка посилання mailto
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
             if (preparing) {
@@ -263,7 +275,6 @@
             formStatus.textContent = 'Готуємо лист для поштової програми…';
             const currentRevision = revision;
             try {
-                // Yield through a paint so the pending state can be announced and displayed.
                 await new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 0)));
                 if (revision !== currentRevision) {
                     return;

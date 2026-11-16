@@ -1,17 +1,20 @@
 (() => {
     'use strict';
 
+    // Джерело JSON і спільний стан завантаження
     const source = new URL('../data/services.json', document.currentScript.src);
     const reservedIds = new Set([...document.querySelectorAll('[id]')].map((element) => element.id));
     const listeners = new Set();
     let state = { status: 'idle', data: null };
     let request = null;
 
+    // Сповіщення сторінки та форми про зміну стану
     function publish(status, data = null) {
         state = { status, data };
         listeners.forEach((listener) => listener(state));
     }
 
+    // Перевірка структури JSON, текстів і унікальності ідентифікаторів
     function validate(data) {
         const categoryIds = ['portraits', 'events', 'commercial'];
         const categories = new Set();
@@ -51,6 +54,7 @@
         return data;
     }
 
+    // Спільний fetch із тайм-аутом і обробкою помилок
     function load() {
         if (state.status === 'success') {
             return Promise.resolve(state.data);
@@ -81,6 +85,7 @@
         return request;
     }
 
+    // Доступ до каталогу для карток послуг і форми
     window.serviceCatalog = {
         load,
         subscribe(listener) {
