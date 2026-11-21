@@ -1,20 +1,20 @@
 (() => {
     'use strict';
 
-    // Джерело JSON і спільний стан завантаження
+    // JSON source and shared loading state
     const source = new URL('../data/services.json', document.currentScript.src);
     const reservedIds = new Set([...document.querySelectorAll('[id]')].map((element) => element.id));
     const listeners = new Set();
     let state = { status: 'idle', data: null };
     let request = null;
 
-    // Сповіщення сторінки та форми про зміну стану
+    // Notify the page and form when the state changes
     function publish(status, data = null) {
         state = { status, data };
         listeners.forEach((listener) => listener(state));
     }
 
-    // Перевірка структури JSON, текстів і унікальності ідентифікаторів
+    // Validate the JSON structure, text, and unique identifiers
     function validate(data) {
         const categoryIds = ['portraits', 'events', 'commercial'];
         const categories = new Set();
@@ -54,7 +54,7 @@
         return data;
     }
 
-    // Спільний fetch із тайм-аутом і обробкою помилок
+    // Shared fetch request with a timeout and error handling
     function load() {
         if (state.status === 'success') {
             return Promise.resolve(state.data);
@@ -85,7 +85,7 @@
         return request;
     }
 
-    // Доступ до каталогу для карток послуг і форми
+    // Expose catalog data to the service cards and form
     window.serviceCatalog = {
         load,
         subscribe(listener) {

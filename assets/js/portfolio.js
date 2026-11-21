@@ -1,7 +1,7 @@
 (() => {
     'use strict';
 
-    // Розкриття запитань і клавіатурна навігація
+    // Expand questions and navigate with the keyboard
     const questions = [...document.querySelectorAll('[data-faq-question]')];
     function expandQuestion(question, expanded) {
         question.setAttribute('aria-expanded', String(expanded));
@@ -25,7 +25,7 @@
             visible[next].focus();
         });
     });
-    // Елементи смуги логотипів
+    // Logo strip elements
     const brandSection = document.querySelector('.portfolio-brands');
     const brandViewport = brandSection.querySelector('.portfolio-brand-viewport');
     const brandTrack = document.getElementById('portfolio-brand-track');
@@ -34,7 +34,7 @@
 
     const wideBrands = window.matchMedia('(min-width: 64rem)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    // Положення логотипів залежно від ширини екрана
+    // Position logos based on screen width
     function alignBrands() {
         const manual = reducedMotion.matches || !brandTrack.hasAttribute('data-loop-ready');
         brandViewport.scrollLeft = wideBrands.matches || !manual ? 0
@@ -45,7 +45,7 @@
     reducedMotion.addEventListener('change', alignBrands);
     new ResizeObserver(alignBrands).observe(brandViewport);
 
-    // Зупинка та продовження руху логотипів
+    // Pause and resume logo motion
     function pauseBrands(paused) {
         brandToggle.setAttribute('aria-pressed', String(paused));
         brandToggle.setAttribute('aria-label', paused ? 'Продовжити рух логотипів' : 'Призупинити рух логотипів');
@@ -55,7 +55,7 @@
             brandViewport.scrollLeft = 0;
         }
     }
-    // Ручне прокручування логотипів без стрибка позиції
+    // Scroll logos manually without jumping
     function useManualBrands() {
         const transform = getComputedStyle(brandTrack).transform;
         const position = transform === 'none' ? brandViewport.scrollLeft
@@ -84,7 +84,7 @@
             : brandViewport.scrollLeft + (event.key === 'ArrowLeft' ? -1 : 1) * brandViewport.clientWidth * 0.65;
         brandViewport.scrollTo({ left, behavior: 'instant' });
     });
-    // Призупинення анімації поза екраном і на прихованій вкладці
+    // Pause animation off screen and in hidden tabs
     new IntersectionObserver(([entry]) => {
         brandSection.classList.toggle('brands-offscreen', !entry.isIntersecting);
     }).observe(brandSection);

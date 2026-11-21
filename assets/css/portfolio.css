@@ -1,11 +1,11 @@
-/* Ширина вмісту портфоліо */
+/* Portfolio content width */
 .page-container {
     width: calc(100% - var(--page-gutter) * 2);
     max-width: var(--content-width);
     margin-inline: auto;
 }
 
-/* Вступний блок із фотографією */
+/* Introduction with a photograph */
 .portfolio-intro {
     position: relative;
     display: grid;
@@ -44,7 +44,7 @@
     display: none;
 }
 
-/* Смуга брендів і керування її рухом */
+/* Brand strip and motion controls */
 .portfolio-brands {
     margin-top: 2.5rem;
 }
@@ -105,7 +105,7 @@
     text-transform: inherit;
 }
 
-/* Логотипи брендів зі спільного спрайта */
+/* Brand logos from the shared sprite */
 .portfolio-brand-logo {
     --brand-row: 0;
     --brand-width: 251.4286px;
@@ -138,7 +138,7 @@
     --brand-width: 183.7838px;
 }
 
-/* Категорії робіт і картки фотографій */
+/* Work categories and photo cards */
 .portfolio-category {
     margin-top: 0;
     padding-block: 2.5rem;
@@ -232,7 +232,7 @@
     --icon-size: 1.25rem;
 }
 
-/* Запитання та відповіді портфоліо */
+/* Portfolio questions and answers */
 .portfolio-faq-item {
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--border-color);
@@ -269,7 +269,7 @@
     display: none;
 }
 
-/* Налаштування сторінки та блоку відгуків */
+/* Page and testimonials layout */
 .portfolio-page {
     --footer-logo-width: 19.6875rem;
     --logo-bottom-gap: 1.25rem;
@@ -306,7 +306,7 @@ html:not(.js) .portfolio-page .testimonials-cards-container {
     grid-template-columns: minmax(0, 1fr);
 }
 
-/* Плавне прокручування логотипів */
+/* Smooth logo scrolling */
 @keyframes portfolio-brands-scroll {
     from {
         transform: translateX(0);
@@ -316,7 +316,7 @@ html:not(.js) .portfolio-page .testimonials-cards-container {
     }
 }
 
-/* Компонування для ноутбуків */
+/* Laptop layout */
 @media (min-width: 64rem) {
     .portfolio-page {
         --footer-logo-width: 52.875rem;
@@ -392,7 +392,7 @@ html:not(.js) .portfolio-page .testimonials-cards-container {
     }
 }
 
-/* Компонування для великих ноутбуків */
+/* Large laptop layout */
 @media (min-width: 90rem) {
     .portfolio-intro {
         grid-template-columns: minmax(0, 1fr);
@@ -456,7 +456,7 @@ html:not(.js) .portfolio-page .testimonials-cards-container {
     }
 }
 
-/* Компонування для широких екранів */
+/* Wide screen layout */
 @media (min-width: 110rem) {
     .portfolio-intro {
         margin-top: 6.25rem;
@@ -583,7 +583,7 @@ html:not(.js) .portfolio-page .testimonials-cards-container {
     }
 }
 
-/* Рух логотипів за дозволеної анімації */
+/* Logo motion when animations are enabled */
 @media (prefers-reduced-motion: no-preference) {
     .js .portfolio-brand-track[data-loop-ready] {
         animation: portfolio-brands-scroll 40s linear -12s infinite;

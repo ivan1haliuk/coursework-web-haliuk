@@ -1,11 +1,11 @@
-/* Ширина вмісту та бічні відступи */
+/* Content width and side margins */
 .page-container {
     width: calc(100% - var(--page-gutter) * 2);
     max-width: var(--content-width);
     margin-inline: auto;
 }
 
-/* Вступний блок сторінки про фотографа */
+/* Photographer introduction */
 .about-intro {
     position: relative;
     isolation: isolate;
@@ -41,7 +41,7 @@
     object-fit: cover;
 }
 
-/* Сітка показників роботи */
+/* Statistics grid */
 .about-statistics {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -79,7 +79,7 @@
     display: none;
 }
 
-/* Текст біографії */
+/* Biography text */
 .biography-section {
     display: grid;
     gap: 1.25rem;
@@ -103,7 +103,7 @@
     line-height: 1.5;
 }
 
-/* Хронологія професійного шляху */
+/* Career timeline */
 .journey-section {
     margin-top: var(--section-spacing);
 }
@@ -170,7 +170,7 @@
 }
 
 
-/* Відображення відгуків без JavaScript */
+/* Testimonials without JavaScript */
 html:not(.js) .about-page .testimonials-cards-container {
     grid-auto-flow: row;
     grid-template-columns: minmax(0, 1fr);
@@ -180,7 +180,7 @@ html:not(.js) .about-page .testimonials-actions {
     display: none;
 }
 
-/* Статистика на планшетах */
+/* Statistics on tablets */
 @media (min-width: 40rem) {
     .about-statistics {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -188,7 +188,7 @@ html:not(.js) .about-page .testimonials-actions {
     }
 }
 
-/* Компонування для ноутбуків */
+/* Laptop layout */
 @media (min-width: 64rem) {
     .journey-timeline {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -296,7 +296,7 @@ html:not(.js) .about-page .testimonials-actions {
     }
 }
 
-/* Компонування для широких екранів */
+/* Wide screen layout */
 @media (min-width: 110rem) {
     .about-page {
         --heading-size: clamp(3rem, 3.020833vw, 3.625rem);

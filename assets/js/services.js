@@ -6,7 +6,7 @@
     const dataMessage = dataState.querySelector('[data-catalog-message]');
     const retry = dataState.querySelector('[data-catalog-retry]');
 
-    // Допоміжні функції створення DOM-елементів та іконок
+    // Helpers for creating DOM elements and icons
     function element(tag, className, text) {
         const node = document.createElement(tag);
         if (className) {
@@ -24,7 +24,7 @@
         return node;
     }
 
-    // Створення картки пакета з об’єкта JSON
+    // Create a package card from a JSON object
     function packageCard(item, service) {
         const article = element('article', 'service-package');
         article.id = item.id;
@@ -57,7 +57,7 @@
         return article;
     }
 
-    // Стани завантаження та побудова списків пакетів
+    // Show loading states and render the package lists
     window.serviceCatalog.subscribe(({ status, data }) => {
         dataState.hidden = status === 'success';
         retry.hidden = status !== 'error';
@@ -82,7 +82,7 @@
             document.getElementById(category.id + '-heading').textContent = category.service;
         });
         if (status === 'success') {
-            // Перехід до пакета після завершення асинхронного завантаження
+            // Navigate to the package after the async request completes
             let anchor = location.hash.slice(1);
             try {
                 anchor = decodeURIComponent(anchor);
@@ -94,13 +94,13 @@
             }
         }
     });
-    // Повторне завантаження каталогу після помилки
+    // Retry loading the catalog after an error
     retry.addEventListener('click', () => {
         window.serviceCatalog.load().catch(() => {});
     });
     window.serviceCatalog.load().catch(() => {});
 
-    // Перемикання фотографій кнопками, свайпом і клавіатурою
+    // Switch photos with buttons, swipes, or the keyboard
     document.querySelectorAll('[data-service-gallery]').forEach((gallery) => {
         const track = gallery.querySelector('.service-slides');
         const controls = [...gallery.querySelectorAll('[data-slide-step]')];
@@ -158,7 +158,7 @@
         showSlide(0);
     });
 
-    // Навігація між запитаннями за допомогою клавіатури
+    // Navigate between questions using the keyboard
     const summaries = [...document.querySelectorAll('.services-page .faq-summary')];
     summaries.forEach((summary) => {
         summary.addEventListener('keydown', (event) => {

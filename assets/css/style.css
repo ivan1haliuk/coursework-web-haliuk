@@ -1,4 +1,4 @@
-/* Базові стилі елементів сторінки */
+/* Base element styles */
 *,
 *::before,
 *::after {
@@ -60,7 +60,7 @@ img {
     outline-offset: 5px;
 }
 
-/* Службовий текст для програм читання з екрана */
+/* Text for screen readers */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -72,7 +72,7 @@ img {
     border: 0;
 }
 
-/* Перехід клавіатурою до основного вмісту */
+/* Keyboard shortcut to the main content */
 .skip-link {
     position: fixed;
     top: 1rem;
@@ -89,7 +89,7 @@ img {
 }
 
 
-/* Спільний спрайт іконок */
+/* Shared icon sprite */
 .icon {
     --icon-size: 1.5rem;
     display: inline-block;
@@ -149,7 +149,7 @@ img {
     display: none;
 }
 
-/* Кнопки та спільні елементи керування */
+/* Buttons and shared controls */
 .contact-btn,
 .about-btn,
 .view-all-btn,
@@ -244,7 +244,7 @@ img {
 }
 
 
-/* Шапка сайту та мобільне меню */
+/* Site header and mobile menu */
 .header {
     position: sticky;
     top: 0;
@@ -347,7 +347,7 @@ img {
 }
 
 
-/* Головний екран і колаж фотографій */
+/* Hero section and photo collage */
 .hero-sub {
     position: relative;
     display: flex;
@@ -491,7 +491,7 @@ img {
 }
 
 
-/* Заголовки та відступи розділів */
+/* Section headings and spacing */
 .about-section,
 .services-section,
 .portfolio-works-section,
@@ -570,7 +570,7 @@ img {
 }
 
 
-/* Коротка інформація про фотографа */
+/* Photographer summary */
 .about-content {
     display: grid;
     gap: 1.25rem;
@@ -663,7 +663,7 @@ img {
 }
 
 
-/* Огляд послуг на головній сторінці */
+/* Home page services overview */
 .services-content[hidden] {
     display: none;
 }
@@ -746,7 +746,7 @@ img {
 }
 
 
-/* Карусель робіт портфоліо */
+/* Portfolio carousel */
 .portfolio-cards-container,
 .testimonials-cards-container {
     --visible-cards: 1;
@@ -819,7 +819,7 @@ img {
 }
 
 
-/* Запитання та відповіді */
+/* Questions and answers */
 .faq-content {
     display: grid;
     padding-block: 1.25rem;
@@ -874,7 +874,7 @@ img {
 }
 
 
-/* Картки відгуків клієнтів */
+/* Client testimonial cards */
 .testimonials-header-left,
 .testimonials-total-reviews {
     display: grid;
@@ -968,7 +968,7 @@ img {
     width: var(--footer-logo-width);
 }
 
-/* Спільний підвал сайту */
+/* Shared site footer */
 .main-footer {
     position: relative;
 }
@@ -1113,7 +1113,7 @@ img {
     font-size: var(--footer-font-size);
 }
 
-/* Сторінка помилки 404 */
+/* 404 error page */
 .error-page {
     display: grid;
     align-items: center;
@@ -1232,7 +1232,7 @@ img {
     font-size: var(--subtitle-size);
 }
 
-/* Компонування для ноутбуків */
+/* Laptop layout */
 @media (min-width: 64rem) {
     .error-page {
         grid-template-columns: 1fr 1fr;
@@ -1372,7 +1372,7 @@ img {
 }
 
 
-/* Компонування для планшетів */
+/* Tablet layout */
 @media (min-width: 40rem) {
     :root {
         --page-gutter: 2.5rem;
@@ -1707,7 +1707,7 @@ img {
 }
 
 
-/* Компонування для широких екранів */
+/* Wide screen layout */
 @media (min-width: 110rem) {
     :root {
         --page-gutter: 8.4375vw;
@@ -1917,14 +1917,14 @@ img {
     }
 }
 
-/* Зменшення анімації за налаштуванням користувача */
+/* Reduced motion based on user preferences */
 @media (prefers-reduced-motion: reduce) {
     .marquee-content {
         animation: none;
     }
 }
 
-/* Анімація рядка напрямів зйомки */
+/* Photography category strip animation */
 @keyframes marquee {
     to {
         transform: translateX(-100%);
@@ -1937,7 +1937,7 @@ body.dialog-open {
     overflow: hidden;
 }
 
-/* Модальне вікно та форма звернення */
+/* Contact dialog and form */
 .dialog {
     width: min(35rem, calc(100% - 2rem));
     max-height: calc(100dvh - 2rem);

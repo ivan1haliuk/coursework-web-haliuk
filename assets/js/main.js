@@ -4,7 +4,7 @@
     document.documentElement.classList.add('js');
     const assetBase = new URL('../', document.currentScript.src);
 
-    // Підстановка резервного зображення, якщо фото недоступне
+    // Use a fallback image if a photo is unavailable
     function showImageFallback(image) {
         if (image.dataset.fallbackApplied) {
             return;
@@ -30,14 +30,14 @@
         }
     });
 
-    // Елементи меню та налаштування адаптивності
+    // Menu elements and responsive settings
     const header = document.getElementById('main-header');
     const burger = document.getElementById('burger-menu');
     const navigation = document.getElementById('nav-links');
     const desktop = window.matchMedia('(min-width: 64rem)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    // Закриття мобільного меню з поверненням фокуса
+    // Close the mobile menu and restore focus
     function closeMenu(returnFocus = false) {
         navigation?.classList.remove('active');
         burger?.setAttribute('aria-expanded', 'false');
@@ -47,7 +47,7 @@
         }
     }
 
-    // Відкриття меню, переходи та закриття поза його межами
+    // Open the menu, follow links, and close it on outside interaction
     if (burger && navigation) {
         burger.addEventListener('click', () => {
             const open = burger.getAttribute('aria-expanded') !== 'true';
@@ -77,7 +77,7 @@
             }
         });
 
-        // У Safari невідомий новий фокус не скасовує натискання посилання
+        // Keep link clicks working when Safari does not report the new focus
         navigation.addEventListener('focusout', (event) => {
             const next = event.relatedTarget;
             if (next && !navigation.contains(next) && next !== burger) {
@@ -88,14 +88,14 @@
         desktop.addEventListener('change', () => closeMenu());
     }
 
-    // Зміна вигляду шапки під час прокручування
+    // Update the header appearance on scroll
     if (header) {
         const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 50);
         window.addEventListener('scroll', updateHeader, { passive: true });
         updateHeader();
     }
 
-    // Одночасно відкрите одне запитання FAQ
+    // Allow only one FAQ item to stay open
     const questions = [...document.querySelectorAll('.faq-item')];
     questions.forEach((question) => {
         question.addEventListener('toggle', () => {
@@ -109,7 +109,7 @@
         });
     });
 
-    // Спільне керування каруселлю кнопками та клавіатурою
+    // Shared carousel controls for buttons and keyboard
     function setupCarousel(track, controls) {
         if (!track || !controls) {
             return { update() {} };
@@ -168,7 +168,7 @@
         return { update };
     }
 
-    // Підключення каруселей робіт і відгуків
+    // Set up the portfolio and testimonial carousels
     setupCarousel(
         document.getElementById('portfolio-cards'),
         document.querySelector('.portfolio-slider-buttons'),
@@ -186,7 +186,7 @@
         document.querySelector('.testimonials-slider-buttons'),
     );
 
-    // Перемикання напрямів послуг на головній сторінці
+    // Switch photography categories on the home page
     const serviceSection = document.getElementById('services');
     if (serviceSection) {
         const slides = [...serviceSection.querySelectorAll('[data-home-service]')];
